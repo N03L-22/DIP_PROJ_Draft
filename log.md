@@ -124,7 +124,7 @@ Newest at the bottom of each table. Dates are ISO. Tracking note: [[Subjects/DIP
 - **The F59 prediction held on real pictures:** chains of 4 and 5 steps do not help (haze: no significant gain; tank water: 1 to 2 dB worse per step). Useful range: up to 3 steps for real haze, 2 for tank water.
 - Caveats: beam search for lengths 4 and 5, not exhaustive; pool of 7 steps; tank water reference is the least turbid picture, not perfectly clear; set sizes are small (23 to 59 pairs).
 
-**F61 (2026-11-04) More scenes and outdoor scenes for the haze comparison (`run_outdoor_haze.py`); DIODE attempted and abandoned.** Rank agreement (Spearman over the 17 haze methods) of synthetic haze with REAL haze (185 pairs; real best dcp_clahe 14.98, DCP 13.70, none 12.38):
+**F61 (2026-11-04) More scenes and outdoor scenes for the haze comparison (`run_outdoor_haze.py`); DIODE attempted and abandoned.** Rank agreement (Spearman over the 17 haze methods) of synthetic haze with REAL haze (the 36-pair Stage 4 sample of the 185 pairs; real best dcp_clahe 14.98, DCP 13.70, none 12.38):
 - 90 NYU rooms, original haze: +0.49 (best dcp_guided 15.63, none 10.16); 90 NYU rooms, calibrated haze: +0.36 (best hist_spec 13.46, DCP 12.42, none 11.28); 100 RESIDE-SOTS outdoor pictures (haze made by RESIDE): +0.08 (best stretch 23.83, DCP 18.68, none 16.01).
 - **Sample size explains the earlier numbers.** Random 12-scene subsets of the 90 give +0.03 to +0.55 (5th to 95th percentile; mean +0.30); the +0.09 of F51 is inside that range. **F51's claim that calibration lowered haze agreement (0.53 to 0.09) is withdrawn:** on 90 scenes the original is +0.49 and the calibrated +0.36, a difference within the noise. The claim that the calibrated haze moved the best-method verdict closer to reality is also not supported: the real winner is DCP then CLAHE (DCP family), which the ORIGINAL haze favours; the calibrated haze favours histogram specification (its mild level does pick dcp_clahe).
 - **Outdoor scenes did not improve the agreement** (+0.08), but RESIDE's haze is light (a global stretch undoes it) and made with its own depth, so this does not settle indoor against outdoor. The suspicion in F51 that scene content (indoor against outdoor) explains the mismatch is therefore NOT confirmed by this test; the same-scene test (+0.81, F41) still shows that with identical scenes the agreement is high.
@@ -137,6 +137,12 @@ Newest at the bottom of each table. Dates are ISO. Tracking note: [[Subjects/DIP
 - **Water, milky synthetic (F57), against the real tank:** +0.41 (+0.21 to +0.59); with 90 scenes +0.45 (+0.33 to +0.59). A modest improvement over the original (+0.13), intervals overlap, so suggestive only.
 - **Same-scene twins (real picture against synthetic version of its own clear picture):** haze +0.81 (+0.67 to +0.84, 91 pictures), glass +1.00 (+0.97 to +1.00, 58 pictures). The most reliable agreement.
 - Caveats: the intervals cover picture sampling only (not the choice of preset settings or of the real data); 17 methods per comparison; real glass sample is 36 pairs (the Stage 4 sample), not all 58.
+
+**F64 (2026-11-05) The Stage 4 real-haze and real-glass comparisons rerun on ALL pairs (185 haze, 58 raindrops; the first run used 36 each; the 36-pair tables are kept in `results/tables/sample36/`).**
+- **Real haze (185 pairs):** none 12.00 dB; fusion_dcp 14.76, dcp_clahe 14.61, dcp_guided 13.75, fusion 13.62, clahe 13.59. (36 pairs: dcp_clahe 14.98 first, fusion_dcp 14.97 second; the top two swap, a tie within 0.2 dB.) DCP then CLAHE beats guided DCP by +0.86 dB (SE 0.14; better on 138 of 185 pairs; SSIM +0.094) and doing nothing by +2.61 dB (better on 158 of 185). The earlier "+1.28 dB, SE 0.22, 29 of 36" was the 36-pair figure.
+- **Real raindrops (58 pairs):** none 24.02; best other method freq_laplacian 23.91 (-0.11 dB, better on 12 of 58 pairs). Unchanged.
+- **Haze rank agreement against all 185 real pairs changes the F61 verdict.** Original haze +0.57, calibrated haze -0.04 (12 matched scenes each); on 90 scenes original +0.57, calibrated +0.30, RESIDE outdoor +0.09. Resampling both the 90 scenes and the real pairs, the original minus the calibrated agreement is +0.30 (90% interval +0.13 to +0.50, positive in 2000 of 2000 draws; picture sampling only). **So calibration made the method ranking on haze worse, not equal** (F61 said within noise, which held only against the 36-pair sample). Glass unchanged: +0.92 (12 scenes), +0.85 (90 scenes) against all 58 real pairs. Calibrated haze matches the picture statistics (F36 to F39) but not the method ranking.
+- Report updated: real-method tables and bullets, Test 2, Test 3, Test 7, the trust table, the conclusions, and the abstract.
 
 ## Changes made
 
@@ -172,6 +178,8 @@ Newest at the bottom of each table. Dates are ISO. Tracking note: [[Subjects/DIP
 | 2026-11-04 | Froze the before-calibration results and re-ran every preset-dependent stage on calibrated presets | `results_original_presets/` (copy of `results/`, with README); `DIP_PRESETS=calibrated` switch in `presets.py`, `datasets.matched_dir()`, `run_failure_analysis.py`, `run_stacked.py`; live `results/` now holds the calibrated run |
 | 2026-11-04 | Wrote `docs/model-equations.md` and the detailed report | Equations for haze, water, glass, plastic and stacks in both domains; `report/final/report.pdf` (18 pages) with before/after strips, post-processing heat map, sweeps, synthetic-vs-real, frequency study, failure analysis, stacks; new scripts `make_report_figures.py` and `make_report_tables.py` |
 | 2026-11-04 | Global-against-local experiment | `code/restore/local.py` (tiled, segmented, region finders), `code/experiments/run_local_vs_global.py`, `code/tests/test_local.py` (7 checks); tables `local_vs_global_*.csv`, figure `local_vs_global.png`, examples `local_examples_*.jpg` |
+| 2026-11-05 | Report: sample-picture gallery and data matrix (section 3) | `code/experiments/make_data_gallery.py` -> `results/figures/data_gallery.jpg`; table `data_matrix` in `make_report_tables.py` (counts read from the manifests and result tables) |
+| 2026-11-05 | Real haze and glass comparisons rerun on all 185 and 58 pairs; haze calibration verdict revised | `results/tables/haze_real.csv`, `glass_real.csv` (36-pair versions in `results/tables/sample36/`), `ranking_agreement.csv`; report numbers updated |
 | 2026-11-04 | Stability of the agreement numbers | `check_agreement_stability.py`, `agreement_stability.csv`, `agreement_stability.png`; report section 7 "How stable are these agreement numbers?"; glass 0.92 corrected to 0.85 in the report |
 | 2026-11-04 | More-scenes and outdoor haze comparison; DIODE attempted; report Test 7; earlier haze-agreement claims corrected | `run_outdoor_haze.py`, `outdoor_haze*.csv`, `outdoor_haze.png`; `data/existing/DIODE/` (partial) |
 | 2026-11-04 | Chains of 1 to 5 steps on real haze and real tank water | `run_longer_chains_real.py`; `longer_real_*.csv`, `longer_chains_real.png`; report section 9.1 extended |
@@ -231,6 +239,8 @@ Newest at the bottom of each table. Dates are ISO. Tracking note: [[Subjects/DIP
 | A deblur on plastic at heavy severity with a fixed Wiener setting | No gain | `plastic_matched.csv` |
 | Outermost-first as a universal rule for stacked media | Worse for haze+plastic | F35 |
 | The first droplet formula (average weight only) | Error 0.176 | F43 |
+
+**F63 (2026-11-04) Correction: the Stage 4 real-haze and real-glass tables use 36 pictures each (12 per severity), not 185 and 58.** The report's captions said 185 and 58 (the sizes of the curated sets); all other real-haze analyses use more pairs: model fit and frequency study 185, same-scene twins 91, subtraction held-out 23 + 23, chain-length sets 24 / 23 / 46. Captions corrected; numbers unchanged.
 
 ## Open items
 - [ ] Confirm the real-capture status (D1) against the 12 Nov presentation date, and decide what to cut.

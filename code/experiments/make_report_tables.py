@@ -93,7 +93,11 @@ def main():
             best = max(means, key=lambda m: means[m][0])
             chain = mean_by(read(f"pipelines_{medium}_verify.csv", folder), "pipeline", ["psnr"])
             best_chain = max(chain, key=lambda p: chain[p][0])
-            agreement = next(r for r in read("ranking_agreement.csv", folder) if r["medium"] == medium and r["level"] == "all" and r["score"] == "psnr")
+            # rank agreement of this run's synthetic results with the SAME real results (all real pairs), so the two rows are comparable
+            real_means = mean_by(read(f"{medium}_real.csv"), "method", ["psnr"])
+            common = [m for m in means if m in real_means]
+            from scipy.stats import spearmanr as _rho
+            agreement = {"spearman": _rho([means[m][0] for m in common], [real_means[m][0] for m in common])[0]}
             dcp = means.get("dcp_guided", [float("nan")])[0] if medium == "haze" else float("nan")
             body.append([medium, tag, tex(best), f"{means[best][0]:.2f}", "--" if dcp != dcp else f"{dcp:.2f}", f"{means['none'][0]:.2f}",
                          tex(best_chain), f"{chain[best_chain][0]:.2f}", f"{float(agreement['spearman']):+.2f}"])
@@ -122,6 +126,22 @@ def main():
     write_table("agreement_stability", ["comparison", "scenes / pairs", "first estimate (90\\% interval)", "with 90 synthetic scenes (90\\% interval)"],
                 [[r["comparison"], (f"{r['synthetic_scenes_before']} / {r['real_pairs']}"), f"{float(r['point_before']):+.2f} ({r['ci_before']})",
                   (f"{float(r['point_now']):+.2f} ({r['ci_now']})" if r["point_now"] else "--")] for r in rows], "lrll")
+
+    # which pictures are used: available against scored (counts read from the manifests and from the result tables)
+    curated = PROJECT / "data" / "curated"
+    count = lambda name, **where: sum(all(r[k] == v for k, v in where.items()) for r in csv.DictReader(open(curated / name)))  # noqa: E731
+    scored = lambda table: len({r["id"] for r in read(table)})  # noqa: E731
+    body = [["NYU indoor scenes", "clear scenes with depth (we degrade them)", "--", str(count("manifest_depth.csv")), f"{scored('haze_matched.csv')} scenes x 3 severities", "up to 90 scenes"],
+            ["O-HAZE", "real haze pairs", "clear photo", str(count("manifest_haze.csv", source="O-HAZE")), "in the 185", "all"],
+            ["I-HAZE", "real haze pairs", "clear photo", str(count("manifest_haze.csv", source="I-HAZE")), "in the 185", "all"],
+            ["Dense-Haze", "real haze pairs", "clear photo", str(count("manifest_haze.csv", source="Dense-Haze")), "in the 185", "all"],
+            ["NH-Haze", "real haze pairs", "clear photo", str(count("manifest_haze.csv", source="NH-Haze")), "in the 185", "all"],
+            ["all real haze", "", "clear photo", str(sum(count("manifest_haze.csv", source=x) for x in ("O-HAZE", "I-HAZE", "Dense-Haze", "NH-Haze"))), str(scored("haze_real.csv")), "23 to 46 per chain test"],
+            ["RainDrop test\\_a", "real raindrops", "clean pane", str(count("manifest_glass.csv")), str(scored("glass_real.csv")), "58 (same-scene twins)"],
+            ["UIEB", "real ocean photos", "none", f"{count('manifest_water.csv')} (of 890)", f"{scored('water_real.csv')} (no-reference scores)", "150 (figures)"],
+            ["TUB tank", "real turbid water pairs", "least-turbid view", str(count("manifest_water_tub.csv")), str(scored("water_tub.csv")), "228 (chain tests)"],
+            ["RESIDE-SOTS outdoor", "haze made by RESIDE", "clear photo", "492", "--", "100 (outdoor-haze test)"]]
+    write_table("data_matrix", ["source", "kind", "reference", "available", "scored in the main comparison", "other analyses"], body, "llcrrl")
 
     # chain-length analysis: ceilings (Stage 4g) and the curve of the best chain per length (Stage 4h)
     rows = read("chain_limits_summary.csv")

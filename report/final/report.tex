@@ -27,7 +27,7 @@
 \end{tabular}\end{center}
 
 \begin{abstract}\noindent
-We take pictures that were spoiled by haze, murky water, rain on glass or cloudy plastic, and try to repair them using classical image-processing tools only (no machine learning). The well-known Dark Channel Prior (DCP) is our baseline. Because real spoiled pictures with a known ``clean'' answer are rare, we also \emph{make} spoiled pictures ourselves (\SYN). A large part of this report asks: \emph{can the made-up pictures be trusted to predict what happens on real ones?} The short answer: partly. They agree well for glass; for haze the full ranking of methods agrees only moderately (rank correlation about +0.4 on 90 scenes, and no better with outdoor scenes), though the verdict about DCP is the same.
+We take pictures that were spoiled by haze, murky water, rain on glass or cloudy plastic, and try to repair them using classical image-processing tools only (no machine learning). The well-known Dark Channel Prior (DCP) is our baseline. Because real spoiled pictures with a known ``clean'' answer are rare, we also \emph{make} spoiled pictures ourselves (\SYN). A large part of this report asks: \emph{can the made-up pictures be trusted to predict what happens on real ones?} The short answer: partly. They agree well for glass; for haze the full ranking of methods agrees only moderately (rank correlation +0.30 with our calibrated haze and +0.57 with the original haze on 90 scenes, and only +0.09 on outdoor scenes), though the verdict about DCP is the same.
 \end{abstract}
 
 \paragraph{How to read the tags.} Every figure and table says where its pictures came from: \SYN\ pictures we made from clean photos (the true answer is known exactly), \REAL\ photographs that were really spoiled and have a clean twin, or \BOTH\ a comparison between the two.
@@ -114,6 +114,9 @@ Plastic & Same, blur and tint. & \textbf{None exists.} Own captures are planned.
 \end{tabular}\end{center}
 
 \paragraph{Why use made-up pictures at all?} Their true answer is exact, we can make as many as we like at any strength, and we can test one thing at a time. \paragraph{What is the catch?} Our equation is a model: if it is wrong, methods may look good on made-up pictures and still fail on real ones. Section~\ref{sec:compare} measures how big that catch is.
+
+\begin{figure}[H]\centering\includegraphics[width=.9\textwidth]{data_gallery.jpg}\caption{A sample from each source (spoiled picture, then its clear twin where there is one). Rows 1 to 2: real haze (O-HAZE, I-HAZE, Dense-Haze, NH-Haze). Row 3: real raindrops and real tank water. Row 4: outdoor haze made by the RESIDE authors. Row 5: one clear NYU indoor scene and the same scene degraded by each of our four models (\SYN). The UIEB ocean photos are shown in Section~\ref{sec:real}.}\end{figure}
+\begin{table}[H]\centering\resizebox{\textwidth}{!}{\scriptsize\tablein{data_matrix}}\caption{Which pictures exist and which are actually scored. ``Main comparison'' is the first method-by-method comparison (Section~\ref{sec:synthetic} and~\ref{sec:real}); the last column lists the largest other uses.}\end{table}
 
 %--------------------------------------------------------------------
 \section{The repair methods and how we score them}\label{sec:methods}
@@ -336,10 +339,10 @@ Now the real thing, where no model is involved.
 \begin{table}[H]\centering\scriptsize
 \begin{minipage}{.48\textwidth}\centering\textbf{real haze, 185 pairs \REAL}\\\tablein{real_haze}\end{minipage}\hfill
 \begin{minipage}{.48\textwidth}\centering\textbf{real raindrops, 58 pairs \REAL}\\\tablein{real_glass}\end{minipage}
-\caption{\REAL\ Best methods on real pictures.}\end{table}
+\caption{\REAL\ Best methods on real pictures: all 185 haze pairs and all 58 raindrop pairs. (A first version used only 36 pictures of each: the top two haze methods swapped places, a tie within 0.2 dB, and the raindrop result did not change.)}\end{table}
 \begin{itemize}
-\item \textbf{Real haze:} \emph{DCP followed by CLAHE} is best (14.98 dB). It beats DCP alone by +1.3 dB (better on 29 of 36 test pairs). DCP alone leaves a dark picture with a blue cast; the contrast step brings brightness back.
-\item \textbf{Real raindrops:} again nothing helps (``none'' scores highest, 24.19 dB).
+\item \textbf{Real haze:} The two best are \emph{fusion after DCP} (14.76 dB) and \emph{DCP followed by CLAHE} (14.61 dB); doing nothing scores 12.00. DCP followed by CLAHE beats DCP alone by +0.86 dB (standard error 0.14; better on 138 of 185 pairs; SSIM +0.094). DCP alone leaves a dark picture with a blue cast; the contrast step brings brightness back.
+\item \textbf{Real raindrops:} again nothing helps (``none'' scores highest, 24.02 dB; the best method, a frequency-domain Laplacian, is 0.11 dB lower and better on only 12 of 58 pairs).
 \end{itemize}
 \begin{figure}[H]\centering\includegraphics[width=.92\textwidth]{report_ba_real_haze.jpg}\caption{\REAL\ Haze. Hazy photo, three repairs, clean photo (right).}\end{figure}
 
@@ -374,7 +377,7 @@ For every method we plot its score on synthetic pictures against its score on re
 \begin{figure}[H]\centering\includegraphics[width=\textwidth]{report_synthetic_vs_real.png}\caption{\BOTH\ Each dot is one method. Left: haze (synthetic is the calibrated version). Right: raindrops on glass.}\end{figure}
 \begin{itemize}
 \item \textbf{Glass:} the dots follow the line closely. Methods rank almost the same (Spearman correlation 0.92 on 12 scenes, 0.85 on 90). The one clear outlier is \emph{stretch}, which scores 24.7 dB on synthetic and 18.6 dB on real raindrops.
-\item \textbf{Haze:} the dots are scattered (correlation 0.09 on the 12 scenes of this figure; with 90 scenes it is +0.36, see Test 7). Histogram methods (\texttt{hist\_spec}, \texttt{eq\_hsi}) score well on synthetic and poorly on real; the DCP-plus-CLAHE family scores best on real and middling on synthetic.
+\item \textbf{Haze:} the dots are scattered (correlation $-0.04$ on the 12 scenes of this figure; with 90 scenes it is +0.30, see Test 7). Histogram methods (\texttt{hist\_spec}, \texttt{eq\_hsi}) score well on synthetic and poorly on real; the DCP-plus-CLAHE family scores best on real and middling on synthetic.
 \end{itemize}
 
 \begin{table}[H]\centering\scriptsize\tablein{before_after_presets}\caption{\BOTH\ Original hand-chosen presets against calibrated ones. Rank agreement is the correlation between how methods rank on synthetic and on real pictures (1 = identical, 0 = unrelated).}\end{table}
@@ -385,7 +388,7 @@ We tuned the settings of haze and glass to look like the real thing, then reran 
 \item \textbf{With the original haze,} DCP looked excellent (+5.1 dB over nothing). On calibrated haze and on real haze it is weak. \emph{The original settings flattered DCP.}
 \item \textbf{With the original glass,} a plain stretch gained +10 dB. On raindrops (calibrated and real), nothing helps. \emph{The original settings flattered stretch.}
 \item \textbf{Glass agreement rose} from 0.53 to 0.92.
-\item \textbf{Haze agreement is not improved by calibration.} The table shows it falling from 0.53 to 0.09, but those numbers use only 12 scenes and are noisy: Test 7 repeats the comparison on 90 scenes and finds +0.49 (original) against +0.36 (calibrated), a difference within the noise. Calibration matched the \emph{statistics} in Test 1, not the \emph{ranking}.
+\item \textbf{Haze agreement got worse with calibration.} Against all 185 real pairs, the original haze ranks the methods at +0.57 and the calibrated haze at $-0.04$ (12 scenes each); Test 7 repeats this on 90 scenes (+0.57 against +0.30). Calibration matched the \emph{statistics} in Test 1, not the \emph{ranking}.
 \end{itemize}
 
 \subsection{Test 4: remove the scene as an excuse}
@@ -429,17 +432,17 @@ Two doubts remained: the haze numbers of Tests 2 and 3 use only 12 indoor rooms,
 \item \textbf{90 indoor rooms} (NYU), both the original and the calibrated haze;
 \item \textbf{100 outdoor pictures} from RESIDE-SOTS, which comes with clear scenes and haze made by its own authors (so it tests the scene type but not our haze model).
 \end{itemize}
-\begin{table}[H]\centering\scriptsize\tablein{outdoor_haze}\caption{\SYN\ Rank agreement with real haze over the 17 haze methods, and the winners. All pictures here are synthetic; ``real haze'' is the 185-pair reference (best: DCP then CLAHE, 14.98 dB; guided DCP 13.70; none 12.38).}\end{table}
+\begin{table}[H]\centering\scriptsize\tablein{outdoor_haze}\caption{\SYN\ Rank agreement with real haze over the 17 haze methods, and the winners. All pictures here are synthetic; ``real haze'' is the reference of all 185 real pairs (best: fusion after DCP 14.76 dB; DCP then CLAHE 14.61; guided DCP 13.75; none 12.00).}\end{table}
 \begin{figure}[H]\centering\includegraphics[width=.95\textwidth]{outdoor_haze.png}\caption{\BOTH\ Synthetic against real PSNR per method, for the three sets of synthetic haze.}\end{figure}
 \begin{itemize}
-\item \textbf{Twelve scenes are too few.} Drawing 12-scene subsets from the 90 gives rank agreements from +0.03 to +0.55 (90\% of draws). The earlier +0.09 sits inside that range, and the earlier fall from 0.53 to 0.09 after calibration was not a reliable finding.
-\item \textbf{Calibration did not help the ranking of haze.} On 90 scenes the original haze agrees at +0.49 and the calibrated at +0.36, within the noise. The calibrated haze changes the winner (histogram specification instead of DCP), but the real winner is DCP then CLAHE, a member of the DCP family, which the \emph{original} haze favours. Calibration matched the picture statistics, not the method ranking.
-\item \textbf{Outdoor scenes did not make it better.} The RESIDE outdoor haze agrees at only +0.08 and its winner is a plain stretch (23.8 dB). Its haze is much lighter (a global stretch undoes it), so this set differs from real fog in haze model as well as scene, which means it does not settle the indoor-versus-outdoor question. A depth-based outdoor test (DIODE) was not possible: the download ran at 12 to 54 kilobytes per second (over 13 hours) and was stopped.
+\item \textbf{Twelve scenes are noisy for the calibrated haze.} Drawing 12-scene subsets from the 90 gives rank agreements from $-0.06$ to +0.55 (90\% of draws, calibrated haze) and +0.51 to +0.63 (original haze).
+\item \textbf{Calibration made the ranking of haze worse.} On 90 scenes the original haze agrees at +0.57 and the calibrated at +0.30; resampling both the scenes and the real pairs, the original is better by +0.30 (90\% interval +0.13 to +0.50, positive in every one of 2000 draws; this covers picture sampling only). The calibrated haze changes the winner (histogram specification instead of DCP), but the real winners are fusion after DCP and DCP then CLAHE, both DCP-family methods, which the \emph{original} haze favours. Calibration matched the picture statistics, not the method ranking.
+\item \textbf{Outdoor scenes did not make it better.} The RESIDE outdoor haze agrees at only +0.09 and its winner is a plain stretch (23.8 dB). Its haze is much lighter (a global stretch undoes it), so this set differs from real fog in haze model as well as scene, which means it does not settle the indoor-versus-outdoor question. A depth-based outdoor test (DIODE) was not possible: the download ran at 12 to 54 kilobytes per second (over 13 hours) and was stopped.
 \end{itemize}
 
 \subsection{How stable are these agreement numbers?}
 The agreement numbers above come from small samples. To see how much they could move, we resampled both sides (the synthetic scenes and the real pairs) 2000 times with replacement and recorded the spread, and we re-made the synthetic side with 90 scenes instead of 12.
-\begin{table}[H]\centering\scriptsize\tablein{agreement_stability}\caption{\BOTH\ Rank agreement between synthetic and real, with the 90\% bootstrap interval (it accounts for the choice of pictures only, not for other uncertainty such as the preset settings). The real glass sample is the 36 pairs scored in Stage 4. The same-scene rows resample the shared pictures.}\end{table}
+\begin{table}[H]\centering\scriptsize\tablein{agreement_stability}\caption{\BOTH\ Rank agreement between synthetic and real, with the 90\% bootstrap interval (it accounts for the choice of pictures only, not for other uncertainty such as the preset settings). The real glass sample is all 58 pairs. The same-scene rows resample the shared pictures.}\end{table}
 \begin{figure}[H]\centering\includegraphics[width=.85\textwidth]{agreement_stability.png}\caption{\BOTH\ The same numbers as intervals.}\end{figure}
 \begin{itemize}
 \item \textbf{Glass is stable and strong:} +0.85 with 90 scenes (+0.79 to +0.89). The earlier 0.92 came from only 12 scenes; the true value is a little lower, still a strong agreement.
@@ -452,7 +455,7 @@ The agreement numbers above come from small samples. To see how much they could 
 \begin{center}\small\begin{tabular}{p{4.2cm}p{11.3cm}}\toprule
 Question & Verdict\\\midrule
 Haze: best method & Real and calibrated synthetic agree that DCP alone is weak and a contrast step helps.\\
-Haze: full ranking & Moderate: +0.36 to +0.49 on 90 indoor scenes, +0.08 on outdoor scenes with RESIDE's haze, +0.81 on the \emph{same scenes} as the real photos. Different scenes, and even different haze models, move it a lot.\\
+Haze: full ranking & Moderate to weak: +0.30 (calibrated) to +0.57 (original) on 90 indoor scenes, +0.09 on outdoor scenes with RESIDE's haze, +0.81 on the \emph{same scenes} as the real photos. Different scenes, and even different haze models, move it a lot.\\
 Glass (raindrops) & Synthetic is a good stand-in: +0.85 (+0.79 to +0.89) on 90 scenes, up to +1.00 on the same scenes.\\
 Water & \textbf{Partly checked.} The original (open-sea style) synthetic water disagrees with real tank pairs (+0.3 to +0.4, and a different winner). Milky synthetic water agrees on the verdict (nothing helps much, DCP hurts) but only modestly on the ranking (+0.4). On real ocean photos colour methods look best by eye. Ink: no real data.\\
 Plastic & \textbf{Unchecked}: no real data exists. Treat as model results.\\
@@ -523,7 +526,7 @@ We searched chains of up to 3 steps. Would 4 or 5 steps help? Before searching, 
 \item \textbf{Where the curve peaks.} Haze: 2 to 3 steps (set C: 3 steps +0.35$\pm$0.14 over 2; set B, with half the pictures, chose 2). Water: 2 steps. Plastic: 1 to 3 steps are tied within noise. Glass: every step lowers the score, and no chain beats doing nothing.
 \item \textbf{More steps usually hurt.} Each added step is another estimate with its own error, and the errors add up: the best five-step water chain scored 15.0 dB on set C, 1.8 dB below the best one-step chain (16.9 dB) and only 0.7 dB above doing nothing (14.3 dB).
 \end{itemize}
-\textbf{The same test on real pictures \REAL.} Real haze (185 pairs, sets of 24, 23 and 46) and real tank water (TUB; sets of 31, 30 and 59 pairs), with the same pool of steps and the same design.
+\textbf{The same test on real pictures \REAL.} Real haze (from the 185 pairs: sets of 24, 23 and 46 pairs) and real tank water (TUB; sets of 31, 30 and 59 pairs), with the same pool of steps and the same design.
 \begin{table}[H]\centering\scriptsize\tablein{longer_chains_real}\caption{\REAL\ Held-out PSNR of the best chain of each length (0 = doing nothing). B chose the length; C was never used.}\end{table}
 \begin{figure}[H]\centering\includegraphics[width=.8\textwidth]{longer_chains_real.png}\caption{\REAL\ Best chain of each length. Error bars: standard error over pictures.}\end{figure}
 \begin{itemize}
@@ -557,7 +560,7 @@ DCP guesses the glow from the brightest pixels. In water the true glow is a dark
 \begin{enumerate}
 \item The one equation $I=tJ+A(1-t)$ explains all four media; the frequency view confirms it.
 \item \textbf{DCP is the right tool only for haze,} and even there it is weak on real photos without a following contrast step.
-\item \textbf{Something beats DCP:} on real haze, DCP then CLAHE (+1.3 dB) and local-glow subtraction (+1.2 dB); on synthetic water, colour correction (+5.0 dB over DCP). On real turbid tank water nothing beat doing nothing and DCP was far worse (11.5 against 18.7 dB); on real ocean photos colour correction looks best by eye. Synthetic water made milky (matching the tank) reproduces that verdict; a dark ink cloud, in contrast, is helped by brightening methods.
+\item \textbf{Something beats DCP:} on real haze, DCP then CLAHE (+0.9 dB over DCP alone on all 185 pairs) and local-glow subtraction (+1.2 dB over DCP on its held-out pairs); on synthetic water, colour correction (+5.0 dB over DCP). On real turbid tank water nothing beat doing nothing and DCP was far worse (11.5 against 18.7 dB); on real ocean photos colour correction looks best by eye. Synthetic water made milky (matching the tank) reproduces that verdict; a dark ink cloud, in contrast, is helped by brightening methods.
 \item \textbf{Order matters,} by up to 3.1 dB, and an extra step can help or hurt.
 \item \textbf{Made-up pictures help but need checking.} Our first presets gave misleading winners; calibrating to real pictures fixed glass fully and haze partly.
 \item \textbf{Raindrops cannot be repaired by global methods,} and running methods per tile does not fix that. Nothing beat doing nothing.

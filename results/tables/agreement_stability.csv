@@ -1,6 +1,6 @@
 comparison,synthetic_scenes_before,real_pairs,point_before,ci_before,synthetic_scenes_now,point_now,ci_now
-glass against real raindrops,12,36,0.92,+0.81 to +0.95,90,0.85,+0.79 to +0.89
+glass against real raindrops,12,58,0.92,+0.83 to +0.95,90,0.85,+0.80 to +0.90
 water (original) against real tank,12,120,0.41,+0.29 to +0.50,90,0.32,+0.27 to +0.39
-water (milky) against real tank,12,120,0.41,+0.21 to +0.59,90,0.45,+0.33 to +0.59
+water (milky) against real tank,12,120,0.41,+0.21 to +0.60,90,0.45,+0.33 to +0.58
 "same-scene twins, haze",91,91,0.81,+0.67 to +0.84,,,
 "same-scene twins, glass",58,58,1.0,+0.97 to +1.00,,,
