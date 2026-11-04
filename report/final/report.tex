@@ -14,11 +14,17 @@
 \tikzset{box/.style={draw,rounded corners,fill=blue!6,minimum height=7mm,align=center,font=\small},arr/.style={-{Stealth},thick}}
 
 \title{Seeing Through Haze, Water, Glass and Plastic\\\large Can classical image processing restore the picture? A simple walk-through}
-\author{Noel Alex Jacob (2025201085), Shaik Areesh, Sri Harshit K\\ Digital Image Processing (CS7.404), IIIT Hyderabad}
+\author{Shaik Areesh, Noel Alex Jacob, Sri Harshit K\\ Digital Image Processing (CS7.404), IIIT Hyderabad}
 \date{4 November 2026 (presentation 12 November)}
 
 \begin{document}
 \maketitle
+\begin{center}\begin{tabular}{lr}\toprule
+\textbf{Team Members} & Student ID\\\midrule
+\textbf{Shaik Areesh} & 2026909008\\
+\textbf{Noel Alex Jacob} & 2025201085\\
+\textbf{Sri Harshit K} & 2024102022\\\bottomrule
+\end{tabular}\end{center}
 
 \begin{abstract}\noindent
 We take pictures that were spoiled by haze, murky water, rain on glass or cloudy plastic, and try to repair them using classical image-processing tools only (no machine learning). The well-known Dark Channel Prior (DCP) is our baseline. Because real spoiled pictures with a known ``clean'' answer are rare, we also \emph{make} spoiled pictures ourselves (\SYN). A large part of this report asks: \emph{can the made-up pictures be trusted to predict what happens on real ones?} The short answer: partly. They agree well for glass; for haze the full ranking of methods agrees only moderately (rank correlation about +0.4 on 90 scenes, and no better with outdoor scenes), though the verdict about DCP is the same.

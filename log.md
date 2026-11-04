@@ -234,7 +234,7 @@ Newest at the bottom of each table. Dates are ISO. Tracking note: [[Subjects/DIP
 
 ## Open items
 - [ ] Confirm the real-capture status (D1) against the 12 Nov presentation date, and decide what to cut.
-- [ ] Get the teammates' full names and roll numbers for the tracking note (only short names, as on the proposal, are on record).
+- [x] Teammates' full names and roll numbers added to the tracking note and the report (2026-11-04): Shaik Areesh 2026909008, Noel Alex Jacob 2025201085, Sri Harshit K 2024102022.
 - [ ] Confirm with the instructor that library calls (guided filter, CLAHE, Wiener, metrics) are allowed for baselines.
 - [ ] Confirm that the reframed multi-method, multi-medium scope is acceptable.
 - [x] Check the Peking raindrop and SOTS sizes: 64 MB and 420 MB, both downloaded.

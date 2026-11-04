@@ -48,12 +48,11 @@ Leading options: DCP dehazing assumption audit Â· low-light reproduction audit Â
 | Member | Roll number | Role in the proposal |
 |---|---|---|
 | Noel Alex Jacob (listed as "Noel Jacob" on the proposal) | 2025201085 | not assigned in writing |
-| Shaik Areesh | *not recorded* | not assigned in writing |
-| Sri Harshit K | *not recorded* | not assigned in writing |
+| Shaik Areesh | 2026909008 | not assigned in writing |
+| Sri Harshit K | 2024102022 | not assigned in writing |
 
 The proposal splits the work into A (data and captures), B (restoration and evaluation) and C (synthesis and
-comparison) without naming who takes which. Full names and roll numbers of the last two members are
-still to be added.
+comparison) without naming who takes which. Names and roll numbers as on the team table of the report (2026-11-04).
 
 ## Log
 Findings and changes: [[Subjects/DIP/Projects/DIP-Project/log|log]]. Latest (2026-11-03): proposal files moved to `proposal/`,
