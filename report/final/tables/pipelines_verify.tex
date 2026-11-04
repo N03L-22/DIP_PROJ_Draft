@@ -1,0 +1,10 @@
+\begin{tabular}{llrrrr}
+\toprule
+medium & best sequence (held-out) & PSNR & SSIM & DCP alone & no restoration \\
+\midrule
+haze & hist\_eq $>$ clahe $>$ dcp\_guided & 13.66 & 0.541 & 12.86 & 11.87 \\
+water & red\_comp $>$ von\_kries & 18.03 & 0.837 & 13.05 & 15.38 \\
+glass & none & 25.80 & 0.854 & 19.78 & 25.80 \\
+plastic & richardson\_lucy $>$ unsharp $>$ dcp\_guided & 17.53 & 0.667 & 15.27 & 16.03 \\
+\bottomrule
+\end{tabular}

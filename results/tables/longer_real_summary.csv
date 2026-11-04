@@ -1,0 +1,3 @@
+medium,chosen_length,chain1,chain2,chain3,chain4,chain5,B0,B1,B2,B3,B4,B5,C0,C1,C2,C3,C4,C5
+haze,3,dcp_guided,dcp_guided > clahe,dcp_guided > gray_world > clahe,unsharp > gray_world > clahe > dcp_guided,unsharp > gray_world > gamma_auto > clahe > dcp_guided,12.37,14.498,15.087,15.604,15.219,15.306,12.429,13.831,14.724,15.057,14.692,14.343
+water,2,unsharp,red_comp > unsharp,von_kries > red_comp > unsharp,unsharp > von_kries > red_comp > clahe,eq_hsi > dcp_guided > clahe > red_comp > unsharp,19.013,19.098,19.205,16.806,14.983,13.7,17.942,17.993,18.085,16.106,14.331,13.43

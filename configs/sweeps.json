@@ -1,0 +1,546 @@
+{
+ "haze": [
+  {
+   "method": "dcp_guided",
+   "param": "patch",
+   "values": [
+    3,
+    7,
+    15,
+    31,
+    61,
+    101
+   ]
+  },
+  {
+   "method": "dcp_guided",
+   "param": "omega",
+   "values": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    1.0
+   ]
+  },
+  {
+   "method": "dcp_guided",
+   "param": "t0",
+   "values": [
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.4
+   ]
+  },
+  {
+   "method": "dcp",
+   "param": "patch",
+   "values": [
+    3,
+    7,
+    15,
+    31,
+    61,
+    101
+   ]
+  },
+  {
+   "method": "clahe",
+   "param": "clip_limit",
+   "values": [
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1
+   ]
+  },
+  {
+   "method": "clahe",
+   "param": "tiles",
+   "values": [
+    2,
+    4,
+    8,
+    16
+   ]
+  },
+  {
+   "method": "gamma_auto",
+   "param": "target",
+   "values": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+   ]
+  },
+  {
+   "method": "stretch",
+   "param": "low_percentile",
+   "values": [
+    0,
+    0.5,
+    1,
+    2,
+    5,
+    10
+   ]
+  },
+  {
+   "method": "tarel",
+   "param": "strength",
+   "values": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    1.0
+   ]
+  },
+  {
+   "method": "tarel",
+   "param": "window",
+   "values": [
+    0.01,
+    0.02,
+    0.03,
+    0.06,
+    0.12
+   ]
+  },
+  {
+   "method": "tarel",
+   "param": "gamma",
+   "values": [
+    0.4,
+    0.55,
+    0.7,
+    0.85,
+    1.0
+   ]
+  },
+  {
+   "method": "unsharp",
+   "param": "amount",
+   "values": [
+    0.0,
+    0.5,
+    1,
+    2,
+    4
+   ]
+  },
+  {
+   "method": "hist_spec",
+   "param": "target_std",
+   "values": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3
+   ]
+  }
+ ],
+ "water": [
+  {
+   "method": "udcp",
+   "param": "patch",
+   "values": [
+    3,
+    7,
+    15,
+    31,
+    61
+   ]
+  },
+  {
+   "method": "udcp",
+   "param": "omega",
+   "values": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    1.0
+   ]
+  },
+  {
+   "method": "wb_dcp",
+   "param": "omega",
+   "values": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    1.0
+   ]
+  },
+  {
+   "method": "wb_dcp",
+   "param": "patch",
+   "values": [
+    3,
+    7,
+    15,
+    31,
+    61
+   ]
+  },
+  {
+   "method": "clahe",
+   "param": "clip_limit",
+   "values": [
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1
+   ]
+  },
+  {
+   "method": "gamma_auto",
+   "param": "target",
+   "values": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+   ]
+  },
+  {
+   "method": "stretch",
+   "param": "low_percentile",
+   "values": [
+    0,
+    0.5,
+    1,
+    2,
+    5,
+    10
+   ]
+  },
+  {
+   "method": "red_comp",
+   "param": "strength",
+   "values": [
+    0,
+    0.5,
+    1,
+    1.5,
+    2
+   ]
+  },
+  {
+   "method": "white_patch",
+   "param": "percentile",
+   "values": [
+    90,
+    95,
+    99,
+    99.5,
+    100
+   ]
+  },
+  {
+   "method": "shades_of_gray",
+   "param": "power",
+   "values": [
+    1,
+    2,
+    4,
+    6,
+    10
+   ]
+  },
+  {
+   "method": "hist_spec",
+   "param": "target_mean",
+   "values": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+   ]
+  },
+  {
+   "method": "fusion",
+   "param": "levels",
+   "values": [
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  }
+ ],
+ "glass": [
+  {
+   "method": "dcp_near_global",
+   "param": "patch_fraction",
+   "values": [
+    0.05,
+    0.1,
+    0.25,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "method": "dcp_near_global",
+   "param": "omega",
+   "values": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    1.0
+   ]
+  },
+  {
+   "method": "dcp_local_airlight",
+   "param": "size",
+   "values": [
+    0.05,
+    0.1,
+    0.15,
+    0.25,
+    0.4
+   ]
+  },
+  {
+   "method": "dcp_local_airlight",
+   "param": "smooth",
+   "values": [
+    0.02,
+    0.05,
+    0.08,
+    0.15,
+    0.3
+   ]
+  },
+  {
+   "method": "homomorphic",
+   "param": "cutoff",
+   "values": [
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+   ]
+  },
+  {
+   "method": "homomorphic",
+   "param": "low_gain",
+   "values": [
+    0.2,
+    0.35,
+    0.5,
+    0.7,
+    0.9
+   ]
+  },
+  {
+   "method": "homomorphic",
+   "param": "high_gain",
+   "values": [
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    3.0
+   ]
+  },
+  {
+   "method": "clahe",
+   "param": "clip_limit",
+   "values": [
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1
+   ]
+  },
+  {
+   "method": "flat_field",
+   "param": "size",
+   "values": [
+    0.05,
+    0.1,
+    0.25,
+    0.4,
+    0.6
+   ]
+  },
+  {
+   "method": "top_hat",
+   "param": "size",
+   "values": [
+    0.05,
+    0.1,
+    0.25,
+    0.4
+   ]
+  },
+  {
+   "method": "local_stats",
+   "param": "boost",
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    6
+   ]
+  },
+  {
+   "method": "unsharp",
+   "param": "amount",
+   "values": [
+    0.0,
+    0.5,
+    1,
+    2,
+    4
+   ]
+  },
+  {
+   "method": "freq_laplacian",
+   "param": "strength",
+   "values": [
+    0,
+    0.5,
+    1,
+    2,
+    4
+   ]
+  }
+ ],
+ "plastic": [
+  {
+   "method": "wiener",
+   "param": "noise_to_signal",
+   "values": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+   ]
+  },
+  {
+   "method": "wiener",
+   "param": "blur_sigma",
+   "values": [
+    0.0,
+    0.003,
+    0.006,
+    0.009,
+    0.012
+   ]
+  },
+  {
+   "method": "wb_dcp",
+   "param": "omega",
+   "values": [
+    0.5,
+    0.7,
+    0.85,
+    0.95,
+    1.0
+   ]
+  },
+  {
+   "method": "clahe",
+   "param": "clip_limit",
+   "values": [
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1
+   ]
+  },
+  {
+   "method": "gamma_auto",
+   "param": "target",
+   "values": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+   ]
+  },
+  {
+   "method": "stretch",
+   "param": "low_percentile",
+   "values": [
+    0,
+    0.5,
+    1,
+    2,
+    5,
+    10
+   ]
+  },
+  {
+   "method": "richardson_lucy",
+   "param": "iterations",
+   "values": [
+    1,
+    3,
+    6,
+    12,
+    25,
+    50
+   ]
+  },
+  {
+   "method": "cls",
+   "param": "smoothness",
+   "values": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+   ]
+  },
+  {
+   "method": "unsharp",
+   "param": "amount",
+   "values": [
+    0.0,
+    0.5,
+    1,
+    2,
+    4
+   ]
+  },
+  {
+   "method": "adaptive_nr",
+   "param": "noise_variance",
+   "values": [
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.02
+   ]
+  }
+ ]
+}

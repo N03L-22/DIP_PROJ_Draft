@@ -1,0 +1,22 @@
+first_second,second_first,psnr_forward,psnr_backward,difference_db
+tarel > gamma_auto,gamma_auto > tarel,14.146,11.461,2.684
+tarel > hist_eq,hist_eq > tarel,14.441,12.359,2.082
+dcp_guided > unsharp,unsharp > dcp_guided,16.022,14.79,1.232
+dcp_guided > tarel,tarel > dcp_guided,13.176,14.219,-1.043
+clahe > hist_eq,hist_eq > clahe,13.394,14.112,-0.718
+dcp_guided > hist_eq,hist_eq > dcp_guided,14.584,13.902,0.682
+tarel > unsharp,unsharp > tarel,14.093,14.725,-0.632
+dcp_guided > gamma_auto,gamma_auto > dcp_guided,15.431,14.859,0.572
+clahe > gamma_auto,gamma_auto > clahe,14.009,14.531,-0.522
+hist_eq > unsharp,unsharp > hist_eq,13.011,13.412,-0.401
+gray_world > tarel,tarel > gray_world,13.54,13.906,-0.365
+clahe > unsharp,unsharp > clahe,10.383,10.651,-0.268
+gray_world > dcp_guided,dcp_guided > gray_world,15.997,15.746,0.251
+dcp_guided > clahe,clahe > dcp_guided,15.497,15.685,-0.187
+tarel > clahe,clahe > tarel,14.564,14.392,0.172
+unsharp > gamma_auto,gamma_auto > unsharp,14.169,14.0,0.169
+hist_eq > gamma_auto,gamma_auto > hist_eq,13.242,13.401,-0.159
+gray_world > gamma_auto,gamma_auto > gray_world,13.762,13.847,-0.085
+gray_world > clahe,clahe > gray_world,10.301,10.369,-0.068
+gray_world > hist_eq,hist_eq > gray_world,13.169,13.199,-0.03
+gray_world > unsharp,unsharp > gray_world,9.473,9.472,0.001

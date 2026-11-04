@@ -1,0 +1,11 @@
+world,level,pictures,spearman,kendall,best_method,best_psnr,dcp_guided,dcp_clahe,none
+nyu_original,heavy,90,0.179,0.103,tarel,12.96,11.34,11.61,7.17
+nyu_original,medium,90,0.522,0.412,dcp,16.15,15.64,15.06,9.38
+nyu_original,mild,90,0.463,0.338,dcp_guided,19.9,19.9,17.66,13.94
+nyu_original,all,90,0.49,0.412,dcp_guided,15.63,15.63,14.77,10.16
+nyu,heavy,90,0.422,0.265,hist_spec,12.47,9.96,9.88,8.99
+nyu,medium,90,0.228,0.206,hist_spec,13.51,12.88,12.96,11.27
+nyu,mild,90,0.24,0.191,dcp_clahe,14.95,14.41,14.95,13.59
+nyu,all,90,0.358,0.25,hist_spec,13.46,12.42,12.6,11.28
+reside,reside,100,0.083,0.118,stretch,23.83,18.68,17.39,16.01
+reside,all,100,0.083,0.118,stretch,23.83,18.68,17.39,16.01

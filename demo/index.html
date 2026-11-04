@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visibility Degradation Synthesiser</title>
+<!-- A local demo of the project's forward models. Open this file in a browser. It needs synth.js beside it.
+     Drop a picture on the left, drag effects into the stack, and move the sliders. -->
+<style>
+:root{
+  --bg:#efefed; --surface:#f8f8f6; --surface-2:#e4e4e1; --ink:#2c2c2b; --muted:#62625f; --line:#d5d5d1;
+  --accent:#3d6299; --accent-soft:#d3dbe6; --good:#397150; --bad:#9d463b; --code:#e8e8e5;
+  --haze:#8a8f98; --water:#3f7f9c; --glass:#5f9aa0; --plastic:#b08a3e;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1a1a1a; --surface:#232323; --surface-2:#2c2c2c; --ink:#cfcfcc; --muted:#92928f; --line:#383838;
+  --accent:#7fa3cf; --accent-soft:#252e3a; --good:#7fb293; --bad:#d58778; --code:#1f1f1f;
+  --haze:#a3a8b0; --water:#6fb0cc; --glass:#8fc2c8; --plastic:#d6b36a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a1a1a; --surface:#232323; --surface-2:#2c2c2c; --ink:#cfcfcc; --muted:#92928f; --line:#383838;
+  --accent:#7fa3cf; --accent-soft:#252e3a; --good:#7fb293; --bad:#d58778; --code:#1f1f1f;
+  --haze:#a3a8b0; --water:#6fb0cc; --glass:#8fc2c8; --plastic:#d6b36a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,"Segoe UI",sans-serif;padding:0 max(16px,env(safe-area-inset-left))}
+h1{font-size:20px;margin:0}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:600}
+button,select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 11px;cursor:pointer}
+button:hover{border-color:var(--accent)} button.on{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:14px}
+header .actions{display:flex;flex-wrap:wrap;gap:8px}
+main{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:18px;align-items:start;padding-bottom:40px}
+@media (max-width:860px){main{grid-template-columns:1fr}}
+section{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.drop{border:2px dashed var(--line);border-radius:10px;padding:16px;text-align:center;color:var(--muted);cursor:pointer;transition:border-color .15s,background .15s}
+.drop.over{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+.drop small{display:block;margin-top:2px}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;border-radius:0;border-right:1px solid var(--line)} .seg button:last-child{border-right:0}
+label.chk{display:inline-flex;gap:6px;align-items:center;font-size:14px;color:var(--muted)}
+/* effect chips you drag into the stack */
+.palette{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);cursor:grab;user-select:none}
+.chip:active{cursor:grabbing} .chip .dot{width:12px;height:12px;border-radius:50%;flex:none}
+.chip b{font-weight:600} .chip small{display:block;color:var(--muted);font-size:12.5px;line-height:1.25}
+.chip .add{margin-left:auto;padding:0 8px;line-height:24px;font-size:18px}
+/* the stack */
+.stackhint{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin:2px 2px 6px}
+#stack{min-height:70px;border:2px dashed var(--line);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,background .15s}
+#stack.over{border-color:var(--accent);background:var(--accent-soft)}
+#stack:empty::before{content:"Drag an effect here, or press + on a chip";color:var(--muted);text-align:center;padding:14px 0;font-size:14px}
+.layer{border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;background:var(--surface-2)}
+.layer.dragging{opacity:.4}
+.layer.drop-before{box-shadow:0 -3px 0 var(--accent)} .layer.drop-after{box-shadow:0 3px 0 var(--accent)}
+.layer>.head{display:flex;align-items:center;gap:6px;padding:7px 8px}
+.layer .grip{cursor:grab;color:var(--muted);padding:0 4px;user-select:none}
+.layer .title{font-weight:600;flex:1;cursor:pointer}
+.layer .num{font-size:12px;color:var(--muted)}
+.layer .tiny{padding:1px 7px;font-size:14px;line-height:20px}
+.layer.off .title,.layer.off .body{opacity:.45}
+.layer .body{padding:2px 10px 10px;border-top:1px solid var(--line)} .layer.collapsed .body{display:none}
+.param{display:grid;grid-template-columns:minmax(118px,42%) 1fr 50px;gap:8px;align-items:center;margin-top:6px;font-size:14px}
+.param label{color:var(--muted);position:relative}
+.param output{font:12.5px ui-monospace,monospace;text-align:right}
+.param input[type=range]{width:100%;accent-color:var(--accent)}
+.tip{display:inline-block;margin-left:5px;width:15px;height:15px;line-height:13px;text-align:center;border:1px solid var(--line);border-radius:50%;font-size:10px;cursor:help;background:var(--surface)}
+.tip::after{content:attr(data-tip);display:none;position:absolute;left:0;top:calc(100% + 4px);width:230px;padding:7px 9px;background:var(--surface);color:var(--ink);border:1px solid var(--accent);border-radius:8px;font-size:13px;line-height:1.35;z-index:30;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.tip:hover::after,.tip:focus::after{display:block}
+.subhead{margin-top:10px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+/* picture area */
+#view{position:relative;width:100%;background:var(--code);border-radius:10px;overflow:hidden;touch-action:none;user-select:none}
+#view canvas{display:block;width:100%;height:auto}
+#before{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+#divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent);cursor:ew-resize}
+#divider::after{content:"";position:absolute;top:50%;left:-9px;width:21px;height:21px;margin-top:-10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tag{position:absolute;top:8px;padding:2px 8px;border-radius:6px;font-size:12px;background:rgba(0,0,0,.55);color:#fff;pointer-events:none}
+#empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:20px}
+table{border-collapse:collapse;font-size:14px;width:100%} td,th{padding:4px 8px;border-bottom:1px solid var(--line);text-align:right} td:first-child,th:first-child{text-align:left}
+.muted{color:var(--muted);font-size:13.5px}
+kbd{font:12px ui-monospace,monospace;background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:0 5px}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Visibility Degradation Synthesiser</h1>
+    <div class="muted">Haze, water, glass and plastic, on their own or stacked. The same formulas as <code>code/degrade/</code>.</div></div>
+  <div class="actions">
+    <button id="btnSample" type="button">Load sample scene</button>
+    <button id="btnExport" type="button">Save picture (PNG)</button>
+    <button id="btnSaveStack" type="button">Save stack (JSON)</button>
+    <button id="btnLoadStack" type="button">Load stack</button>
+    <button id="btnTheme" type="button">Theme: auto</button>
+    <input id="stackFile" type="file" accept="application/json" hidden>
+  </div>
+</header>
+
+<main>
+<div>
+  <section>
+    <h2>1 · Picture</h2>
+    <div id="drop" class="drop" tabindex="0" role="button" aria-label="Drop a picture here or press Enter to choose one">
+      Drop a picture here<small>or click to choose a file</small>
+      <input id="fileIn" type="file" accept="image/*" hidden>
+    </div>
+    <div class="row"><span class="muted">Depth (how far each point is):</span></div>
+    <div class="row">
+      <div class="seg" id="depthSeg" role="group" aria-label="Depth source">
+        <button type="button" data-d="ramp" class="on" title="The bottom of the picture is near and the top is far">Ramp</button>
+        <button type="button" data-d="layers" title="Three flat bands: sky far, middle, ground near">3 layers</button>
+        <button type="button" data-d="map" title="Use a depth picture you drop below">My depth map</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="flipDepth"> flip near/far</label>
+    </div>
+    <div id="depthDrop" class="drop" style="margin-top:8px;padding:8px;font-size:14px" hidden tabindex="0" role="button">
+      Drop a depth picture here<small>white = near by default; tick "flip" if yours is the other way</small>
+      <input id="depthIn" type="file" accept="image/*" hidden>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · Effects (drag into the stack)</h2>
+    <div class="palette" id="palette"></div>
+  </section>
+
+  <section>
+    <h2>3 · Stack</h2>
+    <div class="stackhint"><span>↑ nearest the scene</span><span>nearest the camera ↓</span></div>
+    <div id="stack"></div>
+    <div class="row"><button id="btnClear" type="button">Clear stack</button></div>
+  </section>
+</div>
+
+<div>
+  <section>
+    <h2>Result</h2>
+    <div id="view">
+      <canvas id="after" width="4" height="3"></canvas>
+      <canvas id="before" width="4" height="3"></canvas>
+      <div id="divider" role="slider" aria-label="Compare original and result" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
+      <span class="tag" style="left:8px">Original</span><span class="tag" style="right:8px">Degraded</span>
+      <div id="empty">Drop a picture on the left, or press “Load sample scene”.</div>
+    </div>
+    <div class="row">
+      <span class="muted">Show the result after layer:</span><select id="upTo" aria-label="Show the result after this layer"></select>
+      <span class="muted" id="renderInfo"></span>
+    </div>
+    <div class="muted" style="margin-top:6px">Drag the blue handle (or press ← →) to compare. A layer shows its own result when selected here, so you can see what each step added.</div>
+  </section>
+
+  <section>
+    <h2>Numbers for the analysis</h2>
+    <table id="stats"><thead><tr><th></th><th>Original</th><th>Degraded</th></tr></thead><tbody></tbody></table>
+    <div class="muted" style="margin-top:6px">Contrast is the spread of brightness. The dark channel is the smallest colour value in each 15 px patch; dark-channel restoration relies on it being near 0 in clear outdoor pictures, so a high degraded value means the haze signal is strong.</div>
+  </section>
+</div>
+</main>
+
+<script src="synth.js"></script>
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+
+  /* ---------------- what each effect is called and which sliders it gets ---------------- */
+  const EFFECTS = {
+    haze: { name: 'Haze', blurb: 'Fog that thickens with distance', colour: 'var(--haze)', params: [
+      ['beta', 'Fog density', 0, 4, 0.05, 'How quickly the fog thickens with distance. Bigger means denser fog.'],
+      ['scene_depth', 'Far distance', 0.2, 6, 0.1, 'How far away the farthest point is. Bigger means more fog on the far parts.'],
+      ['airlight', 'Fog brightness', 0, 1, 0.01, 'Brightness of the fog itself (0 black, 1 white).']] },
+    water: { name: 'Water', blurb: 'Red fades first, blue-green veil', colour: 'var(--water)', params: [
+      ['beta_red', 'Red loss', 0, 3, 0.05, 'How fast red light is absorbed with distance. Red should fade fastest.'],
+      ['beta_green', 'Green loss', 0, 3, 0.05, 'How fast green light is absorbed.'],
+      ['beta_blue', 'Blue loss', 0, 3, 0.05, 'How fast blue light is absorbed (smallest in clear water).'],
+      ['scene_depth', 'Far distance', 0.2, 8, 0.1, 'Distance of the farthest point. Bigger means a stronger effect.'],
+      ['veil_red', 'Water light: red', 0, 1, 0.01, 'Red part of the colour of the water itself.'],
+      ['veil_green', 'Water light: green', 0, 1, 0.01, 'Green part of the water colour.'],
+      ['veil_blue', 'Water light: blue', 0, 1, 0.01, 'Blue part of the water colour.']] },
+    glass: { name: 'Glass', blurb: 'Fogged, wet or dirty pane', colour: 'var(--glass)', params: [
+      ['veil', 'Film strength', 0, 1, 0.01, 'Strength of the milky film (fog or dust). 0 is clear glass.'],
+      ['veil_size', 'Film patch size', 0.005, 0.2, 0.005, 'Size of the uneven patches, as a fraction of the longer picture side.'],
+      ['smudge', 'Smudge strength', 0, 1, 0.01, 'How strongly the smudge patches scatter the scene.'],
+      ['smudge_size', 'Smudge size', 0.005, 0.2, 0.005, 'Size of the smudge patches (fraction of the longer side).'],
+      ['smudge_blur', 'Smudge softness', 0, 0.05, 0.001, 'How much a smudge blurs the scene (fraction of the longer side).'],
+      ['droplets', 'Droplets', 0, 150, 1, 'Number of water droplets on the glass.'],
+      ['droplet_min', 'Smallest droplet', 0.002, 0.05, 0.001, 'Smallest droplet radius (fraction of the longer side).'],
+      ['droplet_max', 'Largest droplet', 0.005, 0.1, 0.001, 'Largest droplet radius.'],
+      ['droplet_blur', 'Droplet softness', 0, 0.03, 0.001, 'How much a droplet blurs what is behind it.'],
+      ['droplet_strength', 'Droplet strength', 0, 1, 0.01, 'How visible the droplets are.'],
+      ['airlight', 'Film brightness', 0, 1, 0.01, 'Brightness of the film and smudges.'],
+      ['seed', 'Pattern seed', 0, 99, 1, 'Change this to get a different pattern of patches and droplets.']] },
+    plastic: { name: 'Plastic', blurb: 'Translucent or aged sheet', colour: 'var(--plastic)', params: [
+      ['transmission', 'Light let through', 0.05, 1, 0.01, 'Fraction of light that passes. Lower means more opaque.'],
+      ['tint_red', 'Tint: red', 0, 1.2, 0.01, 'Gain on red. Yellowed plastic keeps red and loses blue.'],
+      ['tint_green', 'Tint: green', 0, 1.2, 0.01, 'Gain on green.'],
+      ['tint_blue', 'Tint: blue', 0, 1.2, 0.01, 'Gain on blue.'],
+      ['blur', 'Softening', 0, 0.03, 0.001, 'How much the sheet blurs the scene (fraction of the longer side).'],
+      ['airlight', 'Milky veil', 0, 1, 0.01, 'Brightness of the veil the sheet adds.']] },
+  };
+
+  /* ---------------- state ---------------- */
+  const WORK_SIDE = 440;                 // longest side of the working picture (keeps sliders responsive)
+  let sourceImage = null;                // the loaded picture (HTMLImageElement or canvas)
+  let depthImage = null;                 // the dropped depth picture, if any
+  let depthMode = 'ramp';
+  let layers = [];                       // [{id, type, enabled, collapsed, params}]
+  let nextId = 1, upTo = 'all', pending = false;
+  let work = null;                       // {h, w, pixels (Float64Array), depth (Float64Array)}
+
+  /* ---------------- reading pictures ---------------- */
+  function readFileAsImage(file) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file), img = new Image();
+      img.onload = () => resolve(img); img.onerror = reject; img.src = url;
+    });
+  }
+  function toPixels(img, maxSide, grey) {
+    const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+    const w = Math.max(1, Math.round(img.width * scale)), h = Math.max(1, Math.round(img.height * scale));
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    const ctx = c.getContext('2d', { willReadFrequently: true }); ctx.drawImage(img, 0, 0, w, h);
+    const rgba = ctx.getImageData(0, 0, w, h).data;
+    if (grey) { const g = new Float64Array(w * h); for (let p = 0; p < w * h; p++) g[p] = (rgba[4*p] + rgba[4*p+1] + rgba[4*p+2]) / 765; return { w, h, data: g }; }
+    const px = new Float64Array(w * h * 3);
+    for (let p = 0; p < w * h; p++) { px[3*p] = rgba[4*p] / 255; px[3*p+1] = rgba[4*p+1] / 255; px[3*p+2] = rgba[4*p+2] / 255; }
+    return { w, h, data: px };
+  }
+  function percentile(values, q) { const s = Float64Array.from(values).sort(); return s[Math.min(s.length - 1, Math.floor(q * (s.length - 1)))]; }
+
+  /* ---------------- depth map for the working size ---------------- */
+  function buildDepth(w, h) {
+    const flip = $('flipDepth').checked;
+    let d;
+    if (depthMode === 'map' && depthImage) {
+      const g = toPixels(depthImage, Math.max(w, h), true);
+      // resample to the working size by nearest neighbour (sizes are almost always identical)
+      d = new Float64Array(w * h);
+      for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) d[y*w+x] = g.data[Math.min(g.h-1, Math.floor(y*g.h/h)) * g.w + Math.min(g.w-1, Math.floor(x*g.w/w))];
+      const lo = percentile(d, 0.01), hi = percentile(d, 0.99);
+      for (let i = 0; i < d.length; i++) d[i] = Math.min(1, Math.max(0, (d[i] - lo) / Math.max(hi - lo, 1e-12)));
+      if (!flip) for (let i = 0; i < d.length; i++) d[i] = 1 - d[i];     // white = near by default
+      else { /* flipped: white = far, already in place */ }
+      return d;
+    }
+    d = depthMode === 'layers' ? Synth.layeredDepth(h, w) : Synth.rampDepth(h, w, true);
+    if (flip) for (let i = 0; i < d.length; i++) d[i] = 1 - d[i];
+    return d;
+  }
+
+  function prepareWork() {
+    if (!sourceImage) { work = null; return; }
+    const px = toPixels(sourceImage, WORK_SIDE, false);
+    work = { h: px.h, w: px.w, pixels: px.data, depth: buildDepth(px.w, px.h) };
+    for (const id of ['before', 'after']) { $(id).width = px.w; $(id).height = px.h; }
+    paint($('before'), work.pixels, px.w, px.h);
+  }
+
+  /* ---------------- drawing and statistics ---------------- */
+  function paint(canvas, data, w, h) {
+    const ctx = canvas.getContext('2d'), out = ctx.createImageData(w, h);
+    for (let p = 0; p < w * h; p++) {
+      out.data[4*p] = Math.round(data[3*p] * 255); out.data[4*p+1] = Math.round(data[3*p+1] * 255);
+      out.data[4*p+2] = Math.round(data[3*p+2] * 255); out.data[4*p+3] = 255;
+    }
+    ctx.putImageData(out, 0, 0);
+  }
+  function darkChannelMean(data, w, h, patch) {
+    // smallest colour per pixel, then the smallest value in each patch (two 1-D passes), then the average
+    const m = new Float64Array(w * h), r = Math.floor(patch / 2), tmp = new Float64Array(w * h), out = new Float64Array(w * h);
+    for (let p = 0; p < w * h; p++) m[p] = Math.min(data[3*p], data[3*p+1], data[3*p+2]);
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { let v = 1; for (let k = Math.max(0, x-r); k <= Math.min(w-1, x+r); k++) v = Math.min(v, m[y*w+k]); tmp[y*w+x] = v; }
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { let v = 1; for (let k = Math.max(0, y-r); k <= Math.min(h-1, y+r); k++) v = Math.min(v, tmp[k*w+x]); out[y*w+x] = v; }
+    let s = 0; for (let p = 0; p < w * h; p++) s += out[p]; return s / (w * h);
+  }
+  function summary(data, w, h) {
+    const n = w * h; let mean = 0; const lum = new Float64Array(n);
+    for (let p = 0; p < n; p++) { lum[p] = 0.299 * data[3*p] + 0.587 * data[3*p+1] + 0.114 * data[3*p+2]; mean += lum[p]; }
+    mean /= n; let v = 0; for (let p = 0; p < n; p++) v += (lum[p] - mean) * (lum[p] - mean);
+    const ch = [0, 0, 0]; for (let p = 0; p < n; p++) for (let c = 0; c < 3; c++) ch[c] += data[3*p+c];
+    return { mean, contrast: Math.sqrt(v / n), dark: darkChannelMean(data, w, h, 15), red: ch[0]/n, green: ch[1]/n, blue: ch[2]/n };
+  }
+  function showStats(before, after) {
+    const rows = [['Mean brightness', 'mean'], ['Contrast (std of brightness)', 'contrast'], ['Mean dark channel (15 px)', 'dark'],
+                  ['Average red', 'red'], ['Average green', 'green'], ['Average blue', 'blue']];
+    document.querySelector('#stats tbody').innerHTML = rows.map(([label, key]) =>
+      `<tr><td>${label}</td><td>${before[key].toFixed(3)}</td><td>${after[key].toFixed(3)}</td></tr>`).join('');
+  }
+
+  /* ---------------- render ---------------- */
+  function activeLayers() {
+    const list = layers.map((l) => ({ type: l.type, enabled: l.enabled, params: l.params }));
+    return upTo === 'all' ? list : list.slice(0, Number(upTo) + 1);
+  }
+  function render() {
+    pending = false;
+    $('empty').style.display = work ? 'none' : 'flex';
+    if (!work) return;
+    const t0 = performance.now();
+    const result = Synth.applyStack(work.pixels, work.depth, work.h, work.w, activeLayers());
+    paint($('after'), result, work.w, work.h);
+    $('renderInfo').textContent = `${work.w} × ${work.h} px, ${(performance.now() - t0).toFixed(0)} ms`;
+    showStats(summary(work.pixels, work.w, work.h), summary(result, work.w, work.h));
+  }
+  function requestRender() { if (!pending) { pending = true; requestAnimationFrame(render); } }
+
+  /* ---------------- the stack UI ---------------- */
+  function addLayer(type, index) {
+    const layer = { id: nextId++, type, enabled: true, collapsed: false, params: Object.assign({}, Synth.DEFAULTS[type]) };
+    layers.splice(index == null ? layers.length : index, 0, layer);
+    rebuildStack(); requestRender();
+  }
+  function fmt(value, step) { return step >= 1 ? String(Math.round(value)) : value.toFixed(step < 0.01 ? 3 : 2); }
+  function rebuildStack() {
+    const host = $('stack'); host.innerHTML = '';
+    layers.forEach((layer, index) => {
+      const spec = EFFECTS[layer.type], card = document.createElement('div');
+      card.className = 'layer' + (layer.enabled ? '' : ' off') + (layer.collapsed ? ' collapsed' : '');
+      card.style.setProperty('--c', spec.colour); card.draggable = true; card.dataset.index = index;
+      card.innerHTML = `<div class="head"><span class="grip" title="Drag to reorder">⋮⋮</span><span class="num">${index + 1}</span>
+        <span class="title" title="Click to fold or unfold">${spec.name}</span>
+        <label class="chk" title="Switch this layer on or off"><input type="checkbox" ${layer.enabled ? 'checked' : ''} data-act="toggle"> on</label>
+        <button class="tiny" data-act="up" title="Move nearer the scene" ${index === 0 ? 'disabled' : ''}>↑</button>
+        <button class="tiny" data-act="down" title="Move nearer the camera" ${index === layers.length - 1 ? 'disabled' : ''}>↓</button>
+        <button class="tiny" data-act="reset" title="Put this layer's sliders back to their defaults">↺</button>
+        <button class="tiny" data-act="remove" title="Remove this layer">×</button></div><div class="body"></div>`;
+      const body = card.querySelector('.body');
+      spec.params.forEach(([key, label, min, max, step, help]) => {
+        const row = document.createElement('div'); row.className = 'param';
+        row.innerHTML = `<label for="p${layer.id}${key}">${label}<span class="tip" tabindex="0" data-tip="${help}">?</span></label>
+          <input id="p${layer.id}${key}" type="range" min="${min}" max="${max}" step="${step}" value="${layer.params[key]}"><output>${fmt(layer.params[key], step)}</output>`;
+        const input = row.querySelector('input'), out = row.querySelector('output');
+        input.addEventListener('input', () => { layer.params[key] = Number(input.value); out.textContent = fmt(layer.params[key], step); requestRender(); });
+        body.appendChild(row);
+      });
+      host.appendChild(card);
+    });
+    const options = ['<option value="all">all layers</option>'].concat(layers.map((l, i) => `<option value="${i}">${i + 1} · ${EFFECTS[l.type].name}</option>`));
+    $('upTo').innerHTML = options.join('');
+    if (upTo !== 'all' && Number(upTo) >= layers.length) upTo = 'all';
+    $('upTo').value = upTo;
+  }
+
+  $('stack').addEventListener('click', (e) => {
+    const card = e.target.closest('.layer'); if (!card) return;
+    const index = Number(card.dataset.index), layer = layers[index], act = e.target.dataset.act;
+    if (e.target.classList.contains('title')) { layer.collapsed = !layer.collapsed; rebuildStack(); return; }
+    if (!act) return;
+    if (act === 'toggle') { layer.enabled = e.target.checked; rebuildStack(); requestRender(); }
+    else if (act === 'remove') { layers.splice(index, 1); rebuildStack(); requestRender(); }
+    else if (act === 'reset') { layer.params = Object.assign({}, Synth.DEFAULTS[layer.type]); rebuildStack(); requestRender(); }
+    else if (act === 'up' || act === 'down') { const to = act === 'up' ? index - 1 : index + 1; [layers[index], layers[to]] = [layers[to], layers[index]]; rebuildStack(); requestRender(); }
+  });
+  $('upTo').addEventListener('change', () => { upTo = $('upTo').value; requestRender(); });
+  $('btnClear').addEventListener('click', () => { layers = []; upTo = 'all'; rebuildStack(); requestRender(); });
+
+  /* ---------------- drag and drop: palette -> stack, and reordering ---------------- */
+  const palette = $('palette');
+  Object.entries(EFFECTS).forEach(([type, spec]) => {
+    const chip = document.createElement('div'); chip.className = 'chip'; chip.draggable = true;
+    chip.innerHTML = `<span class="dot" style="background:${spec.colour}"></span><span><b>${spec.name}</b><small>${spec.blurb}</small></span><button class="add" type="button" title="Add ${spec.name} to the stack" aria-label="Add ${spec.name}">+</button>`;
+    chip.addEventListener('dragstart', (e) => { e.dataTransfer.setData('text/effect', type); e.dataTransfer.effectAllowed = 'copy'; });
+    chip.querySelector('.add').addEventListener('click', () => addLayer(type));
+    palette.appendChild(chip);
+  });
+  let draggedIndex = null;
+  const stack = $('stack');
+  function insertionIndex(clientY) {
+    const cards = [...stack.querySelectorAll('.layer')];
+    for (let i = 0; i < cards.length; i++) { const r = cards[i].getBoundingClientRect(); if (clientY < r.top + r.height / 2) return i; }
+    return cards.length;
+  }
+  stack.addEventListener('dragstart', (e) => { const card = e.target.closest('.layer'); if (!card) return; draggedIndex = Number(card.dataset.index); card.classList.add('dragging'); e.dataTransfer.setData('text/layer', String(draggedIndex)); e.dataTransfer.effectAllowed = 'move'; });
+  stack.addEventListener('dragend', () => { draggedIndex = null; stack.classList.remove('over'); stack.querySelectorAll('.layer').forEach((c) => c.classList.remove('dragging', 'drop-before', 'drop-after')); });
+  stack.addEventListener('dragover', (e) => { e.preventDefault(); stack.classList.add('over'); const at = insertionIndex(e.clientY), cards = [...stack.querySelectorAll('.layer')];
+    cards.forEach((c) => c.classList.remove('drop-before', 'drop-after')); if (cards.length) { if (at < cards.length) cards[at].classList.add('drop-before'); else cards[cards.length - 1].classList.add('drop-after'); } });
+  stack.addEventListener('dragleave', (e) => { if (!stack.contains(e.relatedTarget)) { stack.classList.remove('over'); stack.querySelectorAll('.layer').forEach((c) => c.classList.remove('drop-before', 'drop-after')); } });
+  stack.addEventListener('drop', (e) => {
+    e.preventDefault(); const at = insertionIndex(e.clientY); stack.classList.remove('over');
+    const effect = e.dataTransfer.getData('text/effect');
+    if (effect) { addLayer(effect, at); return; }
+    if (draggedIndex !== null) { const [moved] = layers.splice(draggedIndex, 1); layers.splice(draggedIndex < at ? at - 1 : at, 0, moved); draggedIndex = null; rebuildStack(); requestRender(); }
+  });
+
+  /* ---------------- drag and drop: pictures ---------------- */
+  function wireDrop(zone, input, onFile) {
+    zone.addEventListener('click', () => input.click());
+    zone.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
+    input.addEventListener('change', () => { if (input.files[0]) onFile(input.files[0]); input.value = ''; });
+    ['dragenter', 'dragover'].forEach((t) => zone.addEventListener(t, (e) => { e.preventDefault(); zone.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach((t) => zone.addEventListener(t, (e) => { e.preventDefault(); zone.classList.remove('over'); }));
+    zone.addEventListener('drop', (e) => { const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) onFile(f); });
+  }
+  wireDrop($('drop'), $('fileIn'), async (f) => { sourceImage = await readFileAsImage(f); prepareWork(); requestRender(); });
+  wireDrop($('depthDrop'), $('depthIn'), async (f) => { depthImage = await readFileAsImage(f); setDepthMode('map'); });
+  // also accept a picture dropped anywhere on the result area
+  const view = $('view');
+  view.addEventListener('dragover', (e) => e.preventDefault());
+  view.addEventListener('drop', async (e) => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) { sourceImage = await readFileAsImage(f); prepareWork(); requestRender(); } });
+
+  function setDepthMode(mode) {
+    depthMode = mode;
+    document.querySelectorAll('#depthSeg button').forEach((b) => b.classList.toggle('on', b.dataset.d === mode));
+    $('depthDrop').hidden = mode !== 'map';
+    if (work) { work.depth = buildDepth(work.w, work.h); requestRender(); }
+  }
+  $('depthSeg').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setDepthMode(b.dataset.d); });
+  $('flipDepth').addEventListener('change', () => { if (work) { work.depth = buildDepth(work.w, work.h); requestRender(); } });
+
+  /* ---------------- a built-in sample scene (so the page works with no files) ---------------- */
+  function makeSample() {
+    const c = document.createElement('canvas'); c.width = 640; c.height = 420; const g = c.getContext('2d');
+    const sky = g.createLinearGradient(0, 0, 0, 200); sky.addColorStop(0, '#3a73c9'); sky.addColorStop(1, '#bcd6f2'); g.fillStyle = sky; g.fillRect(0, 0, 640, 420);
+    g.fillStyle = '#ffd36b'; g.beginPath(); g.arc(520, 70, 32, 0, 7); g.fill();
+    function hills(base, amp, colour, seed) { g.fillStyle = colour; g.beginPath(); g.moveTo(0, 420); for (let x = 0; x <= 640; x += 8) g.lineTo(x, base + amp * Math.sin(x * 0.013 + seed) + amp * 0.5 * Math.sin(x * 0.041 + seed * 2)); g.lineTo(640, 420); g.fill(); }
+    hills(190, 22, '#4d6b8a', 1); hills(225, 26, '#3f7a55', 2);
+    for (let i = 0; i < 9; i++) { g.fillStyle = ['#8c4a3a', '#a9683f', '#6c5a8a'][i % 3]; const w = 42 + (i * 17) % 30, hgt = 60 + (i * 37) % 70; g.fillRect(30 + i * 68, 280 - hgt, w, hgt); g.fillStyle = '#ffe9a8'; for (let y = 280 - hgt + 8; y < 270; y += 16) g.fillRect(36 + i * 68, y, 8, 8); }
+    g.fillStyle = '#5b5b5b'; g.fillRect(0, 280, 640, 140); g.fillStyle = '#f0e6b0'; for (let k = 0; k < 8; k++) g.fillRect(60 + k * 80, 355, 46, 7);
+    g.fillStyle = '#c04535'; g.fillRect(250, 330, 90, 40); g.fillStyle = '#222'; g.beginPath(); g.arc(272, 372, 11, 0, 7); g.arc(320, 372, 11, 0, 7); g.fill();
+    return c;
+  }
+  function loadSample() { sourceImage = makeSample(); prepareWork(); requestRender(); }
+  $('btnSample').addEventListener('click', loadSample);
+
+  /* ---------------- compare slider ---------------- */
+  const divider = $('divider');
+  function setSplit(fraction) {
+    fraction = Math.min(1, Math.max(0, fraction)); const pct = fraction * 100;
+    divider.style.left = pct + '%'; $('before').style.clipPath = `inset(0 ${100 - pct}% 0 0)`; divider.setAttribute('aria-valuenow', Math.round(pct));
+  }
+  let dragging = false;
+  function moveTo(e) { const r = view.getBoundingClientRect(); setSplit((e.clientX - r.left) / r.width); }
+  divider.addEventListener('pointerdown', (e) => { dragging = true; divider.setPointerCapture(e.pointerId); });
+  divider.addEventListener('pointermove', (e) => { if (dragging) moveTo(e); });
+  divider.addEventListener('pointerup', () => { dragging = false; });
+  view.addEventListener('pointerdown', (e) => { if (e.target === divider) return; moveTo(e); });
+  divider.addEventListener('keydown', (e) => { const now = Number(divider.getAttribute('aria-valuenow')) / 100; if (e.key === 'ArrowLeft') setSplit(now - 0.03); if (e.key === 'ArrowRight') setSplit(now + 0.03); });
+
+  /* ---------------- save and load ---------------- */
+  function download(name, blob) { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }
+  $('btnExport').addEventListener('click', () => { if (!work) return; $('after').toBlob((blob) => download('degraded.png', blob)); });
+  $('btnSaveStack').addEventListener('click', () => {
+    const data = { layers: layers.map((l) => ({ type: l.type, enabled: l.enabled, params: l.params })) };
+    download('stack.json', new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+  });
+  $('btnLoadStack').addEventListener('click', () => $('stackFile').click());
+  $('stackFile').addEventListener('change', async () => {
+    const file = $('stackFile').files[0]; if (!file) return;
+    try {
+      const data = JSON.parse(await file.text()); const list = Array.isArray(data) ? data : data.layers;
+      layers = list.filter((l) => EFFECTS[l.type]).map((l) => ({ id: nextId++, type: l.type, enabled: l.enabled !== false, collapsed: false, params: Object.assign({}, Synth.DEFAULTS[l.type], l.params) }));
+      upTo = 'all'; rebuildStack(); requestRender();
+    } catch (err) { alert('That file is not a saved stack.'); }
+    $('stackFile').value = '';
+  });
+
+  /* ---------------- theme ---------------- */
+  const modes = ['auto', 'light', 'dark']; let mode = 'auto';
+  try { const m = localStorage.getItem('synth-theme'); if (modes.includes(m)) mode = m; } catch (e) { /* storage may be blocked */ }
+  function applyTheme() { if (mode === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', mode); $('btnTheme').textContent = 'Theme: ' + mode; }
+  $('btnTheme').addEventListener('click', () => { mode = modes[(modes.indexOf(mode) + 1) % 3]; try { localStorage.setItem('synth-theme', mode); } catch (e) { /* ignore */ } applyTheme(); });
+  applyTheme(); rebuildStack(); render();
+
+  // a small handle for automated tests
+  window.__demo = { addLayer, loadSample, setSplit, layers: () => layers, setUpTo: (v) => { upTo = v; rebuildStack(); requestRender(); } };
+})();
+</script>
+</body>
+</html>

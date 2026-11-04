@@ -1,0 +1,17 @@
+{
+  "levels": ["medium", "heavy"],
+  "search_scenes": 6,
+  "verify_scenes": 6,
+  "max_side": 256,
+  "max_length": 3,
+  "top_k": 8,
+  "specialists": {"haze": ["dcp_guided"], "water": ["red_comp", "von_kries"], "glass": ["stretch"], "plastic": ["stretch"]},
+  "generic": ["dcp_guided", "udcp", "stretch", "von_kries", "clahe", "hist_eq"],
+  "stacks": {
+    "water+glass":         {"layers": ["water", "glass"],             "pool": ["red_comp", "von_kries", "stretch", "dcp_guided", "clahe", "unsharp", "gamma_auto"]},
+    "haze+glass":          {"layers": ["haze", "glass"],              "pool": ["dcp_guided", "stretch", "clahe", "unsharp", "gamma_auto", "tarel", "von_kries"]},
+    "haze+plastic":        {"layers": ["haze", "plastic"],            "pool": ["dcp_guided", "stretch", "wiener", "clahe", "unsharp", "tarel", "gamma_auto"]},
+    "water+plastic":       {"layers": ["water", "plastic"],           "pool": ["red_comp", "von_kries", "stretch", "wiener", "clahe", "unsharp", "dcp_guided"]},
+    "water+glass+plastic": {"layers": ["water", "glass", "plastic"],  "pool": ["red_comp", "von_kries", "stretch", "wiener", "clahe", "unsharp", "dcp_guided"]}
+  }
+}

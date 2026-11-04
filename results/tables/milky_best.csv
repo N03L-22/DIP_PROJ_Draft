@@ -1,0 +1,4 @@
+level,beta,blur,distance,synthetic_dark_shift,synthetic_contrast_ratio,synthetic_brightness_shift,synthetic_changed_share,synthetic_sharpness_ratio,real_dark_shift,real_contrast_ratio,real_brightness_shift,real_changed_share,real_sharpness_ratio
+mild,0.6,0.004,0.644,0.116,0.652,0.024,0.399,0.402,0.093,0.603,0.046,0.334,0.316
+medium,1.7,0.004,0.714,0.165,0.454,0.048,0.634,0.244,0.127,0.398,0.062,0.525,0.136
+heavy,2.2,0.008,0.72,0.186,0.385,0.055,0.688,0.154,0.14,0.311,0.067,0.577,0.097

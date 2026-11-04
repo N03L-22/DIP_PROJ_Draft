@@ -1,0 +1,23 @@
+{
+  "haze": {
+    "pool": ["gray_world", "dcp_guided", "tarel", "clahe", "hist_eq", "unsharp", "gamma_auto"],
+    "references": ["dcp", "dcp_guided"]
+  },
+  "water": {
+    "pool": ["red_comp", "von_kries", "udcp", "dcp_guided", "clahe", "eq_hsi", "unsharp"],
+    "references": ["udcp", "wb_dcp", "dcp_guided"]
+  },
+  "glass": {
+    "pool": ["flat_field", "dcp_local_airlight", "homomorphic", "top_hat", "clahe", "unsharp", "stretch"],
+    "references": ["dcp_near_global", "dcp_guided"]
+  },
+  "plastic": {
+    "pool": ["gray_world", "wiener", "richardson_lucy", "clahe", "unsharp", "eq_hsi", "dcp_guided"],
+    "references": ["wb_dcp", "dcp_guided"]
+  },
+  "max_length": 3,
+  "top_k": 12,
+  "search_pictures": 6,
+  "verify_pictures": 6,
+  "max_side": 256
+}

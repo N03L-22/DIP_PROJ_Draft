@@ -1,0 +1,22 @@
+first_second,second_first,psnr_forward,psnr_backward,difference_db
+wiener > dcp_guided,dcp_guided > wiener,19.159,17.446,1.713
+richardson_lucy > dcp_guided,dcp_guided > richardson_lucy,18.746,17.349,1.397
+unsharp > dcp_guided,dcp_guided > unsharp,18.715,17.494,1.221
+wiener > eq_hsi,eq_hsi > wiener,17.576,16.838,0.738
+clahe > dcp_guided,dcp_guided > clahe,16.316,16.888,-0.572
+clahe > eq_hsi,eq_hsi > clahe,15.136,15.699,-0.563
+richardson_lucy > eq_hsi,eq_hsi > richardson_lucy,17.395,16.897,0.498
+unsharp > eq_hsi,eq_hsi > unsharp,17.28,16.823,0.457
+gray_world > dcp_guided,dcp_guided > gray_world,16.083,16.421,-0.338
+wiener > clahe,clahe > wiener,18.102,17.774,0.328
+richardson_lucy > clahe,clahe > richardson_lucy,18.002,17.842,0.16
+eq_hsi > dcp_guided,dcp_guided > eq_hsi,16.358,16.458,-0.1
+clahe > unsharp,unsharp > clahe,17.615,17.662,-0.047
+wiener > richardson_lucy,richardson_lucy > wiener,16.67,16.702,-0.033
+gray_world > clahe,clahe > gray_world,17.536,17.55,-0.014
+gray_world > eq_hsi,eq_hsi > gray_world,16.822,16.834,-0.012
+richardson_lucy > unsharp,unsharp > richardson_lucy,16.596,16.585,0.011
+gray_world > wiener,wiener > gray_world,16.112,16.111,0.0
+gray_world > richardson_lucy,richardson_lucy > gray_world,15.885,15.885,0.0
+gray_world > unsharp,unsharp > gray_world,15.891,15.891,0.0
+wiener > unsharp,unsharp > wiener,16.873,16.873,0.0

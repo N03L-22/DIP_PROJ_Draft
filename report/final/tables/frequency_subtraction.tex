@@ -1,0 +1,28 @@
+\begin{tabular}{llrrr}
+\toprule
+data & method & pictures & PSNR dB & SSIM \\
+\midrule
+real & no restoration & 91 & 12.24 & 0.488 \\
+real & subtract low frequencies (sigma 0.05) & 91 & 12.14 & 0.604 \\
+real & subtract low frequencies (sigma 0.10) & 91 & 12.56 & 0.619 \\
+real & subtract low frequencies (sigma 0.20) & 91 & 12.79 & 0.618 \\
+real & invert model, constant veil & 91 & 11.42 & 0.481 \\
+real & invert model, local veil & 91 & 15.04 & 0.634 \\
+real & homomorphic & 91 & 12.61 & 0.604 \\
+real & frequency Laplacian & 91 & 12.27 & 0.516 \\
+real & oracle radial filter (upper bound) & 91 & 15.43 & 0.625 \\
+real & DCP (guided) & 91 & 13.85 & 0.52 \\
+real & DCP then CLAHE & 91 & 14.66 & 0.634 \\
+twin & no restoration & 91 & 12.37 & 0.539 \\
+twin & subtract low frequencies (sigma 0.05) & 91 & 12.53 & 0.623 \\
+twin & subtract low frequencies (sigma 0.10) & 91 & 12.02 & 0.619 \\
+twin & subtract low frequencies (sigma 0.20) & 91 & 11.07 & 0.604 \\
+twin & invert model, constant veil & 91 & 13.76 & 0.606 \\
+twin & invert model, local veil & 91 & 15.03 & 0.661 \\
+twin & homomorphic & 91 & 10.54 & 0.591 \\
+twin & frequency Laplacian & 91 & 12.4 & 0.567 \\
+twin & oracle radial filter (upper bound) & 91 & 15.44 & 0.664 \\
+twin & DCP (guided) & 91 & 15.94 & 0.698 \\
+twin & DCP then CLAHE & 91 & 15.8 & 0.742 \\
+\bottomrule
+\end{tabular}

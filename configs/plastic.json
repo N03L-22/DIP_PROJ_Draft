@@ -1,0 +1,58 @@
+{
+ "medium": "plastic",
+ "max_side": 512,
+ "methods": [
+  {
+   "name": "none"
+  },
+  {
+   "name": "dcp"
+  },
+  {
+   "name": "wb_dcp"
+  },
+  {
+   "name": "wiener",
+   "params": {
+    "blur_sigma": 0.006,
+    "noise_to_signal": 0.01
+   }
+  },
+  {
+   "name": "richardson_lucy"
+  },
+  {
+   "name": "cls"
+  },
+  {
+   "name": "unsharp"
+  },
+  {
+   "name": "freq_laplacian"
+  },
+  {
+   "name": "adaptive_nr"
+  },
+  {
+   "name": "fusion"
+  },
+  {
+   "name": "retinex"
+  },
+  {
+   "name": "clahe"
+  },
+  {
+   "name": "hist_eq"
+  },
+  {
+   "name": "eq_hsi"
+  },
+  {
+   "name": "hist_spec"
+  },
+  {
+   "name": "stretch"
+  }
+ ]
+}

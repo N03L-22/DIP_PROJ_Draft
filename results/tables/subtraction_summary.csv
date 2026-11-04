@@ -1,0 +1,3 @@
+world,best_in_search,best_with_subtraction,best_without_subtraction,heldout_unsharp_then_dcp_guided_then_blind_veil_local,heldout_unsharp_then_gray_world_then_dcp_guided,heldout_blind_veil_local,heldout_lowfreq_subtract,heldout_dcp_guided,heldout_dcp_guided_then_clahe,heldout_none,heldout_hist_eq_then_clahe_then_lowfreq_subtract,heldout_hist_eq_then_clahe_then_dcp_guided
+real,unsharp > gray_world > dcp_guided,unsharp > dcp_guided > blind_veil_local,unsharp > gray_world > dcp_guided,14.843,15.245,14.984,12.671,13.975,15.025,12.407,,
+synthetic,hist_eq > clahe > dcp_guided,hist_eq > clahe > lowfreq_subtract,hist_eq > clahe > dcp_guided,,,12.113,12.535,12.863,13.168,11.868,12.666,13.66

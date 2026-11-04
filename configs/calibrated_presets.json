@@ -1,0 +1,45 @@
+{
+  "haze": {
+    "mild": {
+      "structure": "scene",
+      "beta": 1.3,
+      "airlight": 0.6
+    },
+    "medium": {
+      "structure": "scene",
+      "beta": 2.2,
+      "airlight": 0.65
+    },
+    "heavy": {
+      "structure": "scene",
+      "beta": 5.5,
+      "airlight": 0.7
+    }
+  },
+  "glass": {
+    "mild": {
+      "droplets": 300,
+      "droplet_max": 0.02,
+      "droplet_strength": 0.8,
+      "droplet_blur": 0.015,
+      "droplet_min": 0.01,
+      "structure": "drops"
+    },
+    "medium": {
+      "droplets": 300,
+      "droplet_max": 0.03,
+      "droplet_strength": 0.8,
+      "droplet_blur": 0.015,
+      "droplet_min": 0.01,
+      "structure": "drops"
+    },
+    "heavy": {
+      "droplets": 160,
+      "droplet_max": 0.05,
+      "droplet_strength": 0.8,
+      "droplet_blur": 0.015,
+      "droplet_min": 0.01,
+      "structure": "drops"
+    }
+  }
+}

@@ -1,0 +1,535 @@
+set,pipeline,picture,psnr
+B,unsharp,Exp10_Cam4_S03,20.598058245503577
+B,unsharp,Exp17_Cam1_S03,20.641503236120187
+B,unsharp,Exp21_Cam2_S02,21.036615787659386
+B,unsharp,Exp27_Cam1_S03,19.44059242031159
+B,unsharp,Exp2_Cam3_S03,21.037859310982657
+B,unsharp,Exp33_Cam3_S03,19.8918147515065
+B,unsharp,Exp4_Cam3_S03,22.762278263526014
+B,unsharp,Exp7_Cam3_S03,26.5518435102643
+B,unsharp,Exp11_Cam3_S04,18.457550662866563
+B,unsharp,Exp17_Cam1_S05,17.946042142118134
+B,unsharp,Exp20_Cam1_S07,16.56422698393642
+B,unsharp,Exp22_Cam4_S03,19.444292229821095
+B,unsharp,Exp26_Cam1_S06,24.508060305665822
+B,unsharp,Exp2_Cam2_S04,17.917189725620936
+B,unsharp,Exp31_Cam4_S05,16.678343548880655
+B,unsharp,Exp4_Cam2_S10,17.80717941385455
+B,unsharp,Exp7_Cam1_S05,22.38431588265577
+B,unsharp,Exp9_Cam2_S08,15.410054073090365
+B,unsharp,Exp11_Cam1_S06,17.545043107144284
+B,unsharp,Exp12_Cam4_S08,15.496470902418018
+B,unsharp,Exp14_Cam3_S09,17.10511151354647
+B,unsharp,Exp16_Cam2_S10,16.33834259457157
+B,unsharp,Exp18_Cam2_S10,14.77613425616016
+B,unsharp,Exp1_Cam2_S10,19.848875601868553
+B,unsharp,Exp22_Cam2_S06,17.852827879122827
+B,unsharp,Exp24_Cam2_S06,19.02570391267435
+B,unsharp,Exp26_Cam4_S09,22.168061726240282
+B,unsharp,Exp29_Cam3_S10,17.8798847846466
+B,unsharp,Exp32_Cam1_S10,18.819074099233887
+B,unsharp,Exp6_Cam4_S09,16.99936941909888
+C,unsharp,Exp10_Cam2_S05,17.539082698971974
+C,unsharp,Exp12_Cam4_S03,19.210258584139847
+C,unsharp,Exp15_Cam4_S03,15.324201705809713
+C,unsharp,Exp18_Cam3_S03,17.194571705527544
+C,unsharp,Exp20_Cam3_S03,20.082270023505288
+C,unsharp,Exp24_Cam4_S02,21.214779845901397
+C,unsharp,Exp26_Cam3_S03,32.09324866630718
+C,unsharp,Exp27_Cam4_S05,16.915291406162403
+C,unsharp,Exp29_Cam4_S03,20.88878432255175
+C,unsharp,Exp31_Cam2_S02,23.87411141933972
+C,unsharp,Exp32_Cam4_S04,20.603824554959917
+C,unsharp,Exp3_Cam3_S03,24.829873137198305
+C,unsharp,Exp4_Cam2_S05,19.527701743069358
+C,unsharp,Exp4_Cam4_S09,16.101059322141932
+C,unsharp,Exp6_Cam4_S03,19.36325484079418
+C,unsharp,Exp8_Cam4_S04,17.968822050197918
+C,unsharp,Exp10_Cam4_S07,16.988649997914184
+C,unsharp,Exp13_Cam4_S04,16.331979474903584
+C,unsharp,Exp15_Cam4_S05,14.279525244777677
+C,unsharp,Exp18_Cam4_S05,14.787115201156764
+C,unsharp,Exp1_Cam3_S05,20.34130299843757
+C,unsharp,Exp21_Cam2_S04,18.098945850989473
+C,unsharp,Exp22_Cam2_S03,20.222076872607854
+C,unsharp,Exp23_Cam4_S05,16.13741589696713
+C,unsharp,Exp25_Cam3_S06,18.42558392005036
+C,unsharp,Exp27_Cam3_S07,16.776991706592007
+C,unsharp,Exp29_Cam4_S05,18.416463168206764
+C,unsharp,Exp2_Cam4_S08,15.98723240392708
+C,unsharp,Exp31_Cam2_S05,18.349871110949245
+C,unsharp,Exp32_Cam4_S07,19.545740256617776
+C,unsharp,Exp3_Cam3_S10,18.885073225756376
+C,unsharp,Exp5_Cam2_S10,16.799232830447156
+C,unsharp,Exp6_Cam3_S05,16.21039251682656
+C,unsharp,Exp7_Cam4_S07,21.136675575416145
+C,unsharp,Exp8_Cam4_S09,15.335391075985768
+C,unsharp,Exp10_Cam3_S09,18.32944535189694
+C,unsharp,Exp11_Cam3_S08,16.356503875057978
+C,unsharp,Exp12_Cam3_S07,16.96673535542359
+C,unsharp,Exp13_Cam2_S10,16.064016096286558
+C,unsharp,Exp14_Cam2_S08,16.244896493675423
+C,unsharp,Exp15_Cam2_S08,15.73308112232766
+C,unsharp,Exp16_Cam2_S04,18.028870107804558
+C,unsharp,Exp16_Cam4_S10,16.545476517419065
+C,unsharp,Exp18_Cam1_S09,14.222715531610362
+C,unsharp,Exp19_Cam1_S09,17.215364993748707
+C,unsharp,Exp1_Cam1_S09,19.829256194224214
+C,unsharp,Exp20_Cam1_S10,15.363104798431506
+C,unsharp,Exp21_Cam4_S10,15.2773661450926
+C,unsharp,Exp22_Cam4_S10,15.385711876092461
+C,unsharp,Exp23_Cam4_S10,15.443281655154786
+C,unsharp,Exp24_Cam4_S10,17.667043877830864
+C,unsharp,Exp26_Cam2_S10,23.85579893668716
+C,unsharp,Exp28_Cam2_S07,16.990581621781335
+C,unsharp,Exp29_Cam2_S09,17.43499599911436
+C,unsharp,Exp30_Cam1_S08,16.815431262847255
+C,unsharp,Exp31_Cam3_S10,17.374598289344767
+C,unsharp,Exp33_Cam2_S06,17.634153091153728
+C,unsharp,Exp6_Cam3_S07,15.73522769645265
+C,unsharp,Exp8_Cam1_S10,15.285942952624467
+B,red_comp > unsharp,Exp10_Cam4_S03,20.787633150937054
+B,red_comp > unsharp,Exp17_Cam1_S03,20.732337997464132
+B,red_comp > unsharp,Exp21_Cam2_S02,21.277164942527204
+B,red_comp > unsharp,Exp27_Cam1_S03,19.696133026686432
+B,red_comp > unsharp,Exp2_Cam3_S03,21.193744173715015
+B,red_comp > unsharp,Exp33_Cam3_S03,20.007446801287717
+B,red_comp > unsharp,Exp4_Cam3_S03,22.983256229848408
+B,red_comp > unsharp,Exp7_Cam3_S03,26.741517975213903
+B,red_comp > unsharp,Exp11_Cam3_S04,18.54438165740592
+B,red_comp > unsharp,Exp17_Cam1_S05,18.015559881415236
+B,red_comp > unsharp,Exp20_Cam1_S07,16.63897120105543
+B,red_comp > unsharp,Exp22_Cam4_S03,19.562550346189177
+B,red_comp > unsharp,Exp26_Cam1_S06,24.65157824897398
+B,red_comp > unsharp,Exp2_Cam2_S04,18.035261156446825
+B,red_comp > unsharp,Exp31_Cam4_S05,16.75338613351969
+B,red_comp > unsharp,Exp4_Cam2_S10,17.89108055019508
+B,red_comp > unsharp,Exp7_Cam1_S05,22.50632341103585
+B,red_comp > unsharp,Exp9_Cam2_S08,15.484151793421008
+B,red_comp > unsharp,Exp11_Cam1_S06,17.6222722176988
+B,red_comp > unsharp,Exp12_Cam4_S08,15.561294289838125
+B,red_comp > unsharp,Exp14_Cam3_S09,17.16620497046964
+B,red_comp > unsharp,Exp16_Cam2_S10,16.383081390534212
+B,red_comp > unsharp,Exp18_Cam2_S10,14.827416770329414
+B,red_comp > unsharp,Exp1_Cam2_S10,19.97340339662325
+B,red_comp > unsharp,Exp22_Cam2_S06,17.909326459466072
+B,red_comp > unsharp,Exp24_Cam2_S06,19.119010379439658
+B,red_comp > unsharp,Exp26_Cam4_S09,22.255040209031527
+B,red_comp > unsharp,Exp29_Cam3_S10,17.91834852556657
+B,red_comp > unsharp,Exp32_Cam1_S10,18.865369807985797
+B,red_comp > unsharp,Exp6_Cam4_S09,17.060749968571464
+C,red_comp > unsharp,Exp10_Cam2_S05,17.622460269486744
+C,red_comp > unsharp,Exp12_Cam4_S03,19.338743066893365
+C,red_comp > unsharp,Exp15_Cam4_S03,15.429573015817672
+C,red_comp > unsharp,Exp18_Cam3_S03,17.30179309792317
+C,red_comp > unsharp,Exp20_Cam3_S03,20.241611497034082
+C,red_comp > unsharp,Exp24_Cam4_S02,21.369086107527053
+C,red_comp > unsharp,Exp26_Cam3_S03,32.40549135267901
+C,red_comp > unsharp,Exp27_Cam4_S05,17.056157257703305
+C,red_comp > unsharp,Exp29_Cam4_S03,21.023071686692045
+C,red_comp > unsharp,Exp31_Cam2_S02,24.0732648844069
+C,red_comp > unsharp,Exp32_Cam4_S04,20.66700652754301
+C,red_comp > unsharp,Exp3_Cam3_S03,25.03567937397601
+C,red_comp > unsharp,Exp4_Cam2_S05,19.651985436552938
+C,red_comp > unsharp,Exp4_Cam4_S09,16.202877423489284
+C,red_comp > unsharp,Exp6_Cam4_S03,19.489182128378584
+C,red_comp > unsharp,Exp8_Cam4_S04,18.11035991941812
+C,red_comp > unsharp,Exp10_Cam4_S07,17.041958119967372
+C,red_comp > unsharp,Exp13_Cam4_S04,16.421188444172454
+C,red_comp > unsharp,Exp15_Cam4_S05,14.358763085223785
+C,red_comp > unsharp,Exp18_Cam4_S05,14.860493141623953
+C,red_comp > unsharp,Exp1_Cam3_S05,20.450472235491382
+C,red_comp > unsharp,Exp21_Cam2_S04,18.23557155983629
+C,red_comp > unsharp,Exp22_Cam2_S03,20.288813659000887
+C,red_comp > unsharp,Exp23_Cam4_S05,16.192291188367285
+C,red_comp > unsharp,Exp25_Cam3_S06,18.56848133178095
+C,red_comp > unsharp,Exp27_Cam3_S07,16.867203125074646
+C,red_comp > unsharp,Exp29_Cam4_S05,18.500320792133394
+C,red_comp > unsharp,Exp2_Cam4_S08,16.077752662068786
+C,red_comp > unsharp,Exp31_Cam2_S05,18.420650399355104
+C,red_comp > unsharp,Exp32_Cam4_S07,19.604693538720106
+C,red_comp > unsharp,Exp3_Cam3_S10,18.967445491647325
+C,red_comp > unsharp,Exp5_Cam2_S10,16.862233597675708
+C,red_comp > unsharp,Exp6_Cam3_S05,16.28665021133426
+C,red_comp > unsharp,Exp7_Cam4_S07,21.241099840687898
+C,red_comp > unsharp,Exp8_Cam4_S09,15.419492906797391
+C,red_comp > unsharp,Exp10_Cam3_S09,18.369880567522085
+C,red_comp > unsharp,Exp11_Cam3_S08,16.401347445556624
+C,red_comp > unsharp,Exp12_Cam3_S07,17.02540956517739
+C,red_comp > unsharp,Exp13_Cam2_S10,16.110208926193103
+C,red_comp > unsharp,Exp14_Cam2_S08,16.30227343197251
+C,red_comp > unsharp,Exp15_Cam2_S08,15.800628326738233
+C,red_comp > unsharp,Exp16_Cam2_S04,18.128809753574394
+C,red_comp > unsharp,Exp16_Cam4_S10,16.587027703779682
+C,red_comp > unsharp,Exp18_Cam1_S09,14.273645119279761
+C,red_comp > unsharp,Exp19_Cam1_S09,17.286865743232962
+C,red_comp > unsharp,Exp1_Cam1_S09,19.94210386663308
+C,red_comp > unsharp,Exp20_Cam1_S10,15.440123025762158
+C,red_comp > unsharp,Exp21_Cam4_S10,15.354718047735552
+C,red_comp > unsharp,Exp22_Cam4_S10,15.435940676597085
+C,red_comp > unsharp,Exp23_Cam4_S10,15.508824485269962
+C,red_comp > unsharp,Exp24_Cam4_S10,17.745548464436148
+C,red_comp > unsharp,Exp26_Cam2_S10,23.94165771293541
+C,red_comp > unsharp,Exp28_Cam2_S07,17.046523587885705
+C,red_comp > unsharp,Exp29_Cam2_S09,17.47653625446128
+C,red_comp > unsharp,Exp30_Cam1_S08,16.86079077344217
+C,red_comp > unsharp,Exp31_Cam3_S10,17.42077689100913
+C,red_comp > unsharp,Exp33_Cam2_S06,17.692878230823457
+C,red_comp > unsharp,Exp6_Cam3_S07,15.802773216983258
+C,red_comp > unsharp,Exp8_Cam1_S10,15.366551204334623
+B,von_kries > red_comp > unsharp,Exp10_Cam4_S03,17.42589255184069
+B,von_kries > red_comp > unsharp,Exp17_Cam1_S03,18.145704260158418
+B,von_kries > red_comp > unsharp,Exp21_Cam2_S02,17.850538166296225
+B,von_kries > red_comp > unsharp,Exp27_Cam1_S03,17.01635484521567
+B,von_kries > red_comp > unsharp,Exp2_Cam3_S03,18.206489536581948
+B,von_kries > red_comp > unsharp,Exp33_Cam3_S03,17.59953132755218
+B,von_kries > red_comp > unsharp,Exp4_Cam3_S03,18.822576088667045
+B,von_kries > red_comp > unsharp,Exp7_Cam3_S03,19.91145989644997
+B,von_kries > red_comp > unsharp,Exp11_Cam3_S04,16.73524739751671
+B,von_kries > red_comp > unsharp,Exp17_Cam1_S05,16.493654971509145
+B,von_kries > red_comp > unsharp,Exp20_Cam1_S07,15.421493498796208
+B,von_kries > red_comp > unsharp,Exp22_Cam4_S03,17.28777408074068
+B,von_kries > red_comp > unsharp,Exp26_Cam1_S06,19.350061374940235
+B,von_kries > red_comp > unsharp,Exp2_Cam2_S04,16.388686513488206
+B,von_kries > red_comp > unsharp,Exp31_Cam4_S05,15.43648309979551
+B,von_kries > red_comp > unsharp,Exp4_Cam2_S10,16.145132066341205
+B,von_kries > red_comp > unsharp,Exp7_Cam1_S05,18.468180285033004
+B,von_kries > red_comp > unsharp,Exp9_Cam2_S08,14.616978901437728
+B,von_kries > red_comp > unsharp,Exp11_Cam1_S06,16.1389753260405
+B,von_kries > red_comp > unsharp,Exp12_Cam4_S08,14.466229915558467
+B,von_kries > red_comp > unsharp,Exp14_Cam3_S09,15.819722055176024
+B,von_kries > red_comp > unsharp,Exp16_Cam2_S10,15.090075707150085
+B,von_kries > red_comp > unsharp,Exp18_Cam2_S10,14.041182250833728
+B,von_kries > red_comp > unsharp,Exp1_Cam2_S10,16.862513525595592
+B,von_kries > red_comp > unsharp,Exp22_Cam2_S06,16.233957441518857
+B,von_kries > red_comp > unsharp,Exp24_Cam2_S06,16.94851406888173
+B,von_kries > red_comp > unsharp,Exp26_Cam4_S09,18.41841371888396
+B,von_kries > red_comp > unsharp,Exp29_Cam3_S10,16.138348076209333
+B,von_kries > red_comp > unsharp,Exp32_Cam1_S10,16.943108242954608
+B,von_kries > red_comp > unsharp,Exp6_Cam4_S09,15.753055785083987
+C,von_kries > red_comp > unsharp,Exp10_Cam2_S05,15.956855798155305
+C,von_kries > red_comp > unsharp,Exp12_Cam4_S03,16.991221367923075
+C,von_kries > red_comp > unsharp,Exp15_Cam4_S03,14.665952870978563
+C,von_kries > red_comp > unsharp,Exp18_Cam3_S03,15.991438281908387
+C,von_kries > red_comp > unsharp,Exp20_Cam3_S03,17.650920896146772
+C,von_kries > red_comp > unsharp,Exp24_Cam4_S02,18.150791039420714
+C,von_kries > red_comp > unsharp,Exp26_Cam3_S03,20.622893863171864
+C,von_kries > red_comp > unsharp,Exp27_Cam4_S05,15.432248202693707
+C,von_kries > red_comp > unsharp,Exp29_Cam4_S03,17.73702659884345
+C,von_kries > red_comp > unsharp,Exp31_Cam2_S02,19.28102141513206
+C,von_kries > red_comp > unsharp,Exp32_Cam4_S04,18.034770450587757
+C,von_kries > red_comp > unsharp,Exp3_Cam3_S03,19.62596803923103
+C,von_kries > red_comp > unsharp,Exp4_Cam2_S05,17.20517982701152
+C,von_kries > red_comp > unsharp,Exp4_Cam4_S09,15.019246054397096
+C,von_kries > red_comp > unsharp,Exp6_Cam4_S03,17.36543703570798
+C,von_kries > red_comp > unsharp,Exp8_Cam4_S04,16.502327057342395
+C,von_kries > red_comp > unsharp,Exp10_Cam4_S07,15.38627824651141
+C,von_kries > red_comp > unsharp,Exp13_Cam4_S04,15.301209412279928
+C,von_kries > red_comp > unsharp,Exp15_Cam4_S05,13.752781415696447
+C,von_kries > red_comp > unsharp,Exp18_Cam4_S05,14.113217766391411
+C,von_kries > red_comp > unsharp,Exp1_Cam3_S05,17.146579755371036
+C,von_kries > red_comp > unsharp,Exp21_Cam2_S04,16.28447914097534
+C,von_kries > red_comp > unsharp,Exp22_Cam2_S03,17.641782513321466
+C,von_kries > red_comp > unsharp,Exp23_Cam4_S05,15.061100538488645
+C,von_kries > red_comp > unsharp,Exp25_Cam3_S06,16.770943696941313
+C,von_kries > red_comp > unsharp,Exp27_Cam3_S07,15.42966240768749
+C,von_kries > red_comp > unsharp,Exp29_Cam4_S05,16.40398869010764
+C,von_kries > red_comp > unsharp,Exp2_Cam4_S08,15.0035110440232
+C,von_kries > red_comp > unsharp,Exp31_Cam2_S05,16.5698586822682
+C,von_kries > red_comp > unsharp,Exp32_Cam4_S07,17.453842951174
+C,von_kries > red_comp > unsharp,Exp3_Cam3_S10,16.9536799281191
+C,von_kries > red_comp > unsharp,Exp5_Cam2_S10,15.541495832857066
+C,von_kries > red_comp > unsharp,Exp6_Cam3_S05,15.242145846465089
+C,von_kries > red_comp > unsharp,Exp7_Cam4_S07,17.843800642085206
+C,von_kries > red_comp > unsharp,Exp8_Cam4_S09,14.542330381989446
+C,von_kries > red_comp > unsharp,Exp10_Cam3_S09,16.45653242157735
+C,von_kries > red_comp > unsharp,Exp11_Cam3_S08,15.252685986022795
+C,von_kries > red_comp > unsharp,Exp12_Cam3_S07,15.625796014929662
+C,von_kries > red_comp > unsharp,Exp13_Cam2_S10,15.081799792474953
+C,von_kries > red_comp > unsharp,Exp14_Cam2_S08,15.126622325942433
+C,von_kries > red_comp > unsharp,Exp15_Cam2_S08,14.876125138151501
+C,von_kries > red_comp > unsharp,Exp16_Cam2_S04,16.2856613268603
+C,von_kries > red_comp > unsharp,Exp16_Cam4_S10,15.1322197586418
+C,von_kries > red_comp > unsharp,Exp18_Cam1_S09,13.579853273354603
+C,von_kries > red_comp > unsharp,Exp19_Cam1_S09,15.642585252909583
+C,von_kries > red_comp > unsharp,Exp1_Cam1_S09,16.920672055594764
+C,von_kries > red_comp > unsharp,Exp20_Cam1_S10,14.511917821584987
+C,von_kries > red_comp > unsharp,Exp21_Cam4_S10,14.336411281755833
+C,von_kries > red_comp > unsharp,Exp22_Cam4_S10,14.451729631387838
+C,von_kries > red_comp > unsharp,Exp23_Cam4_S10,14.545925754253668
+C,von_kries > red_comp > unsharp,Exp24_Cam4_S10,16.104447850557037
+C,von_kries > red_comp > unsharp,Exp26_Cam2_S10,19.104732944589752
+C,von_kries > red_comp > unsharp,Exp28_Cam2_S07,15.65221949309045
+C,von_kries > red_comp > unsharp,Exp29_Cam2_S09,15.84922781887019
+C,von_kries > red_comp > unsharp,Exp30_Cam1_S08,15.504649957023371
+C,von_kries > red_comp > unsharp,Exp31_Cam3_S10,15.992252080167944
+C,von_kries > red_comp > unsharp,Exp33_Cam2_S06,16.167272377484018
+C,von_kries > red_comp > unsharp,Exp6_Cam3_S07,14.861852720246118
+C,von_kries > red_comp > unsharp,Exp8_Cam1_S10,14.528819559539974
+B,unsharp > von_kries > red_comp > clahe,Exp10_Cam4_S03,15.369310359323727
+B,unsharp > von_kries > red_comp > clahe,Exp17_Cam1_S03,16.118312437237915
+B,unsharp > von_kries > red_comp > clahe,Exp21_Cam2_S02,16.74881694967371
+B,unsharp > von_kries > red_comp > clahe,Exp27_Cam1_S03,17.3502779937601
+B,unsharp > von_kries > red_comp > clahe,Exp2_Cam3_S03,17.212886142050394
+B,unsharp > von_kries > red_comp > clahe,Exp33_Cam3_S03,17.06254874781083
+B,unsharp > von_kries > red_comp > clahe,Exp4_Cam3_S03,16.10178000829468
+B,unsharp > von_kries > red_comp > clahe,Exp7_Cam3_S03,14.974072517504515
+B,unsharp > von_kries > red_comp > clahe,Exp11_Cam3_S04,17.27423425654142
+B,unsharp > von_kries > red_comp > clahe,Exp17_Cam1_S05,16.45649057901681
+B,unsharp > von_kries > red_comp > clahe,Exp20_Cam1_S07,14.491129675770898
+B,unsharp > von_kries > red_comp > clahe,Exp22_Cam4_S03,17.41840784942523
+B,unsharp > von_kries > red_comp > clahe,Exp26_Cam1_S06,17.268252508289233
+B,unsharp > von_kries > red_comp > clahe,Exp2_Cam2_S04,17.127615610110855
+B,unsharp > von_kries > red_comp > clahe,Exp31_Cam4_S05,16.68558335316141
+B,unsharp > von_kries > red_comp > clahe,Exp4_Cam2_S10,13.539143098685663
+B,unsharp > von_kries > red_comp > clahe,Exp7_Cam1_S05,17.507882765638904
+B,unsharp > von_kries > red_comp > clahe,Exp9_Cam2_S08,11.332788319189394
+B,unsharp > von_kries > red_comp > clahe,Exp11_Cam1_S06,17.711358867259158
+B,unsharp > von_kries > red_comp > clahe,Exp12_Cam4_S08,13.571470377353688
+B,unsharp > von_kries > red_comp > clahe,Exp14_Cam3_S09,12.325274171212504
+B,unsharp > von_kries > red_comp > clahe,Exp16_Cam2_S10,11.639522209957981
+B,unsharp > von_kries > red_comp > clahe,Exp18_Cam2_S10,11.436383460293715
+B,unsharp > von_kries > red_comp > clahe,Exp1_Cam2_S10,13.280423878135313
+B,unsharp > von_kries > red_comp > clahe,Exp22_Cam2_S06,12.478034664448929
+B,unsharp > von_kries > red_comp > clahe,Exp24_Cam2_S06,15.714697864529693
+B,unsharp > von_kries > red_comp > clahe,Exp26_Cam4_S09,15.073438069757794
+B,unsharp > von_kries > red_comp > clahe,Exp29_Cam3_S10,12.855136789312201
+B,unsharp > von_kries > red_comp > clahe,Exp32_Cam1_S10,11.60156494012282
+B,unsharp > von_kries > red_comp > clahe,Exp6_Cam4_S09,11.776657804574363
+C,unsharp > von_kries > red_comp > clahe,Exp10_Cam2_S05,17.19098238519487
+C,unsharp > von_kries > red_comp > clahe,Exp12_Cam4_S03,15.89657180873595
+C,unsharp > von_kries > red_comp > clahe,Exp15_Cam4_S03,16.655584825422793
+C,unsharp > von_kries > red_comp > clahe,Exp18_Cam3_S03,18.541438146036946
+C,unsharp > von_kries > red_comp > clahe,Exp20_Cam3_S03,15.923507456881305
+C,unsharp > von_kries > red_comp > clahe,Exp24_Cam4_S02,16.12714638272267
+C,unsharp > von_kries > red_comp > clahe,Exp26_Cam3_S03,14.282432664522172
+C,unsharp > von_kries > red_comp > clahe,Exp27_Cam4_S05,16.62462556689817
+C,unsharp > von_kries > red_comp > clahe,Exp29_Cam4_S03,14.242533589157684
+C,unsharp > von_kries > red_comp > clahe,Exp31_Cam2_S02,18.04032048273583
+C,unsharp > von_kries > red_comp > clahe,Exp32_Cam4_S04,16.62098816149411
+C,unsharp > von_kries > red_comp > clahe,Exp3_Cam3_S03,14.964032143017308
+C,unsharp > von_kries > red_comp > clahe,Exp4_Cam2_S05,16.75711857925631
+C,unsharp > von_kries > red_comp > clahe,Exp4_Cam4_S09,15.593217397840046
+C,unsharp > von_kries > red_comp > clahe,Exp6_Cam4_S03,16.706351919829753
+C,unsharp > von_kries > red_comp > clahe,Exp8_Cam4_S04,16.0352915184751
+C,unsharp > von_kries > red_comp > clahe,Exp10_Cam4_S07,12.201068928021696
+C,unsharp > von_kries > red_comp > clahe,Exp13_Cam4_S04,17.04749754865495
+C,unsharp > von_kries > red_comp > clahe,Exp15_Cam4_S05,11.58385138745661
+C,unsharp > von_kries > red_comp > clahe,Exp18_Cam4_S05,15.879542475806074
+C,unsharp > von_kries > red_comp > clahe,Exp1_Cam3_S05,16.330141244467747
+C,unsharp > von_kries > red_comp > clahe,Exp21_Cam2_S04,16.47702213509139
+C,unsharp > von_kries > red_comp > clahe,Exp22_Cam2_S03,16.44824051104819
+C,unsharp > von_kries > red_comp > clahe,Exp23_Cam4_S05,10.537410649706974
+C,unsharp > von_kries > red_comp > clahe,Exp25_Cam3_S06,18.187421225206982
+C,unsharp > von_kries > red_comp > clahe,Exp27_Cam3_S07,15.705184269336778
+C,unsharp > von_kries > red_comp > clahe,Exp29_Cam4_S05,15.608815017078745
+C,unsharp > von_kries > red_comp > clahe,Exp2_Cam4_S08,16.34947580982426
+C,unsharp > von_kries > red_comp > clahe,Exp31_Cam2_S05,16.875155910889102
+C,unsharp > von_kries > red_comp > clahe,Exp32_Cam4_S07,12.717639009273224
+C,unsharp > von_kries > red_comp > clahe,Exp3_Cam3_S10,15.900752313392335
+C,unsharp > von_kries > red_comp > clahe,Exp5_Cam2_S10,11.883631431568453
+C,unsharp > von_kries > red_comp > clahe,Exp6_Cam3_S05,16.491835805660692
+C,unsharp > von_kries > red_comp > clahe,Exp7_Cam4_S07,15.463072220654466
+C,unsharp > von_kries > red_comp > clahe,Exp8_Cam4_S09,12.218668561685798
+C,unsharp > von_kries > red_comp > clahe,Exp10_Cam3_S09,13.036850623165343
+C,unsharp > von_kries > red_comp > clahe,Exp11_Cam3_S08,11.911658241926801
+C,unsharp > von_kries > red_comp > clahe,Exp12_Cam3_S07,13.158347499840563
+C,unsharp > von_kries > red_comp > clahe,Exp13_Cam2_S10,12.26038977300189
+C,unsharp > von_kries > red_comp > clahe,Exp14_Cam2_S08,11.546724805323516
+C,unsharp > von_kries > red_comp > clahe,Exp15_Cam2_S08,12.137702608257435
+C,unsharp > von_kries > red_comp > clahe,Exp16_Cam2_S04,16.63105640970243
+C,unsharp > von_kries > red_comp > clahe,Exp16_Cam4_S10,11.350684374918597
+C,unsharp > von_kries > red_comp > clahe,Exp18_Cam1_S09,10.151334037374076
+C,unsharp > von_kries > red_comp > clahe,Exp19_Cam1_S09,11.993772114998283
+C,unsharp > von_kries > red_comp > clahe,Exp1_Cam1_S09,13.733712511957156
+C,unsharp > von_kries > red_comp > clahe,Exp20_Cam1_S10,12.439769614794498
+C,unsharp > von_kries > red_comp > clahe,Exp21_Cam4_S10,10.789805450469716
+C,unsharp > von_kries > red_comp > clahe,Exp22_Cam4_S10,10.768417241638177
+C,unsharp > von_kries > red_comp > clahe,Exp23_Cam4_S10,10.542496715221453
+C,unsharp > von_kries > red_comp > clahe,Exp24_Cam4_S10,12.686384979880573
+C,unsharp > von_kries > red_comp > clahe,Exp26_Cam2_S10,14.069370267896137
+C,unsharp > von_kries > red_comp > clahe,Exp28_Cam2_S07,15.626367706970614
+C,unsharp > von_kries > red_comp > clahe,Exp29_Cam2_S09,12.291949695772388
+C,unsharp > von_kries > red_comp > clahe,Exp30_Cam1_S08,13.484930756793872
+C,unsharp > von_kries > red_comp > clahe,Exp31_Cam3_S10,12.27390389331009
+C,unsharp > von_kries > red_comp > clahe,Exp33_Cam2_S06,13.456384186702968
+C,unsharp > von_kries > red_comp > clahe,Exp6_Cam3_S07,13.879334157930693
+C,unsharp > von_kries > red_comp > clahe,Exp8_Cam1_S10,11.217740376861876
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp10_Cam4_S03,15.164752546778237
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp17_Cam1_S03,14.45095599207237
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp21_Cam2_S02,15.736358332577169
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp27_Cam1_S03,15.21856408027717
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp2_Cam3_S03,16.643023822331052
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp33_Cam3_S03,15.242234638113558
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp4_Cam3_S03,15.876237651990818
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp7_Cam3_S03,13.44921472868895
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp11_Cam3_S04,14.935097554326152
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp17_Cam1_S05,12.98736751931341
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp20_Cam1_S07,13.442074664935873
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp22_Cam4_S03,15.750680428497734
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp26_Cam1_S06,12.97912875821079
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp2_Cam2_S04,16.694890468560132
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp31_Cam4_S05,14.178177186501122
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp4_Cam2_S10,12.908240980656174
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp7_Cam1_S05,12.976520321222436
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp9_Cam2_S08,12.382327654966204
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp11_Cam1_S06,14.26091179822054
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp12_Cam4_S08,13.387770647871552
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp14_Cam3_S09,12.07933576329127
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp16_Cam2_S10,11.56952086493314
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp18_Cam2_S10,12.138749275451756
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp1_Cam2_S10,12.254934071291189
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp22_Cam2_S06,12.8551079938324
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp24_Cam2_S06,13.445523845705296
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp26_Cam4_S09,12.904883241965068
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp29_Cam3_S10,11.95734667921627
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp32_Cam1_S10,11.058074228411165
+B,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp6_Cam4_S09,12.068928068128903
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp10_Cam2_S05,14.303856877604545
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp12_Cam4_S03,16.746061128410833
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp15_Cam4_S03,14.95170370502282
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp18_Cam3_S03,16.041434331488286
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp20_Cam3_S03,15.52484711640534
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp24_Cam4_S02,15.247083350600859
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp26_Cam3_S03,13.144847452620548
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp27_Cam4_S05,14.692128122130086
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp29_Cam4_S03,14.231780292677001
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp31_Cam2_S02,15.235532768419592
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp32_Cam4_S04,12.326627084113763
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp3_Cam3_S03,15.240353769904463
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp4_Cam2_S05,14.439357384651757
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp4_Cam4_S09,14.080445026540971
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp6_Cam4_S03,14.713659236019403
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp8_Cam4_S04,15.412368891837387
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp10_Cam4_S07,13.048240530164417
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp13_Cam4_S04,15.740296088525703
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp15_Cam4_S05,13.54122071812733
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp18_Cam4_S05,14.20532900882893
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp1_Cam3_S05,12.899063292750357
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp21_Cam2_S04,14.528629786881506
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp22_Cam2_S03,14.401581668615286
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp23_Cam4_S05,11.792557314140886
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp25_Cam3_S06,15.390401043772608
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp27_Cam3_S07,13.649804179145386
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp29_Cam4_S05,13.077820271931927
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp2_Cam4_S08,14.036858921849834
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp31_Cam2_S05,13.803535481002944
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp32_Cam4_S07,12.030612400867813
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp3_Cam3_S10,13.306428953378655
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp5_Cam2_S10,11.881602881300282
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp6_Cam3_S05,13.947141670764038
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp7_Cam4_S07,13.162127151306946
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp8_Cam4_S09,13.112833521305017
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp10_Cam3_S09,12.736282062056945
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp11_Cam3_S08,12.3077947016052
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp12_Cam3_S07,13.520408772814715
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp13_Cam2_S10,12.463293895254061
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp14_Cam2_S08,12.1104700405958
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp15_Cam2_S08,12.196982768421393
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp16_Cam2_S04,13.638755331763852
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp16_Cam4_S10,11.484782094672067
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp18_Cam1_S09,11.775234486898842
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp19_Cam1_S09,12.99495764482253
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp1_Cam1_S09,12.784993390454474
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp20_Cam1_S10,12.36950924625333
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp21_Cam4_S10,11.920781954087861
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp22_Cam4_S10,11.452994343321866
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp23_Cam4_S10,10.87718271916999
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp24_Cam4_S10,12.7725684388006
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp26_Cam2_S10,12.539447234489348
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp28_Cam2_S07,13.214194293430467
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp29_Cam2_S09,11.635420103916477
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp30_Cam1_S08,12.829600127899425
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp31_Cam3_S10,11.798865834163387
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp33_Cam2_S06,13.668729748246955
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp6_Cam3_S07,12.83606567662142
+C,eq_hsi > dcp_guided > clahe > red_comp > unsharp,Exp8_Cam1_S10,12.553053492195183
+B,none,Exp10_Cam4_S03,20.319310297452645
+B,none,Exp17_Cam1_S03,20.488983076063963
+B,none,Exp21_Cam2_S02,20.746354538436243
+B,none,Exp27_Cam1_S03,19.27293219423184
+B,none,Exp2_Cam3_S03,20.74304137867494
+B,none,Exp33_Cam3_S03,19.8078010268203
+B,none,Exp4_Cam3_S03,22.44964561632564
+B,none,Exp7_Cam3_S03,26.24617647525739
+B,none,Exp11_Cam3_S04,18.320116915537195
+B,none,Exp17_Cam1_S05,17.928533438239803
+B,none,Exp20_Cam1_S07,16.546452363054755
+B,none,Exp22_Cam4_S03,19.293912579482114
+B,none,Exp26_Cam1_S06,24.478885590031506
+B,none,Exp2_Cam2_S04,17.751458805868864
+B,none,Exp31_Cam4_S05,16.6384093692078
+B,none,Exp4_Cam2_S10,17.80822603908302
+B,none,Exp7_Cam1_S05,22.35966818667693
+B,none,Exp9_Cam2_S08,15.408186470810534
+B,none,Exp11_Cam1_S06,17.500391947925948
+B,none,Exp12_Cam4_S08,15.490857994980466
+B,none,Exp14_Cam3_S09,17.108677989451706
+B,none,Exp16_Cam2_S10,16.34003655896254
+B,none,Exp18_Cam2_S10,14.776519000519318
+B,none,Exp1_Cam2_S10,19.850265302169063
+B,none,Exp22_Cam2_S06,17.84558805183589
+B,none,Exp24_Cam2_S06,18.998602547228714
+B,none,Exp26_Cam4_S09,22.163122309698903
+B,none,Exp29_Cam3_S10,17.88059511282103
+B,none,Exp32_Cam1_S10,18.82008178481768
+B,none,Exp6_Cam4_S09,17.00124507530748
+C,none,Exp10_Cam2_S05,17.493356766388203
+C,none,Exp12_Cam4_S03,19.037863152325848
+C,none,Exp15_Cam4_S03,15.30934101349165
+C,none,Exp18_Cam3_S03,17.066518146083247
+C,none,Exp20_Cam3_S03,19.829382071915834
+C,none,Exp24_Cam4_S02,21.046118014362975
+C,none,Exp26_Cam3_S03,31.57806969528466
+C,none,Exp27_Cam4_S05,16.879626313083715
+C,none,Exp29_Cam4_S03,21.061541350953075
+C,none,Exp31_Cam2_S02,23.44328711287649
+C,none,Exp32_Cam4_S04,20.571315943733268
+C,none,Exp3_Cam3_S03,24.411167474775837
+C,none,Exp4_Cam2_S05,19.47290881635919
+C,none,Exp4_Cam4_S09,16.087716460137223
+C,none,Exp6_Cam4_S03,19.21384632207553
+C,none,Exp8_Cam4_S04,17.840647355253292
+C,none,Exp10_Cam4_S07,16.97968870452725
+C,none,Exp13_Cam4_S04,16.250946215020402
+C,none,Exp15_Cam4_S05,14.278404544541747
+C,none,Exp18_Cam4_S05,14.756240443838102
+C,none,Exp1_Cam3_S05,20.31877596789417
+C,none,Exp21_Cam2_S04,18.04964866120671
+C,none,Exp22_Cam2_S03,20.14255907219831
+C,none,Exp23_Cam4_S05,16.133977399578562
+C,none,Exp25_Cam3_S06,18.325964427454004
+C,none,Exp27_Cam3_S07,16.762006791487316
+C,none,Exp29_Cam4_S05,18.453132855488192
+C,none,Exp2_Cam4_S08,15.965799953016887
+C,none,Exp31_Cam2_S05,18.287230485592804
+C,none,Exp32_Cam4_S07,19.546392602640683
+C,none,Exp3_Cam3_S10,18.876880951336823
+C,none,Exp5_Cam2_S10,16.800295405780417
+C,none,Exp6_Cam3_S05,16.195391670069586
+C,none,Exp7_Cam4_S07,21.12577819846009
+C,none,Exp8_Cam4_S09,15.331374555812777
+C,none,Exp10_Cam3_S09,18.328889042327845
+C,none,Exp11_Cam3_S08,16.33773543680477
+C,none,Exp12_Cam3_S07,16.95055792337368
+C,none,Exp13_Cam2_S10,16.06485461003385
+C,none,Exp14_Cam2_S08,16.247840472372218
+C,none,Exp15_Cam2_S08,15.73382276451314
+C,none,Exp16_Cam2_S04,17.96017260480735
+C,none,Exp16_Cam4_S10,16.546875501395665
+C,none,Exp18_Cam1_S09,14.22244812959722
+C,none,Exp19_Cam1_S09,17.21551079860704
+C,none,Exp1_Cam1_S09,19.82656454297173
+C,none,Exp20_Cam1_S10,15.359417396588203
+C,none,Exp21_Cam4_S10,15.277270716747353
+C,none,Exp22_Cam4_S10,15.385043165221145
+C,none,Exp23_Cam4_S10,15.444657230422408
+C,none,Exp24_Cam4_S10,17.663602868805285
+C,none,Exp26_Cam2_S10,23.86464230452154
+C,none,Exp28_Cam2_S07,16.963505218420607
+C,none,Exp29_Cam2_S09,17.43134559518056
+C,none,Exp30_Cam1_S08,16.803937392115614
+C,none,Exp31_Cam3_S10,17.37359629965164
+C,none,Exp33_Cam2_S06,17.628271296961312
+C,none,Exp6_Cam3_S07,15.730476595535682
+C,none,Exp8_Cam1_S10,15.284905464729505

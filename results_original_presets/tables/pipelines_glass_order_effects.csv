@@ -1,0 +1,22 @@
+first_second,second_first,psnr_forward,psnr_backward,difference_db
+unsharp > stretch,stretch > unsharp,20.983,24.075,-3.092
+dcp_local_airlight > top_hat,top_hat > dcp_local_airlight,14.988,13.17,1.817
+clahe > unsharp,unsharp > clahe,16.55,15.403,1.147
+dcp_local_airlight > clahe,clahe > dcp_local_airlight,15.806,16.727,-0.921
+dcp_local_airlight > homomorphic,homomorphic > dcp_local_airlight,14.692,13.814,0.878
+homomorphic > clahe,clahe > homomorphic,14.668,15.438,-0.769
+flat_field > stretch,stretch > flat_field,21.162,21.916,-0.754
+homomorphic > unsharp,unsharp > homomorphic,15.829,15.19,0.639
+dcp_local_airlight > stretch,stretch > dcp_local_airlight,18.882,19.351,-0.469
+homomorphic > top_hat,top_hat > homomorphic,13.275,13.713,-0.439
+top_hat > unsharp,unsharp > top_hat,14.525,14.13,0.395
+flat_field > clahe,clahe > flat_field,16.67,16.883,-0.213
+top_hat > clahe,clahe > top_hat,14.203,14.41,-0.207
+homomorphic > stretch,stretch > homomorphic,16.842,16.651,0.191
+flat_field > dcp_local_airlight,dcp_local_airlight > flat_field,17.892,17.713,0.179
+clahe > stretch,stretch > clahe,19.341,19.226,0.114
+top_hat > stretch,stretch > top_hat,15.352,15.445,-0.092
+dcp_local_airlight > unsharp,unsharp > dcp_local_airlight,17.501,17.552,-0.051
+flat_field > unsharp,unsharp > flat_field,16.585,16.564,0.021
+flat_field > homomorphic,homomorphic > flat_field,15.865,15.88,-0.015
+flat_field > top_hat,top_hat > flat_field,14.207,14.211,-0.004

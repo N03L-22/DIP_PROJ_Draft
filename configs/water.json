@@ -1,0 +1,57 @@
+{
+ "medium": "water",
+ "max_side": 512,
+ "methods": [
+  {
+   "name": "none"
+  },
+  {
+   "name": "wb_dcp"
+  },
+  {
+   "name": "udcp"
+  },
+  {
+   "name": "white_patch"
+  },
+  {
+   "name": "shades_of_gray"
+  },
+  {
+   "name": "von_kries"
+  },
+  {
+   "name": "red_comp"
+  },
+  {
+   "name": "fusion"
+  },
+  {
+   "name": "retinex"
+  },
+  {
+   "name": "clahe"
+  },
+  {
+   "name": "hist_eq"
+  },
+  {
+   "name": "eq_hsi"
+  },
+  {
+   "name": "eq_avg_hist"
+  },
+  {
+   "name": "hist_spec"
+  },
+  {
+   "name": "gamma_auto"
+  },
+  {
+   "name": "log"
+  },
+  {
+   "name": "stretch"
+  }
+ ]
+}

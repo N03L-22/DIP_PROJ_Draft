@@ -1,0 +1,57 @@
+{
+ "medium": "glass",
+ "max_side": 512,
+ "methods": [
+  {
+   "name": "none"
+  },
+  {
+   "name": "dcp"
+  },
+  {
+   "name": "dcp_near_global"
+  },
+  {
+   "name": "dcp_local_airlight"
+  },
+  {
+   "name": "homomorphic"
+  },
+  {
+   "name": "flat_field"
+  },
+  {
+   "name": "top_hat"
+  },
+  {
+   "name": "local_stats"
+  },
+  {
+   "name": "fusion"
+  },
+  {
+   "name": "fusion_dcp"
+  },
+  {
+   "name": "retinex"
+  },
+  {
+   "name": "clahe"
+  },
+  {
+   "name": "hist_eq"
+  },
+  {
+   "name": "eq_hsi"
+  },
+  {
+   "name": "unsharp"
+  },
+  {
+   "name": "freq_laplacian"
+  },
+  {
+   "name": "stretch"
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+\begin{tabular}{llllll}
+\toprule
+case & curve & rms\_error & mean\_relative\_error & measured\_mid & predicted\_mid \\
+\midrule
+haze\_flat & luminance & 0.0 & 0.0 & 0.301 & 0.301 \\
+haze\_depth & luminance & 0.103 & 0.2135 & 0.561 & 0.47 \\
+haze\_depth & luminance\_refined & 0.0292 & 0.037 & 0.561 & 0.553 \\
+plastic & luminance & 0.0007 & 0.0588 & 0.05 & 0.05 \\
+water\_flat & channel 0 & 0.0 & 0.0 & 0.259 & 0.259 \\
+water\_flat & channel 1 & 0.0 & 0.0 & 0.592 & 0.592 \\
+water\_flat & channel 2 & 0.0 & 0.0 & 0.799 & 0.799 \\
+glass\_drops & luminance & 0.176 & 0.234 & 0.913 & 0.727 \\
+glass\_drops & luminance\_refined & 0.0974 & 0.1163 & 0.913 & 0.812 \\
+stack\_water\_plastic & channel 0 & 0.0001 & 0.0575 & 0.014 & 0.014 \\
+stack\_water\_plastic & channel 1 & 0.0003 & 0.0582 & 0.03 & 0.03 \\
+stack\_water\_plastic & channel 2 & 0.0004 & 0.0572 & 0.034 & 0.034 \\
+real raindrops (formula fitted to the data) & luminance & 0.0081 &  & 0.899 & fitted weight 0.18, blur sigma 0.8 px \\
+real haze: spectral ratio against affine-fit t, 185 pairs & correlation &  &  & 0.789 &  \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,3 @@
+medium,pictures,methods,spearman,kendall,gain_correlation_per_picture,best_on_real,best_on_synthetic_twin,mean_abs_psnr_difference_dB
+haze,91,17,0.814,0.662,0.542,fusion_dcp,dcp,1.22
+glass,58,17,0.995,0.971,0.931,none,none,1.28

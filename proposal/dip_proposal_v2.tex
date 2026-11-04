@@ -1,0 +1,362 @@
+% ============================================================================
+% dip_proposal_v2.tex -- Reframed project proposal.
+% Build: xelatex dip_proposal_v2.tex
+% ============================================================================
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{fontspec}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
+\setmainfont{Latin Modern Roman}
+
+\sloppy
+
+\title{\textbf{Digital Image Processing --- Team Project Proposal}\\[2pt]
+\large Restoring Visibility Through Haze, Water, Glass and Plastic:
+A Comparative Study of Classical Methods, with the Dark Channel Prior
+(DCP) as the Baseline}
+\author{Noel Jacob \quad Shaik Areesh \quad Sri Harshit K}
+\date{CS7.404 Digital Image Processing, Monsoon 2026 \\ \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Camera visibility is degraded either by the medium between the scene and
+the sensor (atmospheric haze, turbid water) or by a protective or
+intervening element in front of the lens (fogged or dirty glass covers,
+translucent or aged plastic). This project asks which classical,
+non-learning image-processing methods restore visibility best in each
+case, why they succeed or fail, and how far a synthetically generated
+degradation can stand in for a real capture. The Dark Channel Prior
+(DCP) is used throughout as the reference method and as the lens for
+explaining results; no machine learning is used in any restoration or
+degradation step.
+
+A real, self-captured dataset across the four media is compared against
+a calibrated synthetic-degradation model (single-layer and stacked
+multi-layer), with DCP plus a small set of classical and medium-aware
+alternatives run on both. The deliverable list is kept lean -- ten
+items -- by grouping closely related work under a single heading. Three
+tracks (real data, synthetic data, restoration) run in parallel and
+converge on a single comparison and analysis spine, mapped against the
+course's own Report~1 / Report~2 / presentation dates.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+% ============================================================================
+\section{Problem Statement and Objectives}
+% ============================================================================
+
+Camera visibility is degraded either by the medium between the scene and
+the sensor (atmospheric haze, turbid water) or by a protective or
+intervening element in front of the lens (fogged or dirty glass covers,
+translucent or aged plastic). These degradations differ physically, but
+all reduce contrast and visibility in similar ways. This project asks
+which classical, non-learning image-processing methods restore
+visibility best in each case, why they succeed or fail, and how far a
+synthetically generated degradation can stand in for a real capture. The
+Dark Channel Prior (DCP) is used throughout as the reference method and
+as the lens for explaining results. No machine learning is used in any
+restoration or degradation step.
+
+\begin{itemize}[nosep]
+  \item Implement the Dark Channel Prior from scratch as the baseline
+        restoration method.
+  \item Build a real, self-captured dataset with clear references across
+        four media (haze, water, glass, plastic) at three severity
+        levels.
+  \item Compare DCP against classical and medium-aware alternatives on
+        every medium.
+  \item Build a synthetic degradation model (single-layer and stacked
+        multi-layer) and validate it against real captures.
+  \item Explain successes and failures using dark-channel statistics,
+        transmission behaviour and colour-cast analysis.
+  \item Recommend a simple, medium-aware restoration pipeline for each
+        medium, backed by the results.
+\end{itemize}
+
+% ============================================================================
+\section{Data: Real, Synthetic and Existing Image Sets}
+\label{sec:data}
+% ============================================================================
+
+Real captures are the primary evidence. Matched synthetic images
+(degrading our own clear references with the forward model, then
+comparing against the real degraded capture of the same scene) validate
+that model. Bulk synthetic data, generated from public depth datasets,
+drives severity sweeps and stacked-layer experiments that would be
+impractical to capture by hand.
+
+\begin{table}[H]
+\centering
+\normalsize
+\begin{tabular}{@{}lp{3.6cm}p{3.9cm}p{4.3cm}@{}}
+\toprule
+Medium & Real (own captures) & Synthetic (approximation model) & Existing online image sets \\
+\midrule
+Haze & Outdoor haze/fog shots plus a clear reference on a clear day &
+  $t=\exp(-\beta d)$; $A$ near white &
+  O-HAZE / I-HAZE (real haze, paired GT); RESIDE SOTS (paired); RESIDE
+  ITS / NYU Depth v2 (depth, for synthesis) \\
+Water & Aquarium/tub with a reference shot; milk drops for turbidity
+  levels &
+  Per-channel $t_c=\exp(-\beta_c d)$, $\beta_R>\beta_G>\beta_B$;
+  blue-green $A$ &
+  UIEB for real underwater images (pseudo-reference only; rely on
+  no-reference metrics) \\
+Glass & Fog by steam/spray, dirt by dust/smudges, on a clear pane &
+  Near-uniform low-frequency veil (blurred noise), droplet patterns,
+  alpha-blended smudge masks &
+  None fit -- captures and synthesis carry this medium \\
+Plastic & Clear, translucent and aged plastic sheets over a scene &
+  Uniform low $t$, tint gains, Gaussian blur &
+  None fit -- captures and synthesis carry this medium \\
+Stacked & Water/haze scene viewed through a fogged or dirty pane &
+  Two-layer model: $I_2 = J t_1 t_2 + A_1 t_2(1-t_1) + A_2(1-t_2)$ &
+  --- \\
+\bottomrule
+\end{tabular}
+\caption{Data tiers by medium. Real captures are the primary evidence;
+matched and bulk synthetic data extend coverage where capture is
+impractical.}
+\label{tab:data}
+\end{table}
+
+\textbf{Caveat.} Synthetic haze generated with the same model DCP
+inverts favours DCP by construction, so the synthetic-real gap is
+reported explicitly rather than hidden. Synthesis parameters are
+calibrated on a few scenes and evaluated on held-out ones. Depth for our
+own scenes comes from measured distances, a planar ramp, or 2--3
+hand-defined layers -- no learned depth model is used.
+
+% ============================================================================
+\section{Pipeline: Hand-Implemented vs.\ Library}
+\label{sec:pipeline}
+% ============================================================================
+
+The rule: anything under study or central to the project's claims is
+implemented by hand; generic, uncontested primitives use a library.
+Library use for baselines should be confirmed with the instructor.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}p{6.3cm}p{3.6cm}p{4.3cm}@{}}
+\toprule
+Stage & By hand & Library \\
+\midrule
+Dark channel (patch-min over channels) & Yes -- pipeline logic is ours &
+  \texttt{scipy.ndimage} or \texttt{cv2.erode} (cross-check) \\
+Atmospheric light, raw transmission, recovery ($t_0$ floor) & Yes & --- \\
+Guided filter refinement & Optional manual version &
+  \texttt{cv2.ximgproc.guidedFilter} (opencv-contrib) \\
+Soft matting (stretch goal) & --- & \texttt{pymatting} \\
+Medium-aware variants: UDCP/red channel, per-channel or local $A$,
+  large-patch/near-global $t$ & Yes -- modifications of our DCP & --- \\
+Gray-world / simple white balance & Manual gains &
+  \texttt{cv2.xphoto} as cross-check \\
+Homomorphic filtering (glass) & Yes -- log, FFT, high-pass, exp &
+  NumPy FFT \\
+Wiener deblur (plastic) & PSF estimation manual &
+  \texttt{skimage.restoration.wiener} \\
+CLAHE, histogram equalization, gamma & --- & OpenCV \\
+Retinex (MSR, stretch) & Yes -- Gaussian-blur based & --- \\
+Median / bilateral cleanup & --- & OpenCV \\
+Forward degradation models (all media, stacked) & Yes &
+  NumPy / SciPy for noise \& blur helpers \\
+PSNR, SSIM, CIEDE2000 & --- & \texttt{skimage.metrics}, \texttt{skimage.color} \\
+UCIQE, entropy, contrast, dark-channel histograms, model-fit residual,
+  ranking correlation & Yes -- short formulas, part of the analysis &
+  \texttt{scipy.stats} for Spearman/Kendall \\
+Plots and tables & --- & Matplotlib, pandas \\
+\bottomrule
+\end{tabular}
+\caption{Implementation ownership by pipeline stage.}
+\label{tab:pipeline}
+\end{table}
+
+\textbf{Generalized skeleton with per-medium presets:} preprocess (none
+/ white balance) $\rightarrow$ medium-light estimate (global /
+per-channel / local) $\rightarrow$ dark-channel variant $\rightarrow$
+transmission (raw, then guided filter) $\rightarrow$ recover
+$\rightarrow$ postprocess (CLAHE or contrast stretch). A config file
+selects the modules per medium. CAP is excluded because its
+coefficients were fit by supervised learning.
+
+\begin{table}[H]
+\centering
+\normalsize
+\begin{tabular}{@{}ll@{}}
+\toprule
+Medium & Variants tested \\
+\midrule
+Haze & DCP, DCP + guided filter, Retinex, CLAHE \\
+Water & White balance then DCP, UDCP, CLAHE \\
+Glass & Large-patch/near-global $t$, local $A$, homomorphic filtering, CLAHE \\
+Plastic & White balance then DCP, Wiener deblur, Retinex, CLAHE \\
+\bottomrule
+\end{tabular}
+\caption{Medium-aware variant selection.}
+\label{tab:variants}
+\end{table}
+
+% ============================================================================
+\section{Deliverables: Order and Dependencies}
+\label{sec:deliverables}
+% ============================================================================
+
+The deliverable list is kept lean -- ten items instead of a longer
+breakdown -- by grouping closely related work (for example, capture
+protocol with the dataset it produces, and the forward-model spec with
+the code and calibration that implement it) under a single deliverable.
+Three tracks run in parallel -- real data (D1), synthetic data
+(D2--D3) and restoration (D4--D6) -- and converge at D7. From D7 onward
+the pipeline is strictly serial through to the final deliverables.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{figs/deliverable_dependency.png}
+\caption{Deliverable dependency graph. Blue = real-data track, amber =
+synthetic-data track, green = restoration track, grey = the serial
+spine from experiment runs to final deliverables.}
+\label{fig:spine}
+\end{figure}
+
+\textbf{Runs in parallel:} D1, D2$\rightarrow$D3, and D4$\rightarrow$D5
+alongside D6, are three independent tracks until they all feed D7.
+Restoration code (track B) is tested on O-HAZE / RESIDE images while it
+waits for real and synthetic data to land.
+
+\textbf{Strictly serial:} D1 (freeze) and D3 $\rightarrow$ D7
+$\rightarrow$ D8 $\rightarrow$ D9 $\rightarrow$ D10.
+
+\begin{table}[H]
+\centering
+\normalsize
+\begin{tabular}{@{}p{5.5cm}p{1.6cm}p{7.3cm}@{}}
+\toprule
+Deliverable & Status & Why \\
+\midrule
+D4 DCP core \& refinement, D5 medium-aware variants & \textbf{Green} &
+  Well-documented algorithm, small code surface \\
+D6 Metrics \& baselines & \textbf{Green} & Mostly library calls \\
+D2--D3 Synthesis pipeline \& synthetic data & \textbf{Amber} &
+  Matching real captures needs tuning \\
+D8 Real-vs-synthetic comparison & \textbf{Amber} &
+  Depends on both data tracks landing on time \\
+D9 Failure \& stacked-layer analysis & \textbf{Amber} & Needs extra captures \\
+Soft matting \& Wiener tuning (within D5) & \textbf{Amber} &
+  Slow / fiddly -- first to cut if behind \\
+D1 Real dataset & \textbf{Red} &
+  Capture logistics, lighting and tripod consistency -- main schedule risk \\
+\bottomrule
+\end{tabular}
+\caption{Risk assessment (RAG status) by deliverable.}
+\label{tab:rag}
+\end{table}
+
+% ============================================================================
+\section{Work Division}
+\label{sec:work}
+% ============================================================================
+
+\begin{table}[H]
+\centering
+\normalsize
+\begin{tabular}{@{}p{3.0cm}p{7.7cm}p{3.8cm}@{}}
+\toprule
+Member & Owns & Deliverables \\
+\midrule
+A -- Data \& captures & Capture protocol, all real scenes and severity
+  control, depth setups, dataset organisation, downloads (O-HAZE, UIEB,
+  ITS/NYU) & D1, later stacked real shots, demo images \\
+B -- Restoration \& evaluation & DCP from scratch, refinement,
+  medium-aware variants, baselines, metrics module, experiment runner &
+  D4--D7, D9 \\
+C -- Synthesis \& comparison & Forward models, calibration, matched \&
+  bulk synthetic data, real-vs-synthetic statistics and ranking
+  agreement & D2, D3, D8, stacked-layer experiment \\
+All & Understand and be able to explain the DCP core; report sections;
+  rehearsal & D10 \\
+\bottomrule
+\end{tabular}
+\caption{Work division across the three team members.}
+\label{tab:work}
+\end{table}
+
+A few hours per week per person is realistic for this scope, provided
+the real dataset is frozen early (around Oct 14) so the busiest
+coursework weeks are not competing with capture logistics.
+
+% ============================================================================
+\section{Timeline Against Course Dates}
+\label{sec:timeline}
+% ============================================================================
+
+\begin{table}[H]
+\centering
+\normalsize
+\begin{tabular}{@{}p{2.8cm}p{11.2cm}@{}}
+\toprule
+Dates & Milestone \\
+\midrule
+Sep 28 -- 30 & Report 1: framing, pipeline diagram, capture protocol,
+  one or two DCP outputs \\
+Oct 1 -- 14 & Captures (haze \& glass, then water \& plastic), DCP +
+  refinement, synthesis code. Data frozen around Oct 14 \\
+Oct 15 -- 26 & Variants, baselines, metrics, calibration, first
+  real-vs-synthetic comparison. Report 2 on Oct 26 \\
+Oct 27 -- Nov 8 & Ranking agreement, failure \& stacked-layer analysis,
+  severity sweeps, recommended pipelines, README \\
+Nov 9 -- 12 & Rehearsal. Presentation on Nov 12 (Nov 9 is a holiday --
+  Diwali) \\
+\bottomrule
+\end{tabular}
+\caption{Timeline mapped to CS7.404 course milestones.}
+\label{tab:timeline}
+\end{table}
+
+Assign 3 (due Oct 8), Quiz 2 (Oct 22) and Assign 4 (due Nov 2) overlap
+this plan, which is why the real dataset freezes before the busiest
+coursework stretch.
+
+% ============================================================================
+\section{Cut List and Open Items}
+\label{sec:cutlist}
+% ============================================================================
+
+\textbf{Cut in this order if behind schedule:} soft matting
+$\rightarrow$ Retinex $\rightarrow$ plastic stacked-layer cases
+$\rightarrow$ bulk severity sweeps.
+
+\textbf{Must survive:} real captures, DCP plus 2--3 classical
+alternatives, matched synthetic data, and the ranking-agreement
+comparison.
+
+\textbf{To confirm with the TA / instructor:}
+\begin{itemize}[nosep]
+  \item Whether library calls (guided filter, CLAHE, Wiener, metrics)
+        are acceptable for baselines.
+  \item Whether the reframing from a DCP-robustness study to a
+        multi-method, multi-medium comparison is acceptable, since the
+        submitted proposal was DCP-centric.
+  \item Exact Report 1 requirements.
+\end{itemize}
+
+\end{document}

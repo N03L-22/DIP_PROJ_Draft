@@ -1,0 +1,22 @@
+first_second,second_first,psnr_forward,psnr_backward,difference_db
+von_kries > eq_hsi,eq_hsi > von_kries,15.53,14.197,1.333
+udcp > eq_hsi,eq_hsi > udcp,10.281,11.356,-1.075
+von_kries > dcp_guided,dcp_guided > von_kries,14.108,15.085,-0.977
+udcp > unsharp,unsharp > udcp,11.385,12.154,-0.769
+dcp_guided > unsharp,unsharp > dcp_guided,12.463,13.157,-0.694
+udcp > clahe,clahe > udcp,12.969,12.321,0.648
+dcp_guided > eq_hsi,eq_hsi > dcp_guided,11.361,12.007,-0.646
+clahe > eq_hsi,eq_hsi > clahe,12.824,12.248,0.576
+red_comp > dcp_guided,dcp_guided > red_comp,13.141,13.633,-0.493
+von_kries > udcp,udcp > von_kries,12.394,12.746,-0.352
+udcp > dcp_guided,dcp_guided > udcp,11.301,10.966,0.334
+clahe > unsharp,unsharp > clahe,14.302,13.993,0.309
+red_comp > eq_hsi,eq_hsi > red_comp,14.121,13.857,0.264
+red_comp > von_kries,von_kries > red_comp,17.131,16.939,0.191
+eq_hsi > unsharp,unsharp > eq_hsi,12.326,12.474,-0.148
+dcp_guided > clahe,clahe > dcp_guided,14.177,14.037,0.141
+von_kries > clahe,clahe > von_kries,16.959,16.821,0.139
+red_comp > clahe,clahe > red_comp,15.889,15.973,-0.084
+red_comp > udcp,udcp > red_comp,12.116,12.037,0.079
+red_comp > unsharp,unsharp > red_comp,15.587,15.556,0.031
+von_kries > unsharp,unsharp > von_kries,17.117,17.087,0.03

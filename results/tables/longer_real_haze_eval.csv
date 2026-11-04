@@ -1,0 +1,415 @@
+set,pipeline,picture,psnr
+B,dcp_guided,O-HAZE_04,14.000877762273724
+B,dcp_guided,O-HAZE_12,18.07620982210435
+B,dcp_guided,O-HAZE_20,15.54950580753018
+B,dcp_guided,O-HAZE_28,15.101344226427688
+B,dcp_guided,O-HAZE_36,20.428783444729483
+B,dcp_guided,O-HAZE_44,15.745267683664817
+B,dcp_guided,I-HAZE_07,13.297430370661491
+B,dcp_guided,I-HAZE_15,14.419754028041371
+B,dcp_guided,I-HAZE_23,13.335538540243943
+B,dcp_guided,Dense-Haze_01,14.357718601764113
+B,dcp_guided,Dense-Haze_09,17.030199028741816
+B,dcp_guided,Dense-Haze_17,10.651808769761367
+B,dcp_guided,Dense-Haze_25,13.823517520304664
+B,dcp_guided,Dense-Haze_33,11.787721398407264
+B,dcp_guided,Dense-Haze_41,15.597916328039918
+B,dcp_guided,Dense-Haze_49,10.698844006395039
+B,dcp_guided,NH-Haze_02,16.873558852798794
+B,dcp_guided,NH-Haze_10,13.947524050548136
+B,dcp_guided,NH-Haze_18,14.275365440263542
+B,dcp_guided,NH-Haze_26,11.408152310917119
+B,dcp_guided,NH-Haze_34,15.68811191175952
+B,dcp_guided,NH-Haze_42,13.997349676320738
+B,dcp_guided,NH-Haze_50,13.35157061320653
+C,dcp_guided,O-HAZE_02,15.352216324459322
+C,dcp_guided,O-HAZE_06,19.535287443036935
+C,dcp_guided,O-HAZE_10,16.336180667664983
+C,dcp_guided,O-HAZE_14,15.18577878454588
+C,dcp_guided,O-HAZE_18,18.29322022374783
+C,dcp_guided,O-HAZE_22,20.420033530201845
+C,dcp_guided,O-HAZE_26,13.06924762303347
+C,dcp_guided,O-HAZE_30,15.856130853297245
+C,dcp_guided,O-HAZE_34,17.671326708609637
+C,dcp_guided,O-HAZE_38,18.39193215174003
+C,dcp_guided,O-HAZE_42,18.579060134712947
+C,dcp_guided,I-HAZE_01,12.398840712957078
+C,dcp_guided,I-HAZE_05,13.390314306605882
+C,dcp_guided,I-HAZE_09,16.204784737215117
+C,dcp_guided,I-HAZE_13,15.295382566883479
+C,dcp_guided,I-HAZE_17,12.362069649561134
+C,dcp_guided,I-HAZE_21,17.035452376614902
+C,dcp_guided,I-HAZE_25,10.282059772116812
+C,dcp_guided,I-HAZE_34,15.765726628665641
+C,dcp_guided,Dense-Haze_03,13.552047724885941
+C,dcp_guided,Dense-Haze_07,15.188637402980216
+C,dcp_guided,Dense-Haze_11,10.837869298540227
+C,dcp_guided,Dense-Haze_15,11.059250310660858
+C,dcp_guided,Dense-Haze_19,13.021674895064566
+C,dcp_guided,Dense-Haze_23,12.410044238977616
+C,dcp_guided,Dense-Haze_27,13.991862973792504
+C,dcp_guided,Dense-Haze_31,12.856726007936835
+C,dcp_guided,Dense-Haze_35,11.106967494429965
+C,dcp_guided,Dense-Haze_39,9.78650826207417
+C,dcp_guided,Dense-Haze_43,12.462674770594365
+C,dcp_guided,Dense-Haze_47,15.125249815701844
+C,dcp_guided,Dense-Haze_51,13.956021379397935
+C,dcp_guided,Dense-Haze_55,12.720154990800802
+C,dcp_guided,NH-Haze_04,10.191165267748199
+C,dcp_guided,NH-Haze_08,12.921039025460594
+C,dcp_guided,NH-Haze_12,13.484826750179638
+C,dcp_guided,NH-Haze_16,14.109617342090877
+C,dcp_guided,NH-Haze_20,13.323032079053343
+C,dcp_guided,NH-Haze_24,13.168398939119776
+C,dcp_guided,NH-Haze_28,8.55730087958799
+C,dcp_guided,NH-Haze_32,13.972171106652782
+C,dcp_guided,NH-Haze_36,12.274548138842649
+C,dcp_guided,NH-Haze_40,10.676498197680651
+C,dcp_guided,NH-Haze_44,8.750639538084194
+C,dcp_guided,NH-Haze_48,11.522844857447183
+C,dcp_guided,NH-Haze_52,13.772748229338298
+B,dcp_guided > clahe,O-HAZE_04,16.884457589509935
+B,dcp_guided > clahe,O-HAZE_12,16.256348272845745
+B,dcp_guided > clahe,O-HAZE_20,16.421869911077117
+B,dcp_guided > clahe,O-HAZE_28,15.096753317061108
+B,dcp_guided > clahe,O-HAZE_36,17.87783968960681
+B,dcp_guided > clahe,O-HAZE_44,18.54514357512797
+B,dcp_guided > clahe,I-HAZE_07,14.304940221914844
+B,dcp_guided > clahe,I-HAZE_15,17.34422771250567
+B,dcp_guided > clahe,I-HAZE_23,19.800551156292325
+B,dcp_guided > clahe,Dense-Haze_01,14.738033253065863
+B,dcp_guided > clahe,Dense-Haze_09,12.323260522970351
+B,dcp_guided > clahe,Dense-Haze_17,10.674864397333447
+B,dcp_guided > clahe,Dense-Haze_25,13.58729551702348
+B,dcp_guided > clahe,Dense-Haze_33,13.48381956202368
+B,dcp_guided > clahe,Dense-Haze_41,17.105653647596256
+B,dcp_guided > clahe,Dense-Haze_49,12.057274611655496
+B,dcp_guided > clahe,NH-Haze_02,13.662222847804518
+B,dcp_guided > clahe,NH-Haze_10,15.002809813820715
+B,dcp_guided > clahe,NH-Haze_18,16.200959529413996
+B,dcp_guided > clahe,NH-Haze_26,11.266992815479783
+B,dcp_guided > clahe,NH-Haze_34,17.382345582044525
+B,dcp_guided > clahe,NH-Haze_42,13.090469041753124
+B,dcp_guided > clahe,NH-Haze_50,13.881749039645854
+C,dcp_guided > clahe,O-HAZE_02,15.568417591285794
+C,dcp_guided > clahe,O-HAZE_06,18.362811451974043
+C,dcp_guided > clahe,O-HAZE_10,16.329209910502737
+C,dcp_guided > clahe,O-HAZE_14,17.64064043208839
+C,dcp_guided > clahe,O-HAZE_18,13.95047693410149
+C,dcp_guided > clahe,O-HAZE_22,18.847067818922827
+C,dcp_guided > clahe,O-HAZE_26,15.605409323352756
+C,dcp_guided > clahe,O-HAZE_30,20.303051590343607
+C,dcp_guided > clahe,O-HAZE_34,19.130261586559023
+C,dcp_guided > clahe,O-HAZE_38,15.997679454612646
+C,dcp_guided > clahe,O-HAZE_42,20.53289414051481
+C,dcp_guided > clahe,I-HAZE_01,14.389331198524271
+C,dcp_guided > clahe,I-HAZE_05,18.85031225971933
+C,dcp_guided > clahe,I-HAZE_09,21.002292051086137
+C,dcp_guided > clahe,I-HAZE_13,20.163989788823397
+C,dcp_guided > clahe,I-HAZE_17,14.06608970616507
+C,dcp_guided > clahe,I-HAZE_21,19.607545164713084
+C,dcp_guided > clahe,I-HAZE_25,11.275191847125202
+C,dcp_guided > clahe,I-HAZE_34,17.706228702120153
+C,dcp_guided > clahe,Dense-Haze_03,14.448475334799946
+C,dcp_guided > clahe,Dense-Haze_07,15.921550735148152
+C,dcp_guided > clahe,Dense-Haze_11,9.549712001699174
+C,dcp_guided > clahe,Dense-Haze_15,10.431486307424276
+C,dcp_guided > clahe,Dense-Haze_19,13.490055764955635
+C,dcp_guided > clahe,Dense-Haze_23,10.262997822790128
+C,dcp_guided > clahe,Dense-Haze_27,13.591806574423504
+C,dcp_guided > clahe,Dense-Haze_31,12.769906220824861
+C,dcp_guided > clahe,Dense-Haze_35,11.457074782532292
+C,dcp_guided > clahe,Dense-Haze_39,11.567961120915658
+C,dcp_guided > clahe,Dense-Haze_43,12.981890108005135
+C,dcp_guided > clahe,Dense-Haze_47,17.453255192981086
+C,dcp_guided > clahe,Dense-Haze_51,14.230811588943926
+C,dcp_guided > clahe,Dense-Haze_55,13.149253058172372
+C,dcp_guided > clahe,NH-Haze_04,9.990473295095851
+C,dcp_guided > clahe,NH-Haze_08,17.375281871743503
+C,dcp_guided > clahe,NH-Haze_12,13.622867714674902
+C,dcp_guided > clahe,NH-Haze_16,16.380536793744646
+C,dcp_guided > clahe,NH-Haze_20,13.256364208748295
+C,dcp_guided > clahe,NH-Haze_24,12.665490888954338
+C,dcp_guided > clahe,NH-Haze_28,9.687483979573946
+C,dcp_guided > clahe,NH-Haze_32,14.022589501002305
+C,dcp_guided > clahe,NH-Haze_36,13.87796516240943
+C,dcp_guided > clahe,NH-Haze_40,11.08887405341896
+C,dcp_guided > clahe,NH-Haze_44,10.091774185643132
+C,dcp_guided > clahe,NH-Haze_48,11.816517000977493
+C,dcp_guided > clahe,NH-Haze_52,12.790184318448429
+B,dcp_guided > gray_world > clahe,O-HAZE_04,16.872923076080117
+B,dcp_guided > gray_world > clahe,O-HAZE_12,15.960363983063505
+B,dcp_guided > gray_world > clahe,O-HAZE_20,18.063458054811296
+B,dcp_guided > gray_world > clahe,O-HAZE_28,16.736989523205573
+B,dcp_guided > gray_world > clahe,O-HAZE_36,17.673004313511072
+B,dcp_guided > gray_world > clahe,O-HAZE_44,18.589421733654827
+B,dcp_guided > gray_world > clahe,I-HAZE_07,14.588251635915137
+B,dcp_guided > gray_world > clahe,I-HAZE_15,17.086264575912825
+B,dcp_guided > gray_world > clahe,I-HAZE_23,18.245441386602565
+B,dcp_guided > gray_world > clahe,Dense-Haze_01,16.522139308050708
+B,dcp_guided > gray_world > clahe,Dense-Haze_09,12.591742852187123
+B,dcp_guided > gray_world > clahe,Dense-Haze_17,12.269268536604
+B,dcp_guided > gray_world > clahe,Dense-Haze_25,14.433403481110304
+B,dcp_guided > gray_world > clahe,Dense-Haze_33,13.530649709124011
+B,dcp_guided > gray_world > clahe,Dense-Haze_41,17.67017395383214
+B,dcp_guided > gray_world > clahe,Dense-Haze_49,12.186424028296157
+B,dcp_guided > gray_world > clahe,NH-Haze_02,13.945061511902043
+B,dcp_guided > gray_world > clahe,NH-Haze_10,15.712923635386032
+B,dcp_guided > gray_world > clahe,NH-Haze_18,17.001839981821647
+B,dcp_guided > gray_world > clahe,NH-Haze_26,12.025170943277354
+B,dcp_guided > gray_world > clahe,NH-Haze_34,18.911219733373898
+B,dcp_guided > gray_world > clahe,NH-Haze_42,13.960084227019562
+B,dcp_guided > gray_world > clahe,NH-Haze_50,14.313698561680845
+C,dcp_guided > gray_world > clahe,O-HAZE_02,15.458422271502714
+C,dcp_guided > gray_world > clahe,O-HAZE_06,19.672311429388603
+C,dcp_guided > gray_world > clahe,O-HAZE_10,16.86671778462546
+C,dcp_guided > gray_world > clahe,O-HAZE_14,17.536824835398377
+C,dcp_guided > gray_world > clahe,O-HAZE_18,14.069469070945388
+C,dcp_guided > gray_world > clahe,O-HAZE_22,19.114332292348557
+C,dcp_guided > gray_world > clahe,O-HAZE_26,17.121879809205637
+C,dcp_guided > gray_world > clahe,O-HAZE_30,20.20720321835041
+C,dcp_guided > gray_world > clahe,O-HAZE_34,19.531548218523486
+C,dcp_guided > gray_world > clahe,O-HAZE_38,15.879168461752966
+C,dcp_guided > gray_world > clahe,O-HAZE_42,21.073000478461342
+C,dcp_guided > gray_world > clahe,I-HAZE_01,14.323323741074333
+C,dcp_guided > gray_world > clahe,I-HAZE_05,19.019693671766696
+C,dcp_guided > gray_world > clahe,I-HAZE_09,20.49211466224669
+C,dcp_guided > gray_world > clahe,I-HAZE_13,20.1646952609076
+C,dcp_guided > gray_world > clahe,I-HAZE_17,14.149698455263911
+C,dcp_guided > gray_world > clahe,I-HAZE_21,19.593455215369097
+C,dcp_guided > gray_world > clahe,I-HAZE_25,11.289745029341107
+C,dcp_guided > gray_world > clahe,I-HAZE_34,17.791458511858394
+C,dcp_guided > gray_world > clahe,Dense-Haze_03,15.709078254783037
+C,dcp_guided > gray_world > clahe,Dense-Haze_07,17.966373473197844
+C,dcp_guided > gray_world > clahe,Dense-Haze_11,10.74796283714585
+C,dcp_guided > gray_world > clahe,Dense-Haze_15,10.361494556720064
+C,dcp_guided > gray_world > clahe,Dense-Haze_19,13.68903208010899
+C,dcp_guided > gray_world > clahe,Dense-Haze_23,11.213971304335919
+C,dcp_guided > gray_world > clahe,Dense-Haze_27,14.149638091631463
+C,dcp_guided > gray_world > clahe,Dense-Haze_31,12.955243921753727
+C,dcp_guided > gray_world > clahe,Dense-Haze_35,12.328599643281011
+C,dcp_guided > gray_world > clahe,Dense-Haze_39,11.676245845590515
+C,dcp_guided > gray_world > clahe,Dense-Haze_43,12.93537234366533
+C,dcp_guided > gray_world > clahe,Dense-Haze_47,17.26700933295139
+C,dcp_guided > gray_world > clahe,Dense-Haze_51,15.44696471886763
+C,dcp_guided > gray_world > clahe,Dense-Haze_55,13.248963182740193
+C,dcp_guided > gray_world > clahe,NH-Haze_04,10.080799995067075
+C,dcp_guided > gray_world > clahe,NH-Haze_08,17.358743041370452
+C,dcp_guided > gray_world > clahe,NH-Haze_12,14.561445786494634
+C,dcp_guided > gray_world > clahe,NH-Haze_16,16.01756900592254
+C,dcp_guided > gray_world > clahe,NH-Haze_20,13.542047291352848
+C,dcp_guided > gray_world > clahe,NH-Haze_24,12.820810924506851
+C,dcp_guided > gray_world > clahe,NH-Haze_28,9.722073996596025
+C,dcp_guided > gray_world > clahe,NH-Haze_32,14.271085385138
+C,dcp_guided > gray_world > clahe,NH-Haze_36,14.286052025008837
+C,dcp_guided > gray_world > clahe,NH-Haze_40,11.363645569558397
+C,dcp_guided > gray_world > clahe,NH-Haze_44,10.172476538856909
+C,dcp_guided > gray_world > clahe,NH-Haze_48,11.991635658324258
+C,dcp_guided > gray_world > clahe,NH-Haze_52,13.360624365096982
+B,unsharp > gray_world > clahe > dcp_guided,O-HAZE_04,17.888193894709243
+B,unsharp > gray_world > clahe > dcp_guided,O-HAZE_12,16.662190659262187
+B,unsharp > gray_world > clahe > dcp_guided,O-HAZE_20,15.051402192756766
+B,unsharp > gray_world > clahe > dcp_guided,O-HAZE_28,15.643485353217097
+B,unsharp > gray_world > clahe > dcp_guided,O-HAZE_36,15.267404506162938
+B,unsharp > gray_world > clahe > dcp_guided,O-HAZE_44,17.1893254490387
+B,unsharp > gray_world > clahe > dcp_guided,I-HAZE_07,14.407512559798727
+B,unsharp > gray_world > clahe > dcp_guided,I-HAZE_15,17.646579779043527
+B,unsharp > gray_world > clahe > dcp_guided,I-HAZE_23,18.35805519800875
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_01,18.976665731536023
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_09,18.06850094053631
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_17,12.448919514959854
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_25,15.438511014938307
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_33,12.641788062653756
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_41,14.938182260777388
+B,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_49,11.50115691648349
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_02,12.21391999520369
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_10,14.917274489486152
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_18,16.104305496889797
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_26,11.95907783584483
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_34,16.780793155656376
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_42,11.90034010839642
+B,unsharp > gray_world > clahe > dcp_guided,NH-Haze_50,14.039979188952898
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_02,13.717904746820915
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_06,13.996499189561874
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_10,14.552379139109924
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_14,16.893584104213318
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_18,12.562481721866261
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_22,15.552335551806669
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_26,16.07998581153195
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_30,18.59668355499792
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_34,15.968439051657857
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_38,15.107742140634562
+C,unsharp > gray_world > clahe > dcp_guided,O-HAZE_42,16.973127578330832
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_01,16.786769118118087
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_05,20.18352368085499
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_09,18.668687999517587
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_13,20.795732590636355
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_17,15.262253569317819
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_21,18.539270633122424
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_25,11.954223528886503
+C,unsharp > gray_world > clahe > dcp_guided,I-HAZE_34,19.91418304686744
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_03,15.165937786790085
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_07,16.657417551099535
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_11,13.00709038067485
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_15,10.377316601401322
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_19,14.081326910737168
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_23,14.709240518616287
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_27,16.963302181402156
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_31,14.743483488077588
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_35,10.42452086869577
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_39,10.753018497675672
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_43,13.479555347561192
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_47,15.108366778694513
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_51,14.028190867329496
+C,unsharp > gray_world > clahe > dcp_guided,Dense-Haze_55,13.900766392835564
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_04,11.367909933761775
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_08,17.021592240506777
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_12,13.285598800652485
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_16,15.611116329459076
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_20,15.091913310190199
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_24,11.549384051678961
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_28,10.660380928158428
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_32,13.6839346001545
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_36,14.088893711790615
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_40,12.033647042074026
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_44,10.503270351705023
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_48,12.634774524995736
+C,unsharp > gray_world > clahe > dcp_guided,NH-Haze_52,12.795374714064218
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_04,18.867916952995493
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_12,16.826739440759805
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_20,16.58155037443236
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_28,16.579896562240247
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_36,14.602126870962156
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_44,17.281021941483978
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_07,13.6038611702405
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_15,16.70127598290275
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_23,19.34649617800225
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_01,19.307825434943215
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_09,18.17428287169546
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_17,12.197801179426131
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_25,15.322876667556875
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_33,11.841671539294056
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_41,14.424425739457554
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_49,11.492046416443106
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_02,11.645231930514196
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_10,14.60628167136926
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_18,16.115939346939783
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_26,12.551598089644873
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_34,17.999236802566298
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_42,12.250894967682653
+B,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_50,13.728426613586958
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_02,13.433769408133248
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_06,13.357044347733268
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_10,15.025236560063044
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_14,15.987460726018227
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_18,10.610646681590662
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_22,14.82764484444067
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_26,15.949324775809826
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_30,18.64747738394103
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_34,15.360854076418155
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_38,14.855042727538068
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,O-HAZE_42,16.70990020075141
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_01,15.64723450105809
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_05,21.09769740086362
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_09,18.682078272005697
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_13,20.365183082765416
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_17,14.271397155393535
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_21,18.572125661968393
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_25,12.528522419969919
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,I-HAZE_34,19.645899229106398
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_03,14.960369321084162
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_07,16.377462990312345
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_11,13.317718000190995
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_15,9.591586903160293
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_19,13.24190328533636
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_23,14.432998957041963
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_27,16.519012090800814
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_31,14.861366861337261
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_35,9.629216630424233
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_39,10.791439507657053
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_43,13.398235749956433
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_47,14.176144778531459
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_51,12.976943125693275
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,Dense-Haze_55,13.237936359379514
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_04,10.614182332287124
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_08,16.685612258331112
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_12,13.671078525641446
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_16,14.335007307387555
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_20,15.097403786770451
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_24,12.021963711690482
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_28,10.339919873076614
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_32,13.823644399788144
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_36,13.492928977806839
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_40,11.321647813914971
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_44,10.264557092501857
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_48,12.65898527955425
+C,unsharp > gray_world > gamma_auto > clahe > dcp_guided,NH-Haze_52,12.377962998415653
+B,none,O-HAZE_04,21.798771873264368
+B,none,O-HAZE_12,13.461875462351632
+B,none,O-HAZE_20,9.53810715518174
+B,none,O-HAZE_28,10.243073432518608
+B,none,O-HAZE_36,14.946585936348452
+B,none,O-HAZE_44,16.796392085804015
+B,none,I-HAZE_07,12.707338722920875
+B,none,I-HAZE_15,17.140191265291737
+B,none,I-HAZE_23,15.735353612197901
+B,none,Dense-Haze_01,8.120369420475225
+B,none,Dense-Haze_09,10.239104765023974
+B,none,Dense-Haze_17,10.458090146333747
+B,none,Dense-Haze_25,9.722902960390986
+B,none,Dense-Haze_33,9.842716695922554
+B,none,Dense-Haze_41,9.726206172114258
+B,none,Dense-Haze_49,9.876377790798957
+B,none,NH-Haze_02,14.715583034865741
+B,none,NH-Haze_10,12.227758114552561
+B,none,NH-Haze_18,13.841421368788602
+B,none,NH-Haze_26,9.428839347470856
+B,none,NH-Haze_34,11.215067753664057
+B,none,NH-Haze_42,9.768814907827903
+B,none,NH-Haze_50,12.959321436387846
+C,none,O-HAZE_02,15.646584505641243
+C,none,O-HAZE_06,11.628607681479624
+C,none,O-HAZE_10,12.34576726721488
+C,none,O-HAZE_14,14.812323485178712
+C,none,O-HAZE_18,14.4924761658492
+C,none,O-HAZE_22,19.795968855456586
+C,none,O-HAZE_26,12.628729001109855
+C,none,O-HAZE_30,17.667307236860026
+C,none,O-HAZE_34,15.344001604563225
+C,none,O-HAZE_38,12.875708407584908
+C,none,O-HAZE_42,11.993157482077613
+C,none,I-HAZE_01,13.716793943820493
+C,none,I-HAZE_05,16.67761311195941
+C,none,I-HAZE_09,13.22354116043336
+C,none,I-HAZE_13,16.995712317259738
+C,none,I-HAZE_17,11.76533940641351
+C,none,I-HAZE_21,18.77299550169819
+C,none,I-HAZE_25,20.778270455632757
+C,none,I-HAZE_34,11.511833387466016
+C,none,Dense-Haze_03,13.862397526533115
+C,none,Dense-Haze_07,11.468882259980269
+C,none,Dense-Haze_11,7.3327107556937605
+C,none,Dense-Haze_15,9.120766241092008
+C,none,Dense-Haze_19,9.61486573447409
+C,none,Dense-Haze_23,8.529046890283784
+C,none,Dense-Haze_27,8.014091871341765
+C,none,Dense-Haze_31,6.84670529050366
+C,none,Dense-Haze_35,8.53114727011212
+C,none,Dense-Haze_39,12.356526856824315
+C,none,Dense-Haze_43,8.437627914274737
+C,none,Dense-Haze_47,11.845308911192047
+C,none,Dense-Haze_51,9.910838809691612
+C,none,Dense-Haze_55,7.130557417211606
+C,none,NH-Haze_04,10.616922885489688
+C,none,NH-Haze_08,15.41299918995785
+C,none,NH-Haze_12,11.390379820637591
+C,none,NH-Haze_16,16.332618962788803
+C,none,NH-Haze_20,12.46691704188973
+C,none,NH-Haze_24,10.38584715297841
+C,none,NH-Haze_28,11.973637489651638
+C,none,NH-Haze_32,10.091807268099366
+C,none,NH-Haze_36,14.016232675975669
+C,none,NH-Haze_40,10.789790894340285
+C,none,NH-Haze_44,9.634418546507092
+C,none,NH-Haze_48,11.08763346040851
+C,none,NH-Haze_52,11.866440293968289

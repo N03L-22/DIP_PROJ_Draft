@@ -1,0 +1,10 @@
+\begin{tabular}{llllrrlrr}
+\toprule
+medium & presets & best single & PSNR & guided DCP & none & best chain (held-out) & PSNR & rank agreement \\
+\midrule
+haze & original & dcp\_guided & 15.63 & 15.63 & 10.52 & dcp\_guided & 15.26 & +0.53 \\
+haze & calibrated & hist\_spec & 14.49 & 11.31 & 11.81 & hist\_eq $>$ clahe $>$ dcp\_guided & 13.66 & +0.09 \\
+glass & original & stretch & 28.52 & -- & 18.51 & stretch & 26.87 & +0.53 \\
+glass & calibrated & none & 25.05 & -- & 25.05 & none & 25.80 & +0.92 \\
+\bottomrule
+\end{tabular}

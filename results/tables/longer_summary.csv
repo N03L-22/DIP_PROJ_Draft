@@ -1,0 +1,5 @@
+medium,chosen_length,chain1,chain2,chain3,chain4,chain5,B0,B1,B2,B3,B4,B5,C0,C1,C2,C3,C4,C5
+haze,2,hist_eq,hist_eq > dcp_guided,hist_eq > clahe > dcp_guided,gray_world > hist_eq > clahe > dcp_guided,gamma_auto > hist_eq > clahe > gray_world > dcp_guided,11.868,12.651,13.547,13.66,13.234,13.332,11.491,13.076,14.94,15.291,15.136,15.261
+water,2,von_kries,red_comp > von_kries,red_comp > von_kries > unsharp,clahe > dcp_guided > red_comp > von_kries,clahe > dcp_guided > red_comp > von_kries > unsharp,15.385,17.852,18.034,17.977,16.911,15.849,14.298,16.876,17.058,17.13,16.202,15.045
+glass,1,stretch,stretch > unsharp,flat_field > unsharp > stretch,unsharp > dcp_local_airlight > stretch > flat_field,stretch > unsharp > clahe > dcp_local_airlight > flat_field,25.803,24.518,22.569,19.429,16.024,14.321,25.04,24.965,22.704,19.197,16.8,14.74
+plastic,1,clahe,wiener > dcp_guided,wiener > unsharp > dcp_guided,wiener > unsharp > dcp_guided > gray_world,wiener > unsharp > dcp_guided > gray_world > eq_hsi,16.035,18.633,17.03,17.247,17.19,14.756,15.733,17.893,18.001,18.059,17.666,15.92

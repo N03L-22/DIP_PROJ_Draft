@@ -1,0 +1,277 @@
+world,phase,chain,length,level,picture,psnr,ssim
+real,verify,unsharp > gray_world > dcp_guided,3,real,O-HAZE_06,20.28307763761021,0.7881918235481669
+real,verify,unsharp > gray_world > dcp_guided,3,real,O-HAZE_14,17.437956399306756,0.7971244635312426
+real,verify,unsharp > gray_world > dcp_guided,3,real,O-HAZE_22,20.91944919723122,0.8616226389755749
+real,verify,unsharp > gray_world > dcp_guided,3,real,O-HAZE_30,19.934752149738564,0.8793883783668054
+real,verify,unsharp > gray_world > dcp_guided,3,real,O-HAZE_38,17.68929645208079,0.7935254511801203
+real,verify,unsharp > gray_world > dcp_guided,3,real,I-HAZE_02,17.68010778508304,0.8105975249725349
+real,verify,unsharp > gray_world > dcp_guided,3,real,I-HAZE_10,16.726240936072855,0.8056581891202206
+real,verify,unsharp > gray_world > dcp_guided,3,real,I-HAZE_18,18.020515115650966,0.6439799638315834
+real,verify,unsharp > gray_world > dcp_guided,3,real,I-HAZE_31,17.725278158557344,0.8521162079885265
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_04,15.005370808859126,0.4241351516994834
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_12,15.982369521270705,0.5641305303193865
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_20,14.76480092917006,0.5742790907066359
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_28,9.606738632620534,0.3565055242214035
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_36,13.07906760979986,0.6390772903598091
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_44,9.061795052560754,0.47249949681086584
+real,verify,unsharp > gray_world > dcp_guided,3,real,Dense-Haze_52,11.651347290906955,0.3198498484270154
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_06,14.192379616032117,0.6645779150510415
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_14,15.002093596758952,0.669214750460065
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_22,15.146188864923886,0.49225594133230466
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_30,10.140828570117415,0.4764056077449356
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_38,14.66431245206004,0.6166227095356936
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_46,10.86434162166848,0.44084377565814026
+real,verify,unsharp > gray_world > dcp_guided,3,real,NH-Haze_54,15.054916322370707,0.5247339143237486
+real,verify,dcp_guided > gray_world > clahe,3,real,O-HAZE_06,19.672311429388603,0.8245627944841778
+real,verify,dcp_guided > gray_world > clahe,3,real,O-HAZE_14,17.536824835398377,0.7634140374020589
+real,verify,dcp_guided > gray_world > clahe,3,real,O-HAZE_22,19.114332292348557,0.8213624054589955
+real,verify,dcp_guided > gray_world > clahe,3,real,O-HAZE_30,20.20720321835041,0.8390360218879516
+real,verify,dcp_guided > gray_world > clahe,3,real,O-HAZE_38,15.879168461752966,0.7168546389359273
+real,verify,dcp_guided > gray_world > clahe,3,real,I-HAZE_02,18.410840868524005,0.8347484979698346
+real,verify,dcp_guided > gray_world > clahe,3,real,I-HAZE_10,18.68342775798472,0.8528105820357402
+real,verify,dcp_guided > gray_world > clahe,3,real,I-HAZE_18,18.425128554010243,0.6800824048163728
+real,verify,dcp_guided > gray_world > clahe,3,real,I-HAZE_31,17.19475468574771,0.8688843082171572
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_04,14.192214690087319,0.5805049976675966
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_12,17.599451534129727,0.6843677025982192
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_20,15.48851792165019,0.6073252630021094
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_28,9.7766379875241,0.3990311309257924
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_36,13.276531678651544,0.6816718885430278
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_44,9.33048555788133,0.517629853420812
+real,verify,dcp_guided > gray_world > clahe,3,real,Dense-Haze_52,10.286331461957852,0.3777161509710474
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_06,17.04151960622844,0.7793581587433939
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_14,14.8791305056855,0.6868390692991225
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_22,14.982702025187272,0.5133827854027423
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_30,11.010938614257151,0.5801692934122628
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_38,14.39559590527087,0.6240202047128428
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_46,11.758003171058268,0.5210554277886468
+real,verify,dcp_guided > gray_world > clahe,3,real,NH-Haze_54,14.859678290659746,0.5708515712540633
+real,verify,gray_world > unsharp > dcp_guided,3,real,O-HAZE_06,20.28308082505061,0.7881917421305117
+real,verify,gray_world > unsharp > dcp_guided,3,real,O-HAZE_14,17.437950430565877,0.797124067906649
+real,verify,gray_world > unsharp > dcp_guided,3,real,O-HAZE_22,20.920160322888705,0.8616192388822793
+real,verify,gray_world > unsharp > dcp_guided,3,real,O-HAZE_30,19.93474733156015,0.8793879932287814
+real,verify,gray_world > unsharp > dcp_guided,3,real,O-HAZE_38,17.690330446210673,0.7935553322933272
+real,verify,gray_world > unsharp > dcp_guided,3,real,I-HAZE_02,17.680009405718977,0.8106111721609425
+real,verify,gray_world > unsharp > dcp_guided,3,real,I-HAZE_10,16.72622456094934,0.8056584900981609
+real,verify,gray_world > unsharp > dcp_guided,3,real,I-HAZE_18,18.020522569191872,0.6439800692366067
+real,verify,gray_world > unsharp > dcp_guided,3,real,I-HAZE_31,17.725475259142492,0.8521166750334919
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_04,15.005370808259615,0.4241351516818998
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_12,15.982369519272698,0.564130530289238
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_20,14.764800928375744,0.5742790907094326
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_28,9.60724952363991,0.35669214499684493
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_36,13.079083200991633,0.6390803852450245
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_44,9.061793001368711,0.47249968949261567
+real,verify,gray_world > unsharp > dcp_guided,3,real,Dense-Haze_52,11.65134728999605,0.3198498484241277
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_06,14.192395032396412,0.6645780494826398
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_14,15.001922433591604,0.6692478346632992
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_22,15.146196493512178,0.4922567456646871
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_30,10.140828571671118,0.4764056077659023
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_38,14.664283271684491,0.6166241667165879
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_46,10.86439852675838,0.4408501700133785
+real,verify,gray_world > unsharp > dcp_guided,3,real,NH-Haze_54,15.054960395294996,0.5247416121364056
+real,verify,unsharp > dcp_guided > gray_world,3,real,O-HAZE_06,20.310012383886495,0.7822646021319994
+real,verify,unsharp > dcp_guided > gray_world,3,real,O-HAZE_14,17.371857919471584,0.7931595374675338
+real,verify,unsharp > dcp_guided > gray_world,3,real,O-HAZE_22,23.193726329805347,0.8991055574652395
+real,verify,unsharp > dcp_guided > gray_world,3,real,O-HAZE_30,19.917949228484623,0.8744220133403463
+real,verify,unsharp > dcp_guided > gray_world,3,real,O-HAZE_38,17.703937222994675,0.7989281219920544
+real,verify,unsharp > dcp_guided > gray_world,3,real,I-HAZE_02,16.958696498443942,0.8028961273827919
+real,verify,unsharp > dcp_guided > gray_world,3,real,I-HAZE_10,16.84001050388574,0.8061163844050103
+real,verify,unsharp > dcp_guided > gray_world,3,real,I-HAZE_18,18.044844634148205,0.6449696048988639
+real,verify,unsharp > dcp_guided > gray_world,3,real,I-HAZE_31,17.716577528157416,0.8518953233821405
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_04,13.70054227271621,0.4491084231388675
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_12,15.926283259648022,0.5696284326925608
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_20,15.234471759832077,0.5665638562682526
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_28,9.571156134312549,0.353262554486709
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_36,13.088068415036826,0.6392060031000119
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_44,9.094956922833749,0.47349625186297395
+real,verify,unsharp > dcp_guided > gray_world,3,real,Dense-Haze_52,11.080235599831683,0.31830151228413567
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_06,14.425534785334996,0.6670955444851597
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_14,14.806682384725427,0.6680621710371771
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_22,15.243242929584577,0.5084774653476546
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_30,10.275400038157507,0.47721451059877773
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_38,14.861042936370787,0.6137260608379208
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_46,10.94798459674952,0.4442953995113399
+real,verify,unsharp > dcp_guided > gray_world,3,real,NH-Haze_54,15.143275359258265,0.5287167258522386
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,O-HAZE_06,16.465710603693665,0.7170389851129233
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,O-HAZE_14,14.65500917761975,0.768271697855386
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,O-HAZE_22,23.620582501144128,0.9009627112325758
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,O-HAZE_30,17.386720089192202,0.8678561744826724
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,O-HAZE_38,18.89926105185,0.8178064348091719
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,I-HAZE_02,15.34077701041408,0.7862905892564692
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,I-HAZE_10,16.71403113555553,0.8063910093525601
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,I-HAZE_18,15.864775297602268,0.6057246016686846
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,I-HAZE_31,13.309538774420883,0.8141005406431314
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_04,16.201886729730354,0.5971073819913123
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_12,14.072701815035387,0.5249319713863433
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_20,16.300271794828618,0.5430000065069175
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_28,12.990434085808893,0.49583830312400085
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_36,11.018176605835741,0.6180485377274659
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_44,9.693934998322955,0.4139291622732526
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,Dense-Haze_52,14.050589903255123,0.341664543673853
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_06,15.227135065684383,0.7085869585753972
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_14,13.85219062098484,0.6797679244390006
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_22,15.317820195074068,0.5235467116289658
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_30,11.406731445224256,0.5521206510598836
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_38,13.766381049702757,0.6124776775736062
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_46,10.474302396160798,0.4169228938476596
+real,verify,unsharp > dcp_guided > blind_veil_local,3,real,NH-Haze_54,14.770193192438716,0.6043415626917444
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,O-HAZE_06,16.19880824112753,0.7198374897266567
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,O-HAZE_14,13.847311976432193,0.6935105839247807
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,O-HAZE_22,18.849470791370916,0.773350993452504
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,O-HAZE_30,17.177579259702338,0.7769827586549954
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,O-HAZE_38,18.105828707604445,0.7812060254364738
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,I-HAZE_02,14.737925766483897,0.778516562895884
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,I-HAZE_10,15.67855552970007,0.8185424226830446
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,I-HAZE_18,16.040545615565637,0.6331447360645922
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,I-HAZE_31,13.284503521054647,0.8075293118044513
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_04,15.839388754726214,0.5985229415587491
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_12,14.088773559658419,0.6194745970603125
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_20,17.352552811353018,0.6034498297821056
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_28,12.098311382133831,0.5409815245483568
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_36,9.545342258821952,0.5642606468765794
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_44,9.668929049527486,0.4923085263073867
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,Dense-Haze_52,13.359310251958902,0.3969012081723779
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_06,15.95961085327449,0.7575642717302117
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_14,13.604127345113586,0.6698962991633719
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_22,15.102071308040086,0.534042285331395
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_30,11.57678072503505,0.5657063913488645
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_38,13.575837227759514,0.6082595579608169
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_46,10.76097850191287,0.4539523750630114
+real,verify,clahe > dcp_guided > blind_veil_local,3,real,NH-Haze_54,14.650713181889943,0.6212757564552361
+real,verify,blind_veil_local,1,real,O-HAZE_06,15.025505976073658,0.7013416640834391
+real,verify,blind_veil_local,1,real,O-HAZE_14,15.750184169088225,0.8266750210270858
+real,verify,blind_veil_local,1,real,O-HAZE_22,20.976945362355192,0.930663321494715
+real,verify,blind_veil_local,1,real,O-HAZE_30,18.933980635811473,0.901905588321799
+real,verify,blind_veil_local,1,real,O-HAZE_38,17.607276285286616,0.814432783895174
+real,verify,blind_veil_local,1,real,I-HAZE_02,16.07836856294805,0.7935666859671144
+real,verify,blind_veil_local,1,real,I-HAZE_10,19.520720541488295,0.8663063569558539
+real,verify,blind_veil_local,1,real,I-HAZE_18,15.391211152320777,0.6490443517187988
+real,verify,blind_veil_local,1,real,I-HAZE_31,13.182619348028107,0.8129726729845278
+real,verify,blind_veil_local,1,real,Dense-Haze_04,15.753904061446896,0.5420514153597842
+real,verify,blind_veil_local,1,real,Dense-Haze_12,14.218894610989006,0.6258421539090734
+real,verify,blind_veil_local,1,real,Dense-Haze_20,16.634802392285437,0.6004549715585109
+real,verify,blind_veil_local,1,real,Dense-Haze_28,14.018874068828806,0.5746693473974303
+real,verify,blind_veil_local,1,real,Dense-Haze_36,11.679453257667902,0.6781059129333983
+real,verify,blind_veil_local,1,real,Dense-Haze_44,10.053666096459919,0.5279520250645461
+real,verify,blind_veil_local,1,real,Dense-Haze_52,14.992329115166498,0.36745970553042323
+real,verify,blind_veil_local,1,real,NH-Haze_06,15.598540268158008,0.651107373969057
+real,verify,blind_veil_local,1,real,NH-Haze_14,14.21352692079456,0.6964926053122523
+real,verify,blind_veil_local,1,real,NH-Haze_22,15.433962419997087,0.5232622268726552
+real,verify,blind_veil_local,1,real,NH-Haze_30,11.195352947205153,0.5385515026198221
+real,verify,blind_veil_local,1,real,NH-Haze_38,13.429186501004082,0.6085520130149153
+real,verify,blind_veil_local,1,real,NH-Haze_46,10.254457242977228,0.33053127207833516
+real,verify,blind_veil_local,1,real,NH-Haze_54,14.682254222583182,0.5560442699147645
+real,verify,lowfreq_subtract,1,real,O-HAZE_06,10.58052193227221,0.6575437085550199
+real,verify,lowfreq_subtract,1,real,O-HAZE_14,14.744344999175764,0.8374223468912191
+real,verify,lowfreq_subtract,1,real,O-HAZE_22,18.946597963675973,0.887741575326017
+real,verify,lowfreq_subtract,1,real,O-HAZE_30,15.638632569188545,0.8558988223840109
+real,verify,lowfreq_subtract,1,real,O-HAZE_38,10.744749640196789,0.7394570694593474
+real,verify,lowfreq_subtract,1,real,I-HAZE_02,18.589436193216997,0.8186606898211011
+real,verify,lowfreq_subtract,1,real,I-HAZE_10,19.998923591428927,0.8700010667677501
+real,verify,lowfreq_subtract,1,real,I-HAZE_18,13.706095154474397,0.619451061593492
+real,verify,lowfreq_subtract,1,real,I-HAZE_31,12.6089218864833,0.7579722075715196
+real,verify,lowfreq_subtract,1,real,Dense-Haze_04,8.964984288263715,0.29727604320148565
+real,verify,lowfreq_subtract,1,real,Dense-Haze_12,10.583698528338381,0.557484282788674
+real,verify,lowfreq_subtract,1,real,Dense-Haze_20,8.588057218633002,0.5135230536558962
+real,verify,lowfreq_subtract,1,real,Dense-Haze_28,12.611694647623377,0.5590730013995394
+real,verify,lowfreq_subtract,1,real,Dense-Haze_36,12.202496205926757,0.6903756071813939
+real,verify,lowfreq_subtract,1,real,Dense-Haze_44,11.875275013524183,0.587253254891421
+real,verify,lowfreq_subtract,1,real,Dense-Haze_52,7.720682579401706,0.2971200081947104
+real,verify,lowfreq_subtract,1,real,NH-Haze_06,14.80485272986952,0.6570195716259748
+real,verify,lowfreq_subtract,1,real,NH-Haze_14,14.17369258225233,0.707516987135646
+real,verify,lowfreq_subtract,1,real,NH-Haze_22,12.1131307122243,0.4786860815255129
+real,verify,lowfreq_subtract,1,real,NH-Haze_30,10.308175161683597,0.581795934227542
+real,verify,lowfreq_subtract,1,real,NH-Haze_38,10.050128445663528,0.5726867027707876
+real,verify,lowfreq_subtract,1,real,NH-Haze_46,10.277671581519366,0.355355355417814
+real,verify,lowfreq_subtract,1,real,NH-Haze_54,11.594331460708815,0.5360626608267228
+real,verify,dcp_guided,1,real,O-HAZE_06,19.535287443036935,0.6685591791626523
+real,verify,dcp_guided,1,real,O-HAZE_14,15.18577878454588,0.7436251341507117
+real,verify,dcp_guided,1,real,O-HAZE_22,20.420033530201845,0.8693176579747868
+real,verify,dcp_guided,1,real,O-HAZE_30,15.856130853297245,0.7593396776894122
+real,verify,dcp_guided,1,real,O-HAZE_38,18.39193215174003,0.8077111900956515
+real,verify,dcp_guided,1,real,I-HAZE_02,15.650312888572342,0.759246843542975
+real,verify,dcp_guided,1,real,I-HAZE_10,15.027486790305758,0.7551618549463973
+real,verify,dcp_guided,1,real,I-HAZE_18,17.140235060163885,0.5949740217068552
+real,verify,dcp_guided,1,real,I-HAZE_31,15.950017504231543,0.7675854957930078
+real,verify,dcp_guided,1,real,Dense-Haze_04,13.705762553789514,0.31070642912747093
+real,verify,dcp_guided,1,real,Dense-Haze_12,14.711335707977131,0.4989317360024352
+real,verify,dcp_guided,1,real,Dense-Haze_20,13.722827272732587,0.532483568919592
+real,verify,dcp_guided,1,real,Dense-Haze_28,9.241736539254884,0.32666484672383206
+real,verify,dcp_guided,1,real,Dense-Haze_36,11.8614392944103,0.5887138796571324
+real,verify,dcp_guided,1,real,Dense-Haze_44,8.802745399433737,0.4483642123408486
+real,verify,dcp_guided,1,real,Dense-Haze_52,10.787542383054864,0.2756009071237924
+real,verify,dcp_guided,1,real,NH-Haze_06,12.719547280514597,0.5334713419857563
+real,verify,dcp_guided,1,real,NH-Haze_14,13.281964038893893,0.5419796098099349
+real,verify,dcp_guided,1,real,NH-Haze_22,12.427480427398987,0.312509571328933
+real,verify,dcp_guided,1,real,NH-Haze_30,8.95349714780477,0.33094236237507413
+real,verify,dcp_guided,1,real,NH-Haze_38,14.18977508062379,0.5055932990315024
+real,verify,dcp_guided,1,real,NH-Haze_46,10.450744949875245,0.37156123839112914
+real,verify,dcp_guided,1,real,NH-Haze_54,13.415368790631097,0.3173600766958807
+real,verify,dcp_guided > clahe,2,real,O-HAZE_06,18.362811451974043,0.8199909265038787
+real,verify,dcp_guided > clahe,2,real,O-HAZE_14,17.64064043208839,0.76077447445537
+real,verify,dcp_guided > clahe,2,real,O-HAZE_22,18.847067818922827,0.8196998701980869
+real,verify,dcp_guided > clahe,2,real,O-HAZE_30,20.303051590343607,0.838823004324111
+real,verify,dcp_guided > clahe,2,real,O-HAZE_38,15.997679454612646,0.7217759510787906
+real,verify,dcp_guided > clahe,2,real,I-HAZE_02,18.162084704131686,0.821591486944361
+real,verify,dcp_guided > clahe,2,real,I-HAZE_10,18.447539847409544,0.848968270576196
+real,verify,dcp_guided > clahe,2,real,I-HAZE_18,18.565152477966457,0.679957774130122
+real,verify,dcp_guided > clahe,2,real,I-HAZE_31,17.15009144474822,0.8690961491651144
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_04,13.565116938932347,0.5527342969365292
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_12,17.080829999058743,0.6685763076335509
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_20,14.158307404217982,0.6025265768312434
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_28,9.668555257136763,0.3953622531298891
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_36,13.335744074466398,0.6819482896371536
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_44,9.208451516146933,0.5106596127644313
+real,verify,dcp_guided > clahe,2,real,Dense-Haze_52,9.94094313183174,0.3648375870045331
+real,verify,dcp_guided > clahe,2,real,NH-Haze_06,16.04555622628385,0.766337669895797
+real,verify,dcp_guided > clahe,2,real,NH-Haze_14,15.388155852373897,0.6820211994255567
+real,verify,dcp_guided > clahe,2,real,NH-Haze_22,13.819113219799636,0.47571401085627557
+real,verify,dcp_guided > clahe,2,real,NH-Haze_30,10.501794977756166,0.5768943628614306
+real,verify,dcp_guided > clahe,2,real,NH-Haze_38,13.777123405890679,0.6167057174817684
+real,verify,dcp_guided > clahe,2,real,NH-Haze_46,11.304490129336738,0.5126439927640196
+real,verify,dcp_guided > clahe,2,real,NH-Haze_54,14.300597872887712,0.5423761504615435
+real,verify,gamma_auto,1,real,O-HAZE_06,10.003646565110461,0.45402749157314554
+real,verify,gamma_auto,1,real,O-HAZE_14,18.65522979103752,0.7618044630341263
+real,verify,gamma_auto,1,real,O-HAZE_22,13.845015006731089,0.8040062160712287
+real,verify,gamma_auto,1,real,O-HAZE_30,18.402563846720547,0.701165565379203
+real,verify,gamma_auto,1,real,O-HAZE_38,12.152807442555183,0.628958612991038
+real,verify,gamma_auto,1,real,I-HAZE_02,17.571695694510634,0.7239249248851362
+real,verify,gamma_auto,1,real,I-HAZE_10,15.751827050445213,0.7070114792697414
+real,verify,gamma_auto,1,real,I-HAZE_18,11.304183124200918,0.5190927214655013
+real,verify,gamma_auto,1,real,I-HAZE_31,17.372672762060468,0.8107295429031756
+real,verify,gamma_auto,1,real,Dense-Haze_04,12.484743362230919,0.19325673991495293
+real,verify,gamma_auto,1,real,Dense-Haze_12,16.179272775215537,0.41962493541366835
+real,verify,gamma_auto,1,real,Dense-Haze_20,12.197077438361106,0.3102517804732584
+real,verify,gamma_auto,1,real,Dense-Haze_28,12.669746171293761,0.5072637833409788
+real,verify,gamma_auto,1,real,Dense-Haze_36,13.205169672632607,0.5370444204153668
+real,verify,gamma_auto,1,real,Dense-Haze_44,10.77304499104136,0.5148815769549809
+real,verify,gamma_auto,1,real,Dense-Haze_52,10.663035068188636,0.20978845277183736
+real,verify,gamma_auto,1,real,NH-Haze_06,12.852500729415874,0.4216862511074244
+real,verify,gamma_auto,1,real,NH-Haze_14,15.696545505767501,0.6364777356426918
+real,verify,gamma_auto,1,real,NH-Haze_22,11.586419299270238,0.34256222258824304
+real,verify,gamma_auto,1,real,NH-Haze_30,10.496357382588117,0.3957913928158107
+real,verify,gamma_auto,1,real,NH-Haze_38,11.652094226401651,0.454942863702341
+real,verify,gamma_auto,1,real,NH-Haze_46,10.377105028198644,0.32459977952761426
+real,verify,gamma_auto,1,real,NH-Haze_54,13.244042111911174,0.44996180034839184
+real,verify,none,1,real,O-HAZE_06,11.628607681479624,0.5021771736068229
+real,verify,none,1,real,O-HAZE_14,14.812323485178712,0.7042609976564761
+real,verify,none,1,real,O-HAZE_22,19.795968855456586,0.901386485290168
+real,verify,none,1,real,O-HAZE_30,17.667307236860026,0.6918740499844819
+real,verify,none,1,real,O-HAZE_38,12.875708407584908,0.6463939890680136
+real,verify,none,1,real,I-HAZE_02,15.414026432906347,0.6834089267649485
+real,verify,none,1,real,I-HAZE_10,17.311399781526298,0.7264440871462443
+real,verify,none,1,real,I-HAZE_18,8.694534448987097,0.4407830338127808
+real,verify,none,1,real,I-HAZE_31,15.052709167032585,0.7680890361174125
+real,verify,none,1,real,Dense-Haze_04,9.124854031428958,0.1585669988198739
+real,verify,none,1,real,Dense-Haze_12,12.667808680619562,0.3908566145902495
+real,verify,none,1,real,Dense-Haze_20,9.248696229171864,0.27309019644808785
+real,verify,none,1,real,Dense-Haze_28,11.163545380255899,0.5111643728159064
+real,verify,none,1,real,Dense-Haze_36,11.409158915453578,0.5084126397206115
+real,verify,none,1,real,Dense-Haze_44,8.956818022696652,0.5178616293549526
+real,verify,none,1,real,Dense-Haze_52,6.39967872241781,0.16186673247092284
+real,verify,none,1,real,NH-Haze_06,13.40162997943635,0.4325699474389853
+real,verify,none,1,real,NH-Haze_14,15.876115671626817,0.6387566178681442
+real,verify,none,1,real,NH-Haze_22,12.675844405127489,0.357740128634019
+real,verify,none,1,real,NH-Haze_30,10.258052199419275,0.39348890040253365
+real,verify,none,1,real,NH-Haze_38,9.371476617739283,0.3984629223882634
+real,verify,none,1,real,NH-Haze_46,8.244944926955405,0.2827116359121152
+real,verify,none,1,real,NH-Haze_54,13.307748820270401,0.4506638391365612

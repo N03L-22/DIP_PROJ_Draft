@@ -1,0 +1,9 @@
+methods,band,spearman_milky_vs_real,spearman_original_vs_real,best_real,best_milky
+water methods,all,0.44,0.41,red_comp,hist_spec
+water methods,mild,0.18,0.43,red_comp,hist_eq
+water methods,medium,0.41,0.4,gamma_auto,hist_spec
+water methods,heavy,0.47,0.32,gamma_auto,hist_spec
+haze methods,all,0.36,,unsharp,hist_spec
+haze methods,mild,0.3,,unsharp,hist_eq
+haze methods,medium,0.31,,gamma_auto,hist_spec
+haze methods,heavy,0.31,,gamma_auto,hist_spec

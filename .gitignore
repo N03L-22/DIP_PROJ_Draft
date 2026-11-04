@@ -1,0 +1,23 @@
+# environment and caches
+.venv/
+__pycache__/
+*.pyc
+.claude/
+
+# datasets and downloads (gigabytes; several licences forbid redistribution, e.g. UIEB) - see data/README.md for how to fetch them
+data/
+
+# resumable job checkpoints and LaTeX build files
+results/checkpoints/
+results_original_presets/checkpoints/
+report/**/*.aux
+report/**/*.log
+report/**/*.out
+report/**/*.toc
+report/**/*.fls
+
+# figures made from UIEB photographs (UIEB forbids redistribution of its images)
+results/figures/water_real_*
+results/figures/report_ba_uieb.jpg
+results/figures/pipeline_water.jpg
+results_original_presets/figures/water_real_*

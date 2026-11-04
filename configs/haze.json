@@ -1,0 +1,57 @@
+{
+ "medium": "haze",
+ "max_side": 512,
+ "methods": [
+  {
+   "name": "none"
+  },
+  {
+   "name": "dcp"
+  },
+  {
+   "name": "dcp_guided"
+  },
+  {
+   "name": "dcp_clahe"
+  },
+  {
+   "name": "tarel"
+  },
+  {
+   "name": "fusion"
+  },
+  {
+   "name": "fusion_dcp"
+  },
+  {
+   "name": "retinex"
+  },
+  {
+   "name": "clahe"
+  },
+  {
+   "name": "hist_eq"
+  },
+  {
+   "name": "hist_eq_rgb"
+  },
+  {
+   "name": "eq_hsi"
+  },
+  {
+   "name": "hist_spec"
+  },
+  {
+   "name": "gamma_auto"
+  },
+  {
+   "name": "stretch"
+  },
+  {
+   "name": "unsharp"
+  },
+  {
+   "name": "top_hat"
+  }
+ ]
+}

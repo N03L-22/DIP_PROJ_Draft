@@ -1,0 +1,217 @@
+world,phase,chain,length,level,picture,psnr,ssim
+synthetic,verify,hist_eq > clahe > dcp_guided,3,mild,nyu_0397,16.84684451295654,0.5803318562380334
+synthetic,verify,hist_eq > clahe > dcp_guided,3,mild,nyu_0460,18.756183503502402,0.7792527333032501
+synthetic,verify,hist_eq > clahe > dcp_guided,3,mild,nyu_0528,12.78379753244888,0.5493053773775239
+synthetic,verify,hist_eq > clahe > dcp_guided,3,mild,nyu_0586,15.648377790066812,0.667526817379259
+synthetic,verify,hist_eq > clahe > dcp_guided,3,mild,nyu_0649,11.887634492996725,0.5371637041425067
+synthetic,verify,hist_eq > clahe > dcp_guided,3,mild,nyu_0736,13.089988512857545,0.5390760675502534
+synthetic,verify,hist_eq > clahe > dcp_guided,3,medium,nyu_0397,13.700733169195773,0.4963136922031342
+synthetic,verify,hist_eq > clahe > dcp_guided,3,medium,nyu_0460,16.59074673028997,0.6958001293474382
+synthetic,verify,hist_eq > clahe > dcp_guided,3,medium,nyu_0528,12.23993018937582,0.5273525639654061
+synthetic,verify,hist_eq > clahe > dcp_guided,3,medium,nyu_0586,15.217726025943021,0.6274020619936165
+synthetic,verify,hist_eq > clahe > dcp_guided,3,medium,nyu_0649,12.357253866965571,0.5872449136941702
+synthetic,verify,hist_eq > clahe > dcp_guided,3,medium,nyu_0736,12.730007635589038,0.4742700166863889
+synthetic,verify,hist_eq > clahe > dcp_guided,3,heavy,nyu_0397,11.033664425573447,0.4165199031541393
+synthetic,verify,hist_eq > clahe > dcp_guided,3,heavy,nyu_0460,13.907438622328856,0.5156432770120207
+synthetic,verify,hist_eq > clahe > dcp_guided,3,heavy,nyu_0528,12.296621718986955,0.37341498779611615
+synthetic,verify,hist_eq > clahe > dcp_guided,3,heavy,nyu_0586,13.218515291624023,0.4726436877582438
+synthetic,verify,hist_eq > clahe > dcp_guided,3,heavy,nyu_0649,11.272712749906027,0.5051568464089264
+synthetic,verify,hist_eq > clahe > dcp_guided,3,heavy,nyu_0736,12.296331930537615,0.39487058277318066
+synthetic,verify,hist_eq > dcp_guided > clahe,3,mild,nyu_0397,16.843978253701174,0.5670741086573355
+synthetic,verify,hist_eq > dcp_guided > clahe,3,mild,nyu_0460,17.53383851974394,0.7524264427890648
+synthetic,verify,hist_eq > dcp_guided > clahe,3,mild,nyu_0528,12.328528345736963,0.5380817915445056
+synthetic,verify,hist_eq > dcp_guided > clahe,3,mild,nyu_0586,15.801302359509176,0.6586597890315797
+synthetic,verify,hist_eq > dcp_guided > clahe,3,mild,nyu_0649,12.015521482679162,0.531788320507935
+synthetic,verify,hist_eq > dcp_guided > clahe,3,mild,nyu_0736,12.14424870212513,0.48837766958842793
+synthetic,verify,hist_eq > dcp_guided > clahe,3,medium,nyu_0397,13.88943036477474,0.49088654405126836
+synthetic,verify,hist_eq > dcp_guided > clahe,3,medium,nyu_0460,15.97414715072528,0.673282440001309
+synthetic,verify,hist_eq > dcp_guided > clahe,3,medium,nyu_0528,11.300729317969555,0.5051739693296907
+synthetic,verify,hist_eq > dcp_guided > clahe,3,medium,nyu_0586,15.102867395985811,0.6096077017561543
+synthetic,verify,hist_eq > dcp_guided > clahe,3,medium,nyu_0649,12.145235918520708,0.5620306144033889
+synthetic,verify,hist_eq > dcp_guided > clahe,3,medium,nyu_0736,11.996597528663816,0.4426626153731786
+synthetic,verify,hist_eq > dcp_guided > clahe,3,heavy,nyu_0397,9.650024063285553,0.3976858825024112
+synthetic,verify,hist_eq > dcp_guided > clahe,3,heavy,nyu_0460,13.929909079017207,0.5081145960800991
+synthetic,verify,hist_eq > dcp_guided > clahe,3,heavy,nyu_0528,12.120984535179556,0.37206112123021645
+synthetic,verify,hist_eq > dcp_guided > clahe,3,heavy,nyu_0586,12.971958646315025,0.4534485107013282
+synthetic,verify,hist_eq > dcp_guided > clahe,3,heavy,nyu_0649,11.41089667961674,0.48109713353386
+synthetic,verify,hist_eq > dcp_guided > clahe,3,heavy,nyu_0736,11.953496417906296,0.3812906724133814
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,mild,nyu_0397,16.93927014716187,0.672349841855489
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,mild,nyu_0460,16.860579222250898,0.7810240136693603
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,mild,nyu_0528,12.185470141612004,0.5726346013157276
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,mild,nyu_0586,15.889343332236736,0.7086304868600187
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,mild,nyu_0649,15.856246558012245,0.7712752337420997
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,mild,nyu_0736,10.636171768108513,0.5394577874324099
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,medium,nyu_0397,13.565985088524382,0.5299253070894416
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,medium,nyu_0460,14.864639463400238,0.6937101076360798
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,medium,nyu_0528,10.723240421553239,0.49839578272505025
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,medium,nyu_0586,14.707772262139471,0.6467437981683414
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,medium,nyu_0649,15.606719618371978,0.7460779432076757
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,medium,nyu_0736,9.829519966086561,0.4498410394856345
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,heavy,nyu_0397,9.80896309297995,0.40403074804386946
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,heavy,nyu_0460,13.516015246257833,0.5617402477696227
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,heavy,nyu_0528,9.90543509569434,0.35806438177972794
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,heavy,nyu_0586,12.912029320378037,0.510543802074634
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,heavy,nyu_0649,13.790569116004843,0.6061913570423162
+synthetic,verify,hist_eq > dcp_guided > gamma_auto,3,heavy,nyu_0736,9.5701555918996,0.34452258730942803
+synthetic,verify,hist_eq > clahe > gamma_auto,3,mild,nyu_0397,16.579103170783206,0.6107859645035346
+synthetic,verify,hist_eq > clahe > gamma_auto,3,mild,nyu_0460,16.429777643459246,0.7868437922303849
+synthetic,verify,hist_eq > clahe > gamma_auto,3,mild,nyu_0528,12.207763903751644,0.5383292843423466
+synthetic,verify,hist_eq > clahe > gamma_auto,3,mild,nyu_0586,15.042699839821648,0.659319150543269
+synthetic,verify,hist_eq > clahe > gamma_auto,3,mild,nyu_0649,15.681879267510082,0.6209354253038081
+synthetic,verify,hist_eq > clahe > gamma_auto,3,mild,nyu_0736,10.600740588315286,0.5115012549410467
+synthetic,verify,hist_eq > clahe > gamma_auto,3,medium,nyu_0397,12.964187922996516,0.5064741971914496
+synthetic,verify,hist_eq > clahe > gamma_auto,3,medium,nyu_0460,14.586106209127037,0.7169174199558328
+synthetic,verify,hist_eq > clahe > gamma_auto,3,medium,nyu_0528,11.20668266243288,0.5210263296179126
+synthetic,verify,hist_eq > clahe > gamma_auto,3,medium,nyu_0586,14.373509472030523,0.6378318361694143
+synthetic,verify,hist_eq > clahe > gamma_auto,3,medium,nyu_0649,14.641523028438638,0.6369184178126288
+synthetic,verify,hist_eq > clahe > gamma_auto,3,medium,nyu_0736,9.31778634791517,0.44189625049072295
+synthetic,verify,hist_eq > clahe > gamma_auto,3,heavy,nyu_0397,9.355145937755726,0.36249333441760134
+synthetic,verify,hist_eq > clahe > gamma_auto,3,heavy,nyu_0460,12.498412226756749,0.5651333151567443
+synthetic,verify,hist_eq > clahe > gamma_auto,3,heavy,nyu_0528,10.561040878931795,0.3935130682981363
+synthetic,verify,hist_eq > clahe > gamma_auto,3,heavy,nyu_0586,12.54890383717626,0.51676072592851
+synthetic,verify,hist_eq > clahe > gamma_auto,3,heavy,nyu_0649,13.379009313783472,0.5879232543164883
+synthetic,verify,hist_eq > clahe > gamma_auto,3,heavy,nyu_0736,9.327689397051754,0.33015493433360527
+synthetic,verify,gamma_auto > hist_eq > clahe,3,mild,nyu_0397,16.78870945801034,0.6110139785691697
+synthetic,verify,gamma_auto > hist_eq > clahe,3,mild,nyu_0460,16.057224567047875,0.7886066210112704
+synthetic,verify,gamma_auto > hist_eq > clahe,3,mild,nyu_0528,11.631977194614688,0.5259299642583591
+synthetic,verify,gamma_auto > hist_eq > clahe,3,mild,nyu_0586,14.703766622518879,0.653026196450687
+synthetic,verify,gamma_auto > hist_eq > clahe,3,mild,nyu_0649,16.736303475520685,0.6459075702543048
+synthetic,verify,gamma_auto > hist_eq > clahe,3,mild,nyu_0736,9.977806263405329,0.5016527944813296
+synthetic,verify,gamma_auto > hist_eq > clahe,3,medium,nyu_0397,12.66552963111289,0.5058556561324273
+synthetic,verify,gamma_auto > hist_eq > clahe,3,medium,nyu_0460,14.385687303525449,0.7293468354585717
+synthetic,verify,gamma_auto > hist_eq > clahe,3,medium,nyu_0528,10.923808162291966,0.518695199027609
+synthetic,verify,gamma_auto > hist_eq > clahe,3,medium,nyu_0586,14.072464266229282,0.6352234865521572
+synthetic,verify,gamma_auto > hist_eq > clahe,3,medium,nyu_0649,16.326686136708798,0.683056469200826
+synthetic,verify,gamma_auto > hist_eq > clahe,3,medium,nyu_0736,7.8227202188855705,0.42012460113602623
+synthetic,verify,gamma_auto > hist_eq > clahe,3,heavy,nyu_0397,11.800172083235925,0.42920460667651233
+synthetic,verify,gamma_auto > hist_eq > clahe,3,heavy,nyu_0460,12.111993979137397,0.5811241134105342
+synthetic,verify,gamma_auto > hist_eq > clahe,3,heavy,nyu_0528,8.291422146965985,0.37016546779009935
+synthetic,verify,gamma_auto > hist_eq > clahe,3,heavy,nyu_0586,11.940727845627979,0.5243387262643011
+synthetic,verify,gamma_auto > hist_eq > clahe,3,heavy,nyu_0649,14.852883681994594,0.6527510389859917
+synthetic,verify,gamma_auto > hist_eq > clahe,3,heavy,nyu_0736,5.157612027846016,0.27447038317546174
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,mild,nyu_0397,14.825341452659176,0.585251362841024
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,mild,nyu_0460,14.533805587075982,0.7805321931238806
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,mild,nyu_0528,10.916495365796932,0.5060036125406695
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,mild,nyu_0586,12.359448054169329,0.6124550228911819
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,mild,nyu_0649,13.946927249436445,0.639940804020247
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,mild,nyu_0736,13.695202108796229,0.571897671107334
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,medium,nyu_0397,13.8491791298315,0.49907703264425574
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,medium,nyu_0460,14.17472214517149,0.7218090775780627
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,medium,nyu_0528,10.822473728696568,0.511605129022917
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,medium,nyu_0586,12.000887237778182,0.5868438996768807
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,medium,nyu_0649,13.569618140599287,0.6851677147572607
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,medium,nyu_0736,12.97391407234569,0.4974956785430913
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,heavy,nyu_0397,12.240189603300319,0.36207186173455197
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,heavy,nyu_0460,13.123276517269877,0.5842886223037612
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,heavy,nyu_0528,10.668347439084975,0.38836557121891574
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,heavy,nyu_0586,11.134132780791086,0.47644827052729727
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,heavy,nyu_0649,12.545433233305683,0.6409343477702465
+synthetic,verify,hist_eq > clahe > lowfreq_subtract,3,heavy,nyu_0736,10.602561359862497,0.370402243940023
+synthetic,verify,blind_veil_local,1,mild,nyu_0397,14.881199525303542,0.6371016402430897
+synthetic,verify,blind_veil_local,1,mild,nyu_0460,13.09940271908549,0.6641503287231191
+synthetic,verify,blind_veil_local,1,mild,nyu_0528,10.942895706357254,0.5234408480568761
+synthetic,verify,blind_veil_local,1,mild,nyu_0586,13.013431982134577,0.6920462141779676
+synthetic,verify,blind_veil_local,1,mild,nyu_0649,12.052037889588762,0.8407203691803046
+synthetic,verify,blind_veil_local,1,mild,nyu_0736,13.847954252422783,0.5817873894744173
+synthetic,verify,blind_veil_local,1,medium,nyu_0397,13.748880208860708,0.5059010779200338
+synthetic,verify,blind_veil_local,1,medium,nyu_0460,12.47863624704695,0.5747615352306245
+synthetic,verify,blind_veil_local,1,medium,nyu_0528,10.230240011786444,0.4268646235608444
+synthetic,verify,blind_veil_local,1,medium,nyu_0586,11.717827910057522,0.5859331729569734
+synthetic,verify,blind_veil_local,1,medium,nyu_0649,11.901225456949387,0.8021848505576071
+synthetic,verify,blind_veil_local,1,medium,nyu_0736,12.697630927228348,0.4640110489703136
+synthetic,verify,blind_veil_local,1,heavy,nyu_0397,12.459740184010704,0.3736726945324263
+synthetic,verify,blind_veil_local,1,heavy,nyu_0460,11.607116148386819,0.42840072232038445
+synthetic,verify,blind_veil_local,1,heavy,nyu_0528,9.307363230126112,0.28657273651417325
+synthetic,verify,blind_veil_local,1,heavy,nyu_0586,10.52180146365025,0.4361033890074484
+synthetic,verify,blind_veil_local,1,heavy,nyu_0649,11.54042151885073,0.6700738294032628
+synthetic,verify,blind_veil_local,1,heavy,nyu_0736,11.987827600577699,0.3864227487829744
+synthetic,verify,lowfreq_subtract,1,mild,nyu_0397,13.116952328587036,0.5732085861635403
+synthetic,verify,lowfreq_subtract,1,mild,nyu_0460,13.830209210537634,0.701137334415654
+synthetic,verify,lowfreq_subtract,1,mild,nyu_0528,11.36611102006804,0.5555057195987835
+synthetic,verify,lowfreq_subtract,1,mild,nyu_0586,11.899907979093605,0.6674187761496829
+synthetic,verify,lowfreq_subtract,1,mild,nyu_0649,14.873124195968304,0.8949493035251654
+synthetic,verify,lowfreq_subtract,1,mild,nyu_0736,14.211143220507275,0.5998162046165771
+synthetic,verify,lowfreq_subtract,1,medium,nyu_0397,13.25859982302752,0.4726522584750425
+synthetic,verify,lowfreq_subtract,1,medium,nyu_0460,12.991668133536074,0.6091716870942473
+synthetic,verify,lowfreq_subtract,1,medium,nyu_0528,10.174622032595575,0.43819812039766987
+synthetic,verify,lowfreq_subtract,1,medium,nyu_0586,11.251756726603613,0.5875234701855397
+synthetic,verify,lowfreq_subtract,1,medium,nyu_0649,14.924554923322585,0.8549650721319785
+synthetic,verify,lowfreq_subtract,1,medium,nyu_0736,12.845077096859576,0.46712118244065387
+synthetic,verify,lowfreq_subtract,1,heavy,nyu_0397,12.521601552959945,0.37713912882899975
+synthetic,verify,lowfreq_subtract,1,heavy,nyu_0460,11.111558552315714,0.41391306891097046
+synthetic,verify,lowfreq_subtract,1,heavy,nyu_0528,9.043136789181915,0.30583406593562024
+synthetic,verify,lowfreq_subtract,1,heavy,nyu_0586,10.451501291607153,0.42994429274939955
+synthetic,verify,lowfreq_subtract,1,heavy,nyu_0649,15.759692062123463,0.7199865715070711
+synthetic,verify,lowfreq_subtract,1,heavy,nyu_0736,11.99158739233737,0.38837027828820103
+synthetic,verify,dcp_guided,1,mild,nyu_0397,16.904897159092354,0.7456196392815525
+synthetic,verify,dcp_guided,1,mild,nyu_0460,15.091224131723532,0.7078028257652277
+synthetic,verify,dcp_guided,1,mild,nyu_0528,10.77031233615986,0.5455023636015509
+synthetic,verify,dcp_guided,1,mild,nyu_0586,15.98637371988074,0.7689686649098957
+synthetic,verify,dcp_guided,1,mild,nyu_0649,9.940331108141558,0.7470184201807148
+synthetic,verify,dcp_guided,1,mild,nyu_0736,16.43709081928901,0.6943125033869185
+synthetic,verify,dcp_guided,1,medium,nyu_0397,15.428201735587884,0.6536161112526649
+synthetic,verify,dcp_guided,1,medium,nyu_0460,13.878131934335007,0.6194303414431929
+synthetic,verify,dcp_guided,1,medium,nyu_0528,9.438141510791478,0.41346661733158624
+synthetic,verify,dcp_guided,1,medium,nyu_0586,13.307742849794455,0.6462007538563783
+synthetic,verify,dcp_guided,1,medium,nyu_0649,13.243025505613053,0.829302987809041
+synthetic,verify,dcp_guided,1,medium,nyu_0736,11.642788172724961,0.4800913624239392
+synthetic,verify,dcp_guided,1,heavy,nyu_0397,11.773037225254331,0.41545275093461376
+synthetic,verify,dcp_guided,1,heavy,nyu_0460,13.054594698193657,0.5022753146791433
+synthetic,verify,dcp_guided,1,heavy,nyu_0528,8.128820047346833,0.26973299761398023
+synthetic,verify,dcp_guided,1,heavy,nyu_0586,11.290146206723172,0.4849417638855053
+synthetic,verify,dcp_guided,1,heavy,nyu_0649,17.554359352615645,0.7720497564743293
+synthetic,verify,dcp_guided,1,heavy,nyu_0736,7.6721300709324645,0.30652127156007203
+synthetic,verify,dcp_guided > clahe,2,mild,nyu_0397,17.02493953516752,0.7285198895860737
+synthetic,verify,dcp_guided > clahe,2,mild,nyu_0460,18.11764364614212,0.8127797575814596
+synthetic,verify,dcp_guided > clahe,2,mild,nyu_0528,11.688356198969672,0.60181299897576
+synthetic,verify,dcp_guided > clahe,2,mild,nyu_0586,15.400510914742878,0.7231568175118759
+synthetic,verify,dcp_guided > clahe,2,mild,nyu_0649,10.850698804314515,0.75200996241986
+synthetic,verify,dcp_guided > clahe,2,mild,nyu_0736,15.698258380318483,0.6924502398744653
+synthetic,verify,dcp_guided > clahe,2,medium,nyu_0397,14.215761790787935,0.6065728036124729
+synthetic,verify,dcp_guided > clahe,2,medium,nyu_0460,16.2123709598321,0.7156195670850892
+synthetic,verify,dcp_guided > clahe,2,medium,nyu_0528,10.24265750339735,0.48042195326767834
+synthetic,verify,dcp_guided > clahe,2,medium,nyu_0586,13.37564494505607,0.6522310115718325
+synthetic,verify,dcp_guided > clahe,2,medium,nyu_0649,13.895143849666562,0.782772609468037
+synthetic,verify,dcp_guided > clahe,2,medium,nyu_0736,10.877337368556594,0.4828864281055159
+synthetic,verify,dcp_guided > clahe,2,heavy,nyu_0397,11.200731176342703,0.3987338915586729
+synthetic,verify,dcp_guided > clahe,2,heavy,nyu_0460,14.111923953904913,0.5541439400228604
+synthetic,verify,dcp_guided > clahe,2,heavy,nyu_0528,8.578321749139015,0.28442352594331455
+synthetic,verify,dcp_guided > clahe,2,heavy,nyu_0586,11.050094656482731,0.5151737234868856
+synthetic,verify,dcp_guided > clahe,2,heavy,nyu_0649,16.848074300959876,0.7736675934661505
+synthetic,verify,dcp_guided > clahe,2,heavy,nyu_0736,7.630637294206072,0.3094988037198941
+synthetic,verify,gamma_auto,1,mild,nyu_0397,15.507943499952216,0.6246989615402447
+synthetic,verify,gamma_auto,1,mild,nyu_0460,14.770299699079272,0.698365249606284
+synthetic,verify,gamma_auto,1,mild,nyu_0528,11.182676833777629,0.5197577028045103
+synthetic,verify,gamma_auto,1,mild,nyu_0586,14.982287131655628,0.6924763981749237
+synthetic,verify,gamma_auto,1,mild,nyu_0649,17.22076351505431,0.8886846948646706
+synthetic,verify,gamma_auto,1,mild,nyu_0736,11.62764280055388,0.5109790749164057
+synthetic,verify,gamma_auto,1,medium,nyu_0397,14.284091374080699,0.5188814941308434
+synthetic,verify,gamma_auto,1,medium,nyu_0460,13.173014954214741,0.5909488635695025
+synthetic,verify,gamma_auto,1,medium,nyu_0528,9.842785243907286,0.426688650380749
+synthetic,verify,gamma_auto,1,medium,nyu_0586,13.4746632457381,0.6115445172214015
+synthetic,verify,gamma_auto,1,medium,nyu_0649,16.355021450845527,0.8241935682668142
+synthetic,verify,gamma_auto,1,medium,nyu_0736,10.903193795569216,0.426199674105679
+synthetic,verify,gamma_auto,1,heavy,nyu_0397,13.272847587263005,0.4055126154011455
+synthetic,verify,gamma_auto,1,heavy,nyu_0460,11.653129135428655,0.40773164005622187
+synthetic,verify,gamma_auto,1,heavy,nyu_0528,8.816029658061861,0.32202005916841303
+synthetic,verify,gamma_auto,1,heavy,nyu_0586,11.082054974831975,0.4454568728495818
+synthetic,verify,gamma_auto,1,heavy,nyu_0649,14.812888799641332,0.6908333739724867
+synthetic,verify,gamma_auto,1,heavy,nyu_0736,10.485876279929222,0.3675921927769051
+synthetic,verify,none,1,mild,nyu_0397,15.070717305871764,0.6134718856487863
+synthetic,verify,none,1,mild,nyu_0460,13.312355346076568,0.6673790932113409
+synthetic,verify,none,1,mild,nyu_0528,10.391904776112167,0.5030327722839193
+synthetic,verify,none,1,mild,nyu_0586,16.28907986822093,0.727495849649077
+synthetic,verify,none,1,mild,nyu_0649,19.48464977446909,0.883653854450292
+synthetic,verify,none,1,mild,nyu_0736,10.404054675445204,0.4836991826584534
+synthetic,verify,none,1,medium,nyu_0397,12.648541993076222,0.4825417794161539
+synthetic,verify,none,1,medium,nyu_0460,11.008194198429928,0.5397686612883098
+synthetic,verify,none,1,medium,nyu_0528,8.291859282527046,0.4041665359937074
+synthetic,verify,none,1,medium,nyu_0586,13.265184295003465,0.605946798307659
+synthetic,verify,none,1,medium,nyu_0649,17.69133387782447,0.8084549893488352
+synthetic,verify,none,1,medium,nyu_0736,8.489975186211433,0.3830632631837356
+synthetic,verify,none,1,heavy,nyu_0397,10.459459100353612,0.36713306927125516
+synthetic,verify,none,1,heavy,nyu_0460,8.968725341282926,0.3536561543321555
+synthetic,verify,none,1,heavy,nyu_0528,6.695346189263066,0.31378726317327477
+synthetic,verify,none,1,heavy,nyu_0586,9.382796714249393,0.41446860980856143
+synthetic,verify,none,1,heavy,nyu_0649,14.539831282004023,0.6769855715275576
+synthetic,verify,none,1,heavy,nyu_0736,7.224412022068538,0.3191248204111953
