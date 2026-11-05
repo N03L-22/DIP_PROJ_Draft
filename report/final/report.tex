@@ -89,6 +89,16 @@ Water & Same, but red light dies first, so far things turn blue-green. & Each co
 Glass & A milky film, smudges, and \emph{raindrops}. Drops act like tiny lenses that replace small patches of the scene. & Raindrops are patches, not a smooth veil.\\
 Plastic & Dims, tints (often yellow), \emph{blurs} slightly, and adds a veil. & The blur is new; it is the same everywhere (not distance-dependent).\\\bottomrule
 \end{tabular}\end{center}
+\paragraph{The same four media in the literature's terms.}
+\begin{center}\small\begin{tabular}{p{1.4cm}p{4.6cm}p{4.4cm}p{4.8cm}}\toprule
+Medium & Typical cause & Visual result & Standard term\\\midrule
+Air & smoke, dust, fog, humidity & grey or blue wash, distant detail lost & \textbf{atmospheric attenuation} (scattering and airlight)\\
+Water & algae, sand, plankton, floating particles & green or blue tint, strong contrast loss & \textbf{turbidity} and \textbf{backscatter}\\
+Plastic & polymer crystals, surface scratches & milky, cloudy or semi-opaque & \textbf{material haze} (ASTM D1003: the share of transmitted light scattered by more than 2.5 degrees)\\
+Glass & smudges, dust, condensation, texture & halos around lights, washed-out contrast & \textbf{veiling glare} and \textbf{smudge flare}\\\bottomrule
+\end{tabular}\end{center}
+In our equations: atmospheric attenuation and backscatter are both the $tJ+A(1-t)$ of Section~\ref{sec:media}; our plastic model (blur, tint and a milky veil) stands in for material haze; our glass film and smudge stand in for veiling glare.
+
 When two media are stacked (say, murky water seen through plastic), the equation is simply applied twice: $I_2 = t_1 t_2 J + t_2 A_1(1-t_1) + A_2(1-t_2)$.
 
 \subsection{What this means for frequencies (a second view)}
@@ -116,6 +126,20 @@ Plastic & Same, blur and tint. & \textbf{None exists.} Own captures are planned.
 \paragraph{Why use made-up pictures at all?} Their true answer is exact, we can make as many as we like at any strength, and we can test one thing at a time. \paragraph{What is the catch?} Our equation is a model: if it is wrong, methods may look good on made-up pictures and still fail on real ones. Section~\ref{sec:compare} measures how big that catch is.
 
 \begin{figure}[H]\centering\includegraphics[width=.9\textwidth]{data_gallery.jpg}\caption{A sample from each source (spoiled picture, then its clear twin where there is one). Rows 1 to 2: real haze (O-HAZE, I-HAZE, Dense-Haze, NH-Haze). Row 3: real raindrops and real tank water. Row 4: outdoor haze made by the RESIDE authors. Row 5: one clear NYU indoor scene and the same scene degraded by each of our four models (\SYN). The UIEB ocean photos are shown in Section~\ref{sec:real}.}\end{figure}
+\begin{table}[H]\centering\resizebox{\textwidth}{!}{\small\begin{tabular}{p{1.2cm}p{3.1cm}p{4.9cm}p{1.7cm}p{6.6cm}}\toprule
+Medium & Cause & Data we have & Coverage & More datasets found (not downloaded)\\\midrule
+Air & fog & O-HAZE, I-HAZE, Dense-Haze, NH-Haze (real fog-machine pairs, 185); RESIDE (outdoor, made) & covered & --\\
+Air & smoke & NH-Haze (uneven machine fog, as a stand-in) & partly & A2I2-Haze: real smoke-machine pairs from the air and the ground, with in-place smoke measurements; behind a login and a consent notice, terms not stated\\
+Air & dust, humidity & none & missing & none found\\
+Water & turbidity, backscatter & TUB tank pairs (milk, near-clear reference) & covered, with a caveat (milk) & TURBID (milk, chlorophyll, blue-dye subsets with a clear reference; source not found); UFEN (talcum powder, with turbidity readings); SOTRUE (stereo, turbid; not checked)\\
+Water & green or blue tint & UIEB ocean photos, no reference & partly & TURBID blue-dye subset (clear reference)\\
+Water & algae, sand, plankton & none & missing & TURBID chlorophyll subset (closest to algae); UFEN talcum powder (as fine sediment)\\
+Plastic & material haze, scratches & none (synthetic model only) & missing & none public; papers use ground-glass diffusers with a clear reference but release no data\\
+Glass & raindrops & RainDrop pairs (58) & covered & Eigen et al. 2013 (dirt and rain on windows); ``Seeing through Unclear Glass'' (release unconfirmed)\\
+Glass & smudges, dust, condensation & none (synthetic film and smudge) & missing & Flare7K++ (962 real flare photos taken through dusty and scratched lenses; non-commercial; Google Drive and Baidu)\\
+Glass & halos around lights & none & missing & Flare7K++ (night-time flare)\\
+Stacks & several media at once & none (synthetic only) & missing & none found\\\bottomrule
+\end{tabular}}\caption{Coverage of the causes in the table above by the data we have, and what else exists. ``Covered'' means real pictures with a clean reference.}\end{table}
 \begin{table}[H]\centering\resizebox{\textwidth}{!}{\scriptsize\tablein{data_matrix}}\caption{Which pictures exist and which are actually scored. ``Main comparison'' is the first method-by-method comparison (Section~\ref{sec:synthetic} and~\ref{sec:real}); the last column lists the largest other uses.}\end{table}
 
 %--------------------------------------------------------------------
