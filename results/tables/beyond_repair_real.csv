@@ -1,0 +1,306 @@
+world,picture,sharpness_ratio,contrast_ratio,none,best_method,best_gain
+real haze,O-HAZE_01,0.445,0.817,14.59,fusion_dcp,2.2
+real haze,O-HAZE_02,0.556,0.742,15.53,unsharp,0.15
+real haze,O-HAZE_03,0.456,0.893,14.97,dcp_guided,4.56
+real haze,O-HAZE_04,0.491,0.75,21.65,unsharp,0.16
+real haze,O-HAZE_05,0.168,0.589,10.89,dcp,8.56
+real haze,O-HAZE_06,0.35,0.863,11.57,dcp,8.67
+real haze,O-HAZE_07,0.644,0.795,17.33,dcp_guided,4.49
+real haze,O-HAZE_08,0.373,1.28,11.24,dcp_clahe,5.91
+real haze,O-HAZE_09,0.174,0.312,11.52,dcp,5.05
+real haze,O-HAZE_10,0.509,0.898,12.3,dcp_guided,4.29
+real haze,O-HAZE_11,0.373,0.825,13.16,fusion_dcp,3.02
+real haze,O-HAZE_12,0.462,0.396,13.4,clahe,2.98
+real haze,O-HAZE_13,0.385,0.473,11.43,top_hat,7.38
+real haze,O-HAZE_14,0.352,0.569,14.71,fusion,5.33
+real haze,O-HAZE_15,0.253,0.688,10.63,fusion_dcp,5.86
+real haze,O-HAZE_16,0.226,0.718,10.48,fusion_dcp,3.57
+real haze,O-HAZE_17,0.223,0.38,9.89,top_hat,4.89
+real haze,O-HAZE_18,0.74,1.037,14.44,dcp_guided,6.82
+real haze,O-HAZE_19,0.52,1.032,12.12,dcp,5.54
+real haze,O-HAZE_20,0.276,0.937,9.47,dcp_clahe,6.96
+real haze,O-HAZE_21,0.232,0.692,10.58,dcp_clahe,6.15
+real haze,O-HAZE_22,0.735,0.869,19.73,fusion_dcp,2.91
+real haze,O-HAZE_23,0.708,1.188,17.7,dcp_guided,3.22
+real haze,O-HAZE_24,0.565,0.919,14.88,dcp_guided,3.26
+real haze,O-HAZE_25,0.276,0.63,11.91,dcp_guided,5.25
+real haze,O-HAZE_26,0.146,0.231,12.47,clahe,5.13
+real haze,O-HAZE_27,0.357,0.499,13.71,fusion_dcp,4.42
+real haze,O-HAZE_28,0.261,0.384,10.19,fusion_dcp,7.12
+real haze,O-HAZE_29,0.257,0.348,11.84,fusion_dcp,5.02
+real haze,O-HAZE_30,0.405,0.595,17.39,fusion_dcp,3.22
+real haze,O-HAZE_31,0.491,0.678,15.28,fusion_dcp,5.13
+real haze,O-HAZE_32,0.536,0.639,17.57,clahe,3.56
+real haze,O-HAZE_33,0.42,0.398,14.87,top_hat,2.96
+real haze,O-HAZE_34,0.558,1.03,15.27,dcp_clahe,3.95
+real haze,O-HAZE_35,0.507,0.613,13.93,dcp_guided,7.28
+real haze,O-HAZE_36,0.47,0.68,14.84,dcp_guided,5.68
+real haze,O-HAZE_37,0.419,0.936,14.4,fusion_dcp,4.19
+real haze,O-HAZE_38,0.465,0.481,12.83,top_hat,6.78
+real haze,O-HAZE_39,0.387,0.521,12.86,clahe,5.12
+real haze,O-HAZE_40,0.38,0.405,13.65,clahe,5.98
+real haze,O-HAZE_41,0.504,0.693,17.61,hist_spec,4.05
+real haze,O-HAZE_42,0.347,1.061,11.89,dcp,8.25
+real haze,O-HAZE_43,0.525,0.638,16.51,dcp_guided,4.04
+real haze,O-HAZE_44,0.485,0.684,16.62,clahe,3.01
+real haze,O-HAZE_45,0.259,0.398,12.9,top_hat,4.48
+real haze,I-HAZE_01,0.366,0.741,13.67,clahe,4.72
+real haze,I-HAZE_02,0.409,0.507,15.31,clahe,5.04
+real haze,I-HAZE_03,0.239,0.299,15.11,dcp_clahe,4.04
+real haze,I-HAZE_04,0.267,0.656,9.12,top_hat,8.51
+real haze,I-HAZE_05,0.369,0.526,16.59,clahe,3.77
+real haze,I-HAZE_06,0.266,0.736,15.74,clahe,1.26
+real haze,I-HAZE_07,0.287,0.498,12.65,clahe,6.1
+real haze,I-HAZE_08,0.301,0.393,12.22,retinex,6.57
+real haze,I-HAZE_09,0.475,0.728,13.18,dcp_clahe,6.61
+real haze,I-HAZE_10,0.402,0.486,17.24,clahe,5.41
+real haze,I-HAZE_11,0.418,0.696,10.38,dcp_clahe,10.58
+real haze,I-HAZE_12,0.258,0.423,13.27,retinex,8.5
+real haze,I-HAZE_13,0.423,0.845,16.9,fusion_dcp,2.06
+real haze,I-HAZE_14,0.417,0.765,12.53,hist_eq,4.6
+real haze,I-HAZE_15,0.49,0.613,17.07,stretch,5.36
+real haze,I-HAZE_16,0.456,0.78,16.15,clahe,5.76
+real haze,I-HAZE_17,0.225,0.634,11.71,clahe,5.38
+real haze,I-HAZE_18,0.337,0.602,8.68,dcp_clahe,9.86
+real haze,I-HAZE_19,0.365,0.359,13.96,clahe,3.26
+real haze,I-HAZE_20,0.51,0.529,15.65,retinex,5.57
+real haze,I-HAZE_21,0.517,0.658,18.64,clahe,2.75
+real haze,I-HAZE_22,0.628,0.912,17.12,fusion_dcp,3.45
+real haze,I-HAZE_23,0.245,0.461,15.64,dcp_clahe,1.34
+real haze,I-HAZE_24,0.347,0.719,17.16,fusion,0.92
+real haze,I-HAZE_25,0.533,0.843,20.71,unsharp,0.26
+real haze,I-HAZE_31,0.524,0.717,15.02,stretch,4.44
+real haze,I-HAZE_32,0.284,0.597,9.72,dcp_clahe,4.51
+real haze,I-HAZE_33,0.31,0.493,15.74,clahe,3.63
+real haze,I-HAZE_34,0.337,0.737,11.5,clahe,7.13
+real haze,I-HAZE_35,0.266,0.521,11.55,clahe,2.84
+real haze,Dense-Haze_01,0.107,0.472,8.09,top_hat,9.86
+real haze,Dense-Haze_02,0.069,0.619,11.67,fusion_dcp,5.33
+real haze,Dense-Haze_03,0.053,0.56,13.64,dcp_clahe,1.03
+real haze,Dense-Haze_04,0.054,0.319,8.96,fusion_dcp,5.4
+real haze,Dense-Haze_05,0.09,0.697,8.14,top_hat,5.19
+real haze,Dense-Haze_06,0.111,0.386,8.83,dcp_clahe,5.8
+real haze,Dense-Haze_07,0.109,0.249,11.34,clahe,5.88
+real haze,Dense-Haze_08,0.061,0.656,8.77,fusion_dcp,4.58
+real haze,Dense-Haze_09,0.094,0.447,10.2,dcp,7.97
+real haze,Dense-Haze_10,0.079,0.404,6.9,top_hat,6.05
+real haze,Dense-Haze_11,0.075,0.141,7.31,top_hat,6.99
+real haze,Dense-Haze_12,0.084,0.298,12.56,dcp_clahe,4.54
+real haze,Dense-Haze_13,0.054,0.221,12.59,fusion_dcp,3.28
+real haze,Dense-Haze_14,0.087,0.424,7.68,dcp_clahe,5.18
+real haze,Dense-Haze_15,0.065,0.366,9.08,fusion,3.05
+real haze,Dense-Haze_16,0.041,0.639,7.14,fusion_dcp,6.82
+real haze,Dense-Haze_17,0.065,0.29,10.29,fusion,1.69
+real haze,Dense-Haze_18,0.077,0.297,10.89,clahe,4.5
+real haze,Dense-Haze_19,0.072,0.228,9.58,gamma_auto,5.63
+real haze,Dense-Haze_20,0.093,0.236,9.17,top_hat,6.08
+real haze,Dense-Haze_21,0.079,0.34,9.7,fusion_dcp,4.38
+real haze,Dense-Haze_22,0.104,0.251,9.33,top_hat,7.4
+real haze,Dense-Haze_23,0.058,0.243,8.49,tarel,5.79
+real haze,Dense-Haze_24,0.073,0.726,7.04,dcp,8.5
+real haze,Dense-Haze_25,0.073,0.314,9.65,fusion_dcp,5.06
+real haze,Dense-Haze_26,0.052,0.177,11.04,fusion_dcp,3.24
+real haze,Dense-Haze_27,0.083,0.657,7.97,fusion_dcp,6.63
+real haze,Dense-Haze_28,0.114,0.539,11.12,fusion,2.41
+real haze,Dense-Haze_29,0.075,0.256,9.47,dcp_clahe,4.3
+real haze,Dense-Haze_30,0.094,0.502,8.07,top_hat,6.7
+real haze,Dense-Haze_31,0.102,0.551,6.82,top_hat,7.23
+real haze,Dense-Haze_32,0.162,0.38,14.05,fusion,3.61
+real haze,Dense-Haze_33,0.111,0.433,9.8,clahe,6.78
+real haze,Dense-Haze_34,0.095,0.272,9.64,clahe,3.26
+real haze,Dense-Haze_35,0.075,0.274,8.49,clahe,4.37
+real haze,Dense-Haze_36,0.13,0.236,11.3,retinex,4.25
+real haze,Dense-Haze_37,0.223,0.828,12.52,clahe,5.38
+real haze,Dense-Haze_38,0.096,0.419,8.76,fusion_dcp,5.0
+real haze,Dense-Haze_39,0.094,0.222,12.3,fusion,0.35
+real haze,Dense-Haze_40,0.089,0.312,7.0,top_hat,5.99
+real haze,Dense-Haze_41,0.083,0.213,9.68,dcp_clahe,6.63
+real haze,Dense-Haze_42,0.061,0.434,10.28,fusion_dcp,2.88
+real haze,Dense-Haze_43,0.102,1.012,8.41,tarel,5.16
+real haze,Dense-Haze_44,0.113,0.391,8.94,clahe,2.76
+real haze,Dense-Haze_45,0.141,0.253,10.63,dcp_clahe,6.48
+real haze,Dense-Haze_46,0.054,0.423,7.32,tarel,5.18
+real haze,Dense-Haze_47,0.104,0.275,11.76,dcp_clahe,5.42
+real haze,Dense-Haze_48,0.065,0.25,11.47,fusion_dcp,3.26
+real haze,Dense-Haze_49,0.041,0.119,9.73,dcp_clahe,2.33
+real haze,Dense-Haze_50,0.066,0.567,14.28,fusion_dcp,0.34
+real haze,Dense-Haze_51,0.064,0.251,9.82,dcp_clahe,5.32
+real haze,Dense-Haze_52,0.059,0.324,6.37,top_hat,7.06
+real haze,Dense-Haze_53,0.127,0.238,7.12,top_hat,9.6
+real haze,Dense-Haze_54,0.137,0.281,12.28,retinex,0.97
+real haze,Dense-Haze_55,0.101,0.228,7.11,clahe,8.26
+real haze,NH-Haze_01,0.362,0.634,11.33,top_hat,6.72
+real haze,NH-Haze_02,0.791,1.121,14.46,dcp_guided,2.14
+real haze,NH-Haze_03,0.282,0.597,8.93,dcp_clahe,3.7
+real haze,NH-Haze_04,0.215,0.612,10.53,retinex,1.52
+real haze,NH-Haze_05,0.331,0.641,10.28,fusion_dcp,3.39
+real haze,NH-Haze_06,0.203,0.412,13.15,dcp_clahe,2.52
+real haze,NH-Haze_07,0.217,0.459,11.6,dcp_clahe,0.51
+real haze,NH-Haze_08,0.328,0.457,15.11,dcp_clahe,2.18
+real haze,NH-Haze_09,0.219,0.374,12.16,hist_eq_rgb,1.98
+real haze,NH-Haze_10,0.282,0.65,12.05,dcp_clahe,3.01
+real haze,NH-Haze_11,0.204,0.438,9.82,fusion_dcp,3.51
+real haze,NH-Haze_12,0.307,0.676,11.29,dcp,2.37
+real haze,NH-Haze_13,0.384,0.628,12.31,fusion_dcp,1.99
+real haze,NH-Haze_14,0.357,0.624,15.66,fusion_dcp,0.35
+real haze,NH-Haze_15,0.492,0.704,11.72,dcp,3.29
+real haze,NH-Haze_16,0.447,0.736,16.12,fusion,0.99
+real haze,NH-Haze_17,0.253,0.415,11.24,fusion_dcp,3.61
+real haze,NH-Haze_18,0.356,0.569,13.67,dcp_clahe,2.4
+real haze,NH-Haze_19,0.263,0.829,12.64,fusion_dcp,2.6
+real haze,NH-Haze_20,0.22,0.432,12.34,top_hat,2.3
+real haze,NH-Haze_21,0.362,0.701,10.07,fusion_dcp,3.14
+real haze,NH-Haze_22,0.212,0.44,12.54,fusion_dcp,1.32
+real haze,NH-Haze_23,0.707,1.1,11.68,tarel,1.84
+real haze,NH-Haze_24,0.44,1.089,10.29,dcp,4.59
+real haze,NH-Haze_25,0.313,0.548,10.71,dcp_clahe,5.02
+real haze,NH-Haze_26,0.247,0.697,9.35,fusion_dcp,2.36
+real haze,NH-Haze_27,0.219,0.441,13.51,top_hat,1.68
+real haze,NH-Haze_28,0.144,0.307,11.74,fusion,0.32
+real haze,NH-Haze_29,0.189,0.422,13.17,dcp_clahe,1.53
+real haze,NH-Haze_30,0.214,0.316,10.18,fusion_dcp,1.61
+real haze,NH-Haze_31,0.256,0.777,15.03,fusion_dcp,1.93
+real haze,NH-Haze_32,0.325,0.424,10.01,top_hat,5.63
+real haze,NH-Haze_33,0.149,0.634,11.32,fusion_dcp,3.18
+real haze,NH-Haze_34,0.205,0.785,10.98,dcp_clahe,6.29
+real haze,NH-Haze_35,0.24,0.511,11.8,dcp_clahe,3.9
+real haze,NH-Haze_36,0.225,0.437,13.68,clahe,2.48
+real haze,NH-Haze_37,0.22,0.286,13.29,clahe,2.08
+real haze,NH-Haze_38,0.3,0.454,9.31,top_hat,5.5
+real haze,NH-Haze_39,0.119,0.422,9.83,hist_spec,2.14
+real haze,NH-Haze_40,0.233,0.411,10.71,clahe,2.41
+real haze,NH-Haze_41,0.288,0.827,9.52,fusion_dcp,3.18
+real haze,NH-Haze_42,0.411,0.871,9.71,top_hat,5.93
+real haze,NH-Haze_43,0.258,0.427,12.84,clahe,0.82
+real haze,NH-Haze_44,0.25,0.385,9.57,fusion_dcp,0.92
+real haze,NH-Haze_45,0.335,0.386,10.98,top_hat,3.26
+real haze,NH-Haze_46,0.163,0.295,8.15,dcp_clahe,3.16
+real haze,NH-Haze_47,0.267,1.017,7.06,dcp,5.89
+real haze,NH-Haze_48,0.171,0.544,10.91,fusion_dcp,2.3
+real haze,NH-Haze_49,0.374,0.812,11.93,fusion_dcp,3.38
+real haze,NH-Haze_50,0.292,0.752,12.74,fusion_dcp,1.94
+real haze,NH-Haze_51,0.177,0.501,10.07,dcp,6.3
+real haze,NH-Haze_52,0.357,0.582,11.78,top_hat,3.06
+real haze,NH-Haze_53,0.299,0.409,9.43,top_hat,4.54
+real haze,NH-Haze_54,0.301,0.881,13.06,fusion_dcp,1.57
+real haze,NH-Haze_55,0.26,0.691,13.26,dcp_clahe,2.52
+real tank water,TUB_Exp10_Cam1_S02,0.524,0.645,22.97,red_comp,0.29
+real tank water,TUB_Exp10_Cam1_S06,0.113,0.267,17.08,gamma_auto,0.49
+real tank water,TUB_Exp10_Cam1_S08,0.097,0.254,16.64,gamma_auto,0.52
+real tank water,TUB_Exp10_Cam3_S02,0.502,0.709,24.78,red_comp,0.24
+real tank water,TUB_Exp11_Cam1_S05,0.261,0.391,18.81,fusion,1.14
+real tank water,TUB_Exp11_Cam2_S02,0.533,0.694,23.22,red_comp,0.18
+real tank water,TUB_Exp11_Cam2_S03,0.333,0.515,19.48,fusion,0.73
+real tank water,TUB_Exp11_Cam3_S06,0.146,0.295,16.95,clahe,0.87
+real tank water,TUB_Exp12_Cam1_S07,0.127,0.272,15.82,gamma_auto,0.41
+real tank water,TUB_Exp12_Cam2_S05,0.116,0.355,17.61,clahe,0.32
+real tank water,TUB_Exp12_Cam3_S03,0.256,0.519,19.71,fusion,0.42
+real tank water,TUB_Exp12_Cam3_S09,0.099,0.277,16.47,gamma_auto,0.53
+real tank water,TUB_Exp13_Cam1_S10,0.083,0.238,14.42,gamma_auto,1.24
+real tank water,TUB_Exp13_Cam3_S03,0.242,0.563,18.61,fusion,0.3
+real tank water,TUB_Exp13_Cam4_S05,0.128,0.375,15.82,fusion,1.24
+real tank water,TUB_Exp14_Cam1_S04,0.116,0.331,16.85,clahe,1.88
+real tank water,TUB_Exp14_Cam2_S07,0.08,0.289,16.31,gamma_auto,0.31
+real tank water,TUB_Exp14_Cam4_S05,0.067,0.305,16.82,gamma_auto,0.25
+real tank water,TUB_Exp14_Cam4_S09,0.059,0.227,16.06,gamma_auto,0.39
+real tank water,TUB_Exp15_Cam1_S03,0.123,0.397,16.05,clahe,2.47
+real tank water,TUB_Exp15_Cam3_S06,0.064,0.273,15.36,gamma_auto,0.52
+real tank water,TUB_Exp16_Cam1_S07,0.084,0.264,16.96,gamma_auto,0.37
+real tank water,TUB_Exp16_Cam2_S03,0.19,0.497,19.43,red_comp,0.13
+real tank water,TUB_Exp16_Cam3_S02,0.427,0.637,23.72,red_comp,0.21
+real tank water,TUB_Exp16_Cam3_S05,0.093,0.318,18.16,gamma_auto,0.36
+real tank water,TUB_Exp16_Cam4_S10,0.058,0.249,16.5,gamma_auto,0.46
+real tank water,TUB_Exp17_Cam3_S04,0.132,0.408,18.13,fusion,0.74
+real tank water,TUB_Exp17_Cam3_S10,0.089,0.3,16.53,gamma_auto,0.43
+real tank water,TUB_Exp17_Cam4_S02,0.476,0.761,24.41,red_comp,0.11
+real tank water,TUB_Exp18_Cam2_S09,0.057,0.285,14.84,gamma_auto,0.44
+real tank water,TUB_Exp18_Cam3_S02,0.396,0.632,20.33,clahe,0.87
+real tank water,TUB_Exp19_Cam1_S04,0.226,0.544,19.82,red_comp,0.14
+real tank water,TUB_Exp19_Cam1_S06,0.139,0.392,17.87,clahe,0.82
+real tank water,TUB_Exp19_Cam2_S03,0.225,0.606,20.93,red_comp,0.13
+real tank water,TUB_Exp19_Cam3_S08,0.117,0.38,17.67,gamma_auto,0.26
+real tank water,TUB_Exp1_Cam1_S04,0.183,0.502,21.03,gamma_auto,0.39
+real tank water,TUB_Exp1_Cam1_S10,0.126,0.409,19.62,gamma_auto,0.35
+real tank water,TUB_Exp1_Cam3_S05,0.165,0.448,20.3,gamma_auto,0.21
+real tank water,TUB_Exp1_Cam4_S08,0.127,0.31,18.21,gamma_auto,0.35
+real tank water,TUB_Exp20_Cam2_S02,0.387,0.684,22.01,red_comp,0.15
+real tank water,TUB_Exp20_Cam3_S07,0.075,0.331,17.16,red_comp,0.07
+real tank water,TUB_Exp20_Cam3_S08,0.071,0.336,16.85,gamma_auto,0.21
+real tank water,TUB_Exp20_Cam4_S04,0.131,0.435,17.68,fusion,0.73
+real tank water,TUB_Exp21_Cam2_S04,0.105,0.464,18.0,fusion,0.33
+real tank water,TUB_Exp21_Cam3_S08,0.078,0.277,16.46,gamma_auto,0.32
+real tank water,TUB_Exp21_Cam3_S10,0.079,0.293,16.18,gamma_auto,0.38
+real tank water,TUB_Exp22_Cam1_S05,0.114,0.364,17.18,clahe,2.08
+real tank water,TUB_Exp22_Cam2_S10,0.074,0.326,17.24,gamma_auto,0.44
+real tank water,TUB_Exp22_Cam4_S02,0.337,0.736,22.57,red_comp,0.16
+real tank water,TUB_Exp23_Cam1_S03,0.134,0.431,18.76,fusion,0.67
+real tank water,TUB_Exp23_Cam1_S08,0.067,0.286,16.66,gamma_auto,0.51
+real tank water,TUB_Exp23_Cam3_S10,0.063,0.295,16.27,gamma_auto,0.63
+real tank water,TUB_Exp23_Cam4_S04,0.06,0.28,16.42,fusion,0.62
+real tank water,TUB_Exp24_Cam2_S07,0.113,0.406,18.47,gamma_auto,0.47
+real tank water,TUB_Exp24_Cam3_S04,0.198,0.492,20.2,gamma_auto,0.2
+real tank water,TUB_Exp24_Cam4_S09,0.087,0.319,17.75,gamma_auto,0.56
+real tank water,TUB_Exp25_Cam1_S02,0.715,0.891,29.26,red_comp,0.3
+real tank water,TUB_Exp25_Cam2_S07,0.119,0.463,18.14,fusion,0.82
+real tank water,TUB_Exp25_Cam3_S04,0.359,0.628,20.77,red_comp,0.19
+real tank water,TUB_Exp25_Cam4_S10,0.079,0.26,15.46,gamma_auto,0.32
+real tank water,TUB_Exp26_Cam2_S03,0.63,0.905,31.46,gamma_auto,0.77
+real tank water,TUB_Exp26_Cam2_S06,0.261,0.616,25.36,gamma_auto,0.77
+real tank water,TUB_Exp26_Cam4_S07,0.212,0.489,22.81,gamma_auto,0.6
+real tank water,TUB_Exp27_Cam1_S03,0.208,0.525,19.23,gamma_auto,0.25
+real tank water,TUB_Exp27_Cam2_S08,0.059,0.324,15.96,gamma_auto,0.41
+real tank water,TUB_Exp27_Cam3_S03,0.245,0.6,19.9,red_comp,0.2
+real tank water,TUB_Exp28_Cam1_S03,0.236,0.5,20.56,gamma_auto,0.17
+real tank water,TUB_Exp28_Cam1_S07,0.086,0.296,17.47,gamma_auto,0.43
+real tank water,TUB_Exp28_Cam2_S05,0.13,0.424,17.97,fusion,0.99
+real tank water,TUB_Exp28_Cam4_S02,0.329,0.664,16.79,red_comp,0.05
+real tank water,TUB_Exp28_Cam4_S07,0.075,0.296,16.01,gamma_auto,0.33
+real tank water,TUB_Exp29_Cam2_S10,0.06,0.341,17.29,gamma_auto,0.54
+real tank water,TUB_Exp29_Cam3_S04,0.224,0.545,20.22,gamma_auto,0.41
+real tank water,TUB_Exp29_Cam4_S02,0.46,0.689,22.75,red_comp,0.17
+real tank water,TUB_Exp2_Cam1_S10,0.102,0.26,15.03,clahe,0.47
+real tank water,TUB_Exp2_Cam2_S05,0.155,0.43,16.81,fusion,1.03
+real tank water,TUB_Exp2_Cam4_S02,0.515,0.781,22.81,red_comp,0.2
+real tank water,TUB_Exp2_Cam4_S05,0.153,0.479,17.03,fusion,1.05
+real tank water,TUB_Exp30_Cam2_S05,0.132,0.357,17.26,clahe,1.45
+real tank water,TUB_Exp30_Cam2_S10,0.06,0.278,16.05,gamma_auto,0.46
+real tank water,TUB_Exp30_Cam4_S02,0.508,0.783,24.41,red_comp,0.19
+real tank water,TUB_Exp30_Cam4_S07,0.117,0.388,16.63,fusion,1.17
+real tank water,TUB_Exp31_Cam2_S10,0.051,0.309,17.03,gamma_auto,0.55
+real tank water,TUB_Exp31_Cam3_S02,0.461,0.696,23.48,red_comp,0.17
+real tank water,TUB_Exp31_Cam4_S05,0.11,0.301,16.61,fusion,1.3
+real tank water,TUB_Exp32_Cam2_S02,0.32,0.589,23.8,gamma_auto,-0.04
+real tank water,TUB_Exp32_Cam3_S05,0.1,0.418,19.39,gamma_auto,0.16
+real tank water,TUB_Exp32_Cam3_S08,0.088,0.406,18.67,gamma_auto,0.4
+real tank water,TUB_Exp32_Cam4_S04,0.075,0.399,20.51,gamma_auto,0.25
+real tank water,TUB_Exp33_Cam2_S08,0.068,0.392,17.12,gamma_auto,0.47
+real tank water,TUB_Exp33_Cam3_S04,0.133,0.508,18.65,clahe,0.42
+real tank water,TUB_Exp33_Cam4_S03,0.256,0.625,20.06,red_comp,0.14
+real tank water,TUB_Exp3_Cam2_S05,0.244,0.584,20.52,red_comp,0.13
+real tank water,TUB_Exp3_Cam2_S09,0.161,0.494,18.78,gamma_auto,0.31
+real tank water,TUB_Exp3_Cam4_S03,0.341,0.7,22.38,red_comp,0.16
+real tank water,TUB_Exp4_Cam1_S06,0.166,0.406,18.18,clahe,1.46
+real tank water,TUB_Exp4_Cam1_S10,0.13,0.296,16.83,gamma_auto,0.39
+real tank water,TUB_Exp4_Cam2_S06,0.15,0.45,19.07,gamma_auto,0.33
+real tank water,TUB_Exp4_Cam3_S07,0.155,0.419,18.5,fusion,0.56
+real tank water,TUB_Exp4_Cam4_S07,0.138,0.389,16.65,clahe,1.99
+real tank water,TUB_Exp5_Cam1_S10,0.102,0.311,16.61,gamma_auto,0.39
+real tank water,TUB_Exp5_Cam2_S04,0.135,0.398,18.26,clahe,0.66
+real tank water,TUB_Exp5_Cam3_S08,0.113,0.302,16.61,gamma_auto,0.37
+real tank water,TUB_Exp6_Cam1_S05,0.121,0.296,16.72,clahe,0.85
+real tank water,TUB_Exp6_Cam1_S09,0.099,0.246,15.74,gamma_auto,0.37
+real tank water,TUB_Exp6_Cam2_S02,0.319,0.621,20.98,red_comp,0.16
+real tank water,TUB_Exp6_Cam4_S05,0.095,0.31,17.59,gamma_auto,0.34
+real tank water,TUB_Exp6_Cam4_S09,0.08,0.279,16.96,gamma_auto,0.38
+real tank water,TUB_Exp7_Cam2_S02,0.408,0.746,28.36,gamma_auto,0.31
+real tank water,TUB_Exp7_Cam3_S04,0.256,0.593,24.03,gamma_auto,0.36
+real tank water,TUB_Exp7_Cam4_S10,0.17,0.307,19.98,gamma_auto,0.41
+real tank water,TUB_Exp8_Cam1_S04,0.161,0.502,17.37,fusion,1.12
+real tank water,TUB_Exp8_Cam1_S07,0.088,0.327,15.8,gamma_auto,0.32
+real tank water,TUB_Exp8_Cam3_S07,0.096,0.37,15.99,gamma_auto,0.32
+real tank water,TUB_Exp8_Cam4_S03,0.304,0.673,19.85,red_comp,0.18
+real tank water,TUB_Exp9_Cam1_S07,0.093,0.264,15.09,clahe,1.48
+real tank water,TUB_Exp9_Cam2_S05,0.105,0.397,16.65,clahe,1.12
+real tank water,TUB_Exp9_Cam4_S05,0.12,0.52,17.17,fusion,0.82
+real tank water,TUB_Exp9_Cam4_S08,0.075,0.287,15.51,gamma_auto,0.31
+real tank water,TUB_Exp9_Cam4_S10,0.061,0.22,15.09,gamma_auto,0.38

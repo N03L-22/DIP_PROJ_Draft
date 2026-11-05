@@ -156,6 +156,19 @@ def main():
         write_table("tune_chain", ["pictures", "set", "default settings", "tuned settings", "gain (dB)"],
                     [[{"haze": "real haze", "water": "real tank water"}[r["medium"]], s_, r[f"default_{s_}"], r[f"tuned_{s_}"], f"{float(r['gain_' + s_]):+.2f} $\\pm$ {r['se_' + s_]}"] for r in rows for s_ in ("A", "B", "C")], "llrrr")
 
+    # why the gaps: classes of the synthetic pictures, and what is left on the real ones
+    rows = read("beyond_repair_synthetic.csv")
+    classes = ["beyond repair", "nearly as good as the theory", "in between", "estimation-limited (large gap)"]
+    body = []
+    for medium in ("haze", "water"):
+        for level in ("mild", "medium", "heavy"):
+            own = [r for r in rows if r["medium"] == medium and r["level"] == level]
+            body.append([medium, level, f"{100 * np.mean([float(r['share_unrecoverable']) for r in own]):.0f}\\%"] + [str(sum(r["class"] == c for r in own)) for c in classes])
+    write_table("beyond_repair_synthetic", ["medium", "severity", "pixels unrecoverable", "beyond repair", "near the theory", "in between", "estimation-limited (gap 10 dB or more)"], body, "llrrrrr")
+    rows = read("beyond_repair_real_summary.csv")
+    write_table("beyond_repair_real", ["pictures", "detail left (sharpness ratio)", "n", "mean best gain (dB)", "share with no gain above 0.5 dB"],
+                [[r["world"], r["sharpness_ratio"], r["pictures"], r["mean_best_gain_dB"], f"{100 * float(r['share_with_no_gain_over_0.5dB']):.0f}\\%"] for r in rows], "llrrr")
+
     # chains derived from the inverse equations: were they in the pools of the earlier searches?
     pools = json.loads((PROJECT / "configs" / "pipelines.json").read_text())
     subtraction_pool = {"blind_veil_local", "lowfreq_subtract", "dcp_guided", "clahe", "hist_eq", "unsharp", "gamma_auto", "tarel", "gray_world"}

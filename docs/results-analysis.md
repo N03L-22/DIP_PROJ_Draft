@@ -133,6 +133,7 @@ Tables `severity_<medium>.csv`, figures `severity_<medium>.png`: PSNR at 0.25× 
 - **Global against local (F53, F54).** Local application helps haze (tiles of about 4 to 6 per side; real histogram equalisation +1.95 dB), mixed for water, hurts glass. The best tile size differs by medium.
 - **Subtraction (F58).** Local-glow subtraction alone ties DCP then CLAHE on real haze; no combination with subtraction beat the best chain without it.
 - **Chain length (F59, F60).** The damage is invertible in 1 to 2 steps; chains of 4 and 5 steps do not help on synthetic or real pictures. Useful range: 2 to 3 steps for haze, 2 for tank water, 1 to 3 for plastic, none for glass.
+- **Limits and gaps (F66 to F71).** Real pictures ask for per-colour glow, local variation and blur; refining the synthetic haze that way did not improve its ranking of the methods. The true inverse is 13 to 26 dB above the best chains; the gap is estimation (per-pixel transmission, glow), not the number of steps. Chains derived from the inverse beat the earlier search for plastic by up to 8.4 dB (a per-colour stretch and the true blur width). Beyond repair: heavy synthetic haze (6 of 18 pictures), real Dense-Haze (38 pairs: brightness restored, structure only in part), real tank water (nothing repaired).
 - **Full write-up with figures:** `report/final/report.pdf`; equations: `docs/model-equations.md`.
 
 ## 8. Still to do
