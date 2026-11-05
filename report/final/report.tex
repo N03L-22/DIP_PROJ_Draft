@@ -534,7 +534,7 @@ We searched chains of up to 3 steps. Would 4 or 5 steps help? Before searching, 
 \item \textbf{A ceiling for chains of whole-picture brightness steps.} Stretch, gamma, histogram equalisation, white balance and log are all a function of the pixel value, so a chain of any number of them is still one such function per colour. The best possible function (the \emph{oracle LUT}: for each input value, the average true value of the pixels that have it) is a ceiling for every such chain, however long.
 \item \textbf{A ceiling for any chain on invertible damage.} Inverting with the true $t$ and $A$ is exact except for the rounding of the saved picture to 8 bits (a grey level of $1/255$), which the inversion multiplies by $1/t$. Its predicted PSNR is $-10\log_{10}\!\big(\overline{1/t^{2}}/(12\cdot255^{2})\big)$.
 \end{itemize}
-\begin{table}[H]\centering\scriptsize\tablein{chain_limits}\caption{\SYN\ Held-out PSNR (18 pictures): doing nothing; the best chain of 1, 2 and 3 steps (chosen on other pictures); the two ceilings; and the predicted PSNR of the true inverse. No inverse exists for raindrops.}\end{table}
+\begin{table}[H]\centering\scriptsize\tablein{chain_limits}\caption{\label{tab:chain_limits}\SYN\ Held-out PSNR (18 pictures): doing nothing; the best chain of 1, 2 and 3 steps (chosen on other pictures); the two ceilings; and the predicted PSNR of the true inverse. No inverse exists for raindrops.}\end{table}
 \begin{figure}[H]\centering\includegraphics[width=.95\textwidth]{chain_limits.png}\caption{\SYN\ The best chains against the ceilings.}\end{figure}
 \textbf{What we checked.}
 \begin{itemize}
@@ -580,6 +580,112 @@ DCP guesses the glow from the brightest pixels. In water the true glow is a dark
 \begin{figure}[H]\centering\includegraphics[width=.9\textwidth]{failure_transmission.png}\caption{\SYN\ How well DCP finds the transmission $t$ for haze, water and plastic (correlation with the truth: +0.76 haze, +0.11 water).}\end{figure}
 
 %--------------------------------------------------------------------
+\section{How good can a repair be? Equations, refinements and limits}
+\label{sec:limits}
+This section sets our equations beside the ones in the literature, asks what the real pictures say should be added, writes the inverse of every function we use, and explains why the measured scores sit far below the best possible.
+
+\subsection{General equations and ours}
+Entries marked $^\dagger$ are quoted from memory of the papers and should be checked before they are cited.
+{\small\begin{longtable}{p{1.3cm}p{8.3cm}p{5.8cm}}
+\toprule Medium & Common equation in the literature & Ours\\\midrule\endhead
+Air & Atmospheric scattering model (Koschmieder; McCartney; Narasimhan and Nayar): $I=Jt+A(1-t)$, $t=e^{-\beta d}$. Variants: a $\beta_c$ per colour, a $\beta(x)$ that varies over the picture, a glow $A(x)$ for night scenes, a forward-scatter blur. & The same equation, with one scalar $\beta$ and one scalar glow $A$.\\
+Water & Jaffe--McGlamery: total light = direct + forward scatter + backscatter, where forward scatter is the direct signal blurred. Simplified form (Chiang and Chen): $I_c=J_ce^{-\beta_cd}+B_c(1-e^{-\beta_cd})$.$^\dagger$ Revised (Akkaynak and Treibitz): the direct and the backscatter coefficients differ, $\beta^D\ne\beta^B$.$^\dagger$ & The simplified form with a $\beta_c$ per colour. No forward scatter, and $\beta^D=\beta^B$.\\
+Plastic & ASTM D1003 haze: diffuse light (scattered by more than 2.5$^\circ$) as a share of the total transmitted light. Imaging models: a point-spread function with a narrow core and a wide halo, plus attenuation and veil. & A Gaussian blur, a tint and a milky veil. No wide halo, no scratches.\\
+Glass & Raindrops (Qian et al.): $I=(1-M)\odot B+R$, a mask blend.$^\dagger$ Dirt (Eigen et al.): an opacity-weighted dirt layer.$^\dagger$ Veiling glare: stray light $I=J+g\,(K\!*\!J)$ with a wide kernel $K$; Stiles--Holladay $L=10E/\theta^2$.$^\dagger$ & A film as haze with a depth-free $t$, smudges as a blur blend, droplets as a blend with a blurred scene. Real drops refract an inverted miniature of the scene, which a blur only imitates.\\\bottomrule
+\end{longtable}}
+
+\subsection{What the real pictures say to add}
+For every real pair we fitted four nested models of how the clear picture became the degraded one, and scored how well each reproduces the real degraded picture (PSNR of the fitted picture; higher means the model explains the real picture better).
+\begin{table}[H]\centering\scriptsize\resizebox{\textwidth}{!}{\tablein{model_refinement}}\caption{\REAL\ Fit of nested models to the real pairs. ``One $t$ and $A$'': $I=aJ+b$. ``Per colour'': a separate $a_c,b_c$ per channel. ``+ blur'': the scene is blurred first (best width per pair). ``+ local maps'': a separate map in each cell of a 4$\times$4 grid (96 parameters per pair, so part of this gain is flexibility). $t$ and $A$ are the means of the per-colour fit.}\end{table}
+\begin{itemize}
+\item \textbf{Haze: the biggest missing piece is that $t$ varies across the picture} (+8.2 dB), which means depth. Colour dependence adds +1.3 dB: blue is attenuated most ($t=0.34,0.30,0.26$ for red, green, blue) and the glow is bluish ($A=0.61,0.63,0.69$; our first model used 0.92 for all colours). Blur adds only +0.2 dB.
+\item \textbf{Milky tank water: the colour is in the glow, not in the attenuation.} The glow is yellow-brown ($A=0.57,0.53,0.42$) while $t$ is nearly the same for all colours (0.30, 0.29, 0.27), which is the opposite of the open-sea model. Per colour +3.5 dB, blur +1.2 dB (width 2.8\% of the picture), uneven light over the picture +7.0 dB (the lamp).
+\item \textbf{Raindrops: none of the affine refinements explains them} (26.1 to 27.0 dB). They need a patch model with refraction.
+\end{itemize}
+We then built the refined haze (per-colour $\beta$ and glow, plus the blur, fitted with the values above and calibrated to the real severity as before) and tested, as in Test 7, whether it ranks the methods like real haze does.
+\begin{table}[H]\centering\scriptsize\tablein{outdoor_haze}\caption{\SYN\ Rank agreement of five synthetic hazes with the 185 real haze pairs (17 methods), and the winners.}\end{table}
+\begin{itemize}
+\item \textbf{The refinements did not improve the ranking} (+0.28, against +0.30 for the first calibrated haze and +0.57 for the original haze). Their picture statistics are no closer either (signature distance 0.35, 0.27, 0.42 against 0.34, 0.23, 0.17).
+\item \textbf{A uniform fog is the worst} ($-$0.12): its damage is one global affine map, so a plain stretch undoes it almost exactly (47.7 dB), which is not what happens on real haze. This confirms that the dependence on depth matters.
+\item So the missing ingredient for matching the ranking is not colour or blur. We have not found it: the original haze, which looks least like the real fog in its statistics, ranks the methods closest to real haze.
+\end{itemize}
+
+\subsection{The inverse of every function we use}
+Every limit is also limited by the rounding of the saved picture to 8 bits, which each division by $t$ multiplies: PSNR $\le -10\log_{10}\!\big(\overline{1/t^2}/(12\cdot255^2)\big)$.
+{\small\begin{longtable}{p{2.5cm}p{6.1cm}p{6.8cm}}
+\toprule Function & Inverse it computes & Theoretical limit\\\midrule\endhead
+\texttt{stretch} & $J=(I-b)/a$, exact for one global affine map & Fails where $t$ varies across the picture.\\
+\texttt{gamma}, \texttt{log}, \texttt{hist\_eq}, \texttt{hist\_spec}, \texttt{eq\_hsi} & The inverse of a monotone map applied to the pixel values (equalisation needs the clear picture's histogram) & Ceiling: the best possible map per colour, the \emph{oracle LUT}.\\
+\texttt{gray\_world}, \texttt{white\_patch}, \texttt{von\_kries} & $J_c=I_c/g_c$ & Ignores the glow offset and relies on a scene assumption.\\
+\texttt{red\_comp} & A heuristic, $R'=R+(\bar G-\bar R)(1-R)G$; the true inverse is $R=R_{\mathrm{obs}}e^{\beta_Rd}$, which needs the depth & Restores only the mean of red.\\
+\texttt{dcp}, \texttt{dcp\_guided} & $J=\dfrac{I-A}{\max(t,t_0)}+A$, with $t=1-\omega\,\mathrm{dark}(I/A)$ & Exact if $t$ and $A$ are right. With $t_0=0.1$ noise is amplified up to 10$\times$ (a cap of about 39 dB).\\
+\texttt{udcp} & The same, with the dark channel from green and blue & Needs red already lost.\\
+\texttt{tarel} & $J=(I-V)/(1-V)$ & Assumes a white glow.\\
+\texttt{blind\_veil} & $J=(I-\hat V)/\hat t$ & Assumes the local clear brightness is near the prior mean.\\
+\texttt{clahe} & A local monotone map; no unique inverse & Noise grows with the clip limit.\\
+\texttt{unsharp} & $I+k(I-h\!*\!I)$, the first term of the series that inverts a blur & Amplifies high-frequency noise.\\
+\texttt{wiener}, \texttt{cls}, \texttt{richardson\_lucy} & $\hat J=\dfrac{H^*}{|H|^2+K}\hat I$ for a Gaussian blur, $H=e^{-2\pi^2\sigma^2f^2}$ & Detail above $f^*\approx\sqrt{\ln\mathrm{SNR}/(2\pi^2\sigma^2)}$ is lost.\\
+\texttt{flat\_field} & $J=I/s$ with $s$ a wide blur & Also removes true slow scene content.\\
+\texttt{homomorphic} & Inverts $I=s\cdot r$ in the log domain & Needs the lighting to be purely low-frequency.\\
+\texttt{fusion} & A weighted blend, not an inverse & The output stays between its inputs.\\\bottomrule
+\end{longtable}}
+For the Wiener limit, rounding noise of 0.0011 and a signal of 0.2 give $f^*\approx0.51/\sigma$ (an estimate): our plastic blur ($\sigma\approx1.5$ pixels) is nearly invertible up to 0.34 cycles per pixel, the heaviest ($\sigma\approx3$) only up to 0.17.
+
+\textbf{How the limits combine in a chain.} (1) A chain of pointwise steps is one monotone map per colour, so its ceiling is the oracle LUT however long it is. (2) Affine layers compose, $J=(I-b_{\mathrm{tot}})/a_{\mathrm{tot}}$ with $a_{\mathrm{tot}}=\prod t_i$ and $b_{\mathrm{tot}}=\sum_iA_i(1-t_i)\prod_{j>i}t_j$; the last layer is undone first. An affine map commutes with a normalised blur, so in an ideal world their order does not matter; in practice it does, because each step is an estimate and clipping to $[0,1]$ breaks the commutation.
+
+\subsection{Why the measured scores are far below the best possible}
+Table~\ref{tab:chain_limits} (Section~\ref{sec:chainlength}) shows chains at 13 to 18 dB against true inverses at 30 to 46 dB. The gap has four parts, which we separate by giving the method more and more of the truth.
+\begin{itemize}
+\item \textbf{The per-pixel transmission.} A whole-picture step cannot know that far pixels are hazier. At medium severity the haze chain reaches 13.4 dB and the best global affine map (which uses the clear picture) 14.9, the best global map of any shape (the LUT) 19.7, and the true per-pixel inverse 33.2 dB. The step from the LUT to the true inverse (+13.5 dB for haze, +26 dB for water) is the cost of $t(x)$.
+\item \textbf{Estimating the glow.} The table below gives DCP the truth piece by piece on synthetic haze. With the true glow, DCP rises from 12.9 to 15.0 dB. With the true $t$ but the \emph{estimated} glow, the result is 10.8 dB, worse than DCP itself: an error $\Delta A$ in the glow becomes an error $\Delta A/t$ in the picture.
+\item \textbf{Estimating $t$.} With the true glow, DCP's own $t$ gives 15.0 dB and the true $t$ gives 22.3 dB (with the floor $t_0$): the dark-channel guess of $t$ costs 7.3 dB.
+\item \textbf{Rounding and the blur.} At heavy haze the true inverse itself is poor (14.3 dB, below the 18.2 dB of the oracle LUT), because $t$ is tiny and the 8-bit rounding is multiplied by $1/t$. For plastic, inverting the blur costs about 5 dB (oracle affine 23.9 and true inverse 29.1 at medium).
+\end{itemize}
+\begin{table}[H]\centering\scriptsize\resizebox{\textwidth}{!}{\tablein{gap_haze}}\caption{\SYN\ DCP given the truth piece by piece (calibrated synthetic haze, 18 held-out pictures; PSNR in dB).}\end{table}
+\textbf{Are any results almost the best possible?} Yes, in two situations. At \emph{heavy haze} the chain reaches 12.4 dB against a true inverse of only 14.3 dB, and in 5 of the 18 pictures the best chain is within 3 dB of the true inverse. For \emph{raindrops} the best chains are within 1 dB of the oracle LUT in 10 of 18 pictures, but that ceiling is only 0.9 dB above doing nothing, so there is nothing to gain. For haze and water at mild and medium severity no chain comes within 1 dB of the LUT.
+
+\subsection{The best chain against the theoretical restoration, in pictures}
+\label{sec:theorypics}
+For every synthetic held-out picture we took the best of all chains tried (the earlier searches and the chains derived from the inverse in the next subsection; chosen with the answer known, so slightly optimistic) and compared it with the theoretical restoration: the true inverse, or for raindrops (which have no inverse) the best possible map of pixel values, the oracle LUT. The three rows of each figure are the case with the smallest gap, a typical (median) gap and the largest gap. Columns: degraded, best chain, oracle LUT, theoretical restoration, clear.
+\begin{figure}[H]\centering\includegraphics[width=\textwidth]{theory_haze.jpg}\caption{\SYN\ Haze. Top: heavy haze, where the best chain beats the true inverse. Middle: medium haze. Bottom: mild haze, the largest gap.}\end{figure}
+\begin{itemize}
+\item \textbf{Smallest gap, heavy haze: the chain beats the theory ($-5.9$ dB).} Here $t<0.1$ on 80\% of the pixels, so the 8-bit rounding of the picture is multiplied by $1/t$ (up to $10^8$ in $1/t^2$) and the true inverse breaks down (saturated white and red patches). A chain that raises contrast without dividing by $t$ is better.
+\item \textbf{Typical gap, medium haze (15 dB).} The true inverse is almost exact (32.9 dB); the chain (histogram equalisation, 17.6 dB) brightens the whole picture but cannot know that the far wall is hazier than the near sofa, so a veil remains where $t$ is small.
+\item \textbf{Largest gap, mild haze (33 dB).} Only 2\% of the pixels have $t<0.1$, so the true inverse is nearly perfect (46.5 dB), but any chain that cannot see $t(x)$ leaves the depth gradient (the grey wash at the back of the room) and cannot restore the colours.
+\end{itemize}
+\begin{figure}[H]\centering\includegraphics[width=\textwidth]{theory_water.jpg}\caption{\SYN\ Open-sea style water, same layout.}\end{figure}
+Water behaves like haze: the gap is small only when rounding limits the inverse (heavy: $t<0.1$ on 78\% of the pixels, true inverse 29.7 dB, gap 14 dB), and grows to 30 to 38 dB at medium and mild severity where the inverse is almost exact (49 to 55 dB) but the chain's colour correction is global (17.5 to 18.5 dB).
+\begin{figure}[H]\centering\includegraphics[width=\textwidth]{theory_plastic.jpg}\caption{\SYN\ Plastic. The best chain is the derived \texttt{wiener\_matched > stretch\_rgb} in all three cases.}\end{figure}
+\begin{itemize}
+\item \textbf{Smallest gap, mild plastic ($-0.8$ dB):} the chain is essentially the inverse (undo the blur, then one per-colour range), and it matches the true inverse (39.2 against 38.4 dB).
+\item \textbf{Typical gap, heavy plastic (2.1 dB):} a 3-pixel blur; the Wiener filter cannot recover detail above about 0.17 cycles per pixel (Section~\ref{sec:limits}), so the result stays softer than the true inverse.
+\item \textbf{Largest gap, mild plastic (16 dB):} the blur is easy, but the per-colour stretch \emph{assumes the clear picture spans the full range from black to white}. This bathroom is bright with few deep shadows, so the likely cause (not tested) is that the stretch maps the wrong range and leaves a brightness and colour offset; the true inverse knows the true gain and offset.
+\end{itemize}
+\begin{figure}[H]\centering\includegraphics[width=\textwidth]{theory_glass.jpg}\caption{\SYN\ Raindrops. The theoretical column is the oracle LUT (no inverse exists).}\end{figure}
+For raindrops the typical and smallest gaps are only 0.2 to 0.6 dB: the best chain (a plain stretch) is already close to the best possible whole-picture map, and that map is only about 1 dB above doing nothing. The largest gap (8 dB) is a picture where the oracle map, which sees the answer, does much better than any rule that has to guess; we did not look into why.
+
+\subsection{Chains derived from the inverse equations, and whether we had tried them}
+\label{sec:theorychains}
+The inverse of each medium is a short list of operations (undo the gain and offset per colour; undo the depth-dependent transmission; undo the blur), and each operation has a function that approximates it. We built the chains in the order the inverse asks for and tested them next to the best chains of the earlier searches. One function was missing: the stretch in the earlier searches used a single range for all colours, so it could not undo a different gain and offset per colour. We added \texttt{stretch\_rgb} (a separate range per colour), and a Wiener filter whose blur width equals the true blur of the severity (\texttt{wiener\_matched}).
+{\small\input{tables/theory_chains_long.tex}}
+\begin{itemize}
+\item \textbf{Plastic: the derived chains win by a wide margin.} \texttt{wiener\_matched > stretch\_rgb} scores 26.6 dB against 18.1 for the best earlier chain (+8.4 dB), and even with the default blur width \texttt{stretch\_rgb > richardson\_lucy} reaches 22.2 dB (+4.0). The earlier search missed them for two reasons: its pool had no per-colour stretch, and its Wiener filter always assumed one blur width. This chain also lies above the oracle LUT (24.2 dB), as it must: the LUT bounds only chains of pointwise steps, and a deblur is not pointwise.
+\item \textbf{Haze: the derived chains do not beat the earlier ones.} \texttt{dcp\_guided > gamma\_auto} (13.5 dB) and the others stay 1.3 to 3.9 dB below the best earlier chain (14.8 dB), and adding a stretch after DCP lowers the score on real haze (13.1 against 14.4 without it). On real haze the best derived chain, \texttt{dcp\_guided > gray\_world} (14.4), is 0.85 dB below the earlier \texttt{dcp\_guided > gray\_world > clahe}.
+\item \textbf{Water: close, but not better.} \texttt{stretch\_rgb > von\_kries} reaches 16.8 dB on synthetic water, 0.6 dB below the best earlier chain; the per-colour stretch alone (14.8) is worse than white balance (17.2) because the damage varies with depth, which a global range cannot follow. On the real tank water the per-colour stretch is harmful (12.9 dB against 18.3 for doing nothing): the near-uniform milky picture has almost no range for the percentiles to estimate, so the stretch amplifies noise.
+\item \textbf{Glass:} chains that assume a slow film (\texttt{flat\_field}) lower the score by 5 dB, as raindrops are not a film.
+\item \textbf{Had we tried them?} Only some. Chains made of the earlier pool's functions at their default settings had been searched (marked ``yes''). Chains using \texttt{stretch}, \texttt{stretch\_rgb}, the matched Wiener filter or the subtraction methods inside a medium's own pool had not (marked ``no'').
+\end{itemize}
+\textbf{So should the functions, their settings and their order change?} Yes, where the theory says what the inverse needs: for plastic the settings (the blur width) and a per-colour stretch matter by 4 to 8 dB, more than any reordering. For haze and water the settings are near their optimum (previous subsection) and the derived chains do not beat the searched ones. The order of deblur and stretch commutes in theory; in practice deblurring first is 0.6 dB better (26.6 against 26.0), because the stretch percentiles are estimated on a blurred picture.
+
+\subsection{Should the settings and the order of the steps change?}
+We tuned the settings inside the best real-picture chains on one set of pictures and judged them on two others (the same disjoint sets as in Section~\ref{sec:chainlength}).
+\begin{table}[H]\centering\scriptsize\tablein{tune_chain}\caption{\REAL\ Default against tuned settings of the best chains (A chose the settings; B and C are held out). Gain: mean $\pm$ standard error, dB.}\end{table}
+\begin{itemize}
+\item \textbf{Real haze, \texttt{dcp\_guided > gray\_world > clahe}:} tuning $\omega$, $t_0$, the patch size, the CLAHE clip and tile count gains $+0.06\pm0.25$ dB (B) and $+0.20\pm0.15$ (C), within the noise. The defaults are already near the best: the score surface is flat around them.
+\item \textbf{Real tank water, \texttt{red\_comp > unsharp}:} stronger red compensation (2.0) and a wider unsharp mask ($\sigma=0.03$) gain $+0.48\pm0.09$ (B) and $+0.33\pm0.05$ (C), small but consistent. Both best values sit at the edge of the grid, so the best setting may be stronger still.
+\item \textbf{The order matters more than the settings.} The order of the same steps changes the score by up to 3.1 dB (Stage 4d), a subtraction step placed last helps and placed first does not, while tuning the settings gains 0.1 to 0.5 dB. The theory agrees: undo the last layer first, and give each step an unmodified picture to estimate from.
+\end{itemize}
+
 \section{Conclusions and limits}
 \begin{enumerate}
 \item The one equation $I=tJ+A(1-t)$ explains all four media; the frequency view confirms it.
@@ -589,6 +695,7 @@ DCP guesses the glow from the brightest pixels. In water the true glow is a dark
 \item \textbf{Made-up pictures help but need checking.} Our first presets gave misleading winners; calibrating to real pictures fixed glass fully and haze partly.
 \item \textbf{Raindrops cannot be repaired by global methods,} and running methods per tile does not fix that. Nothing beat doing nothing.
 \item \textbf{For haze, local is better than global:} running histogram equalisation or DCP tile by tile gained 1 to 2 dB on real haze, best at roughly 4$\times$4 to 6$\times$6 tiles; depth is the information that matters. The best tile size differs by medium (water: colour methods like many tiles; glass: none).
+\item \textbf{The best possible is far above what any chain reaches, and the gap is estimation, not steps.} The true inverse is 13 to 26 dB above the chains at medium severity; its parts are the per-pixel transmission (depth), the estimate of the glow (an error $\Delta A$ becomes $\Delta A/t$) and of $t$, rounding at heavy haze, and the blur for plastic. Real pictures also ask for per-colour glow and local variation, but refining the synthetic haze that way did not make it rank the methods more like real haze. Tuning the settings inside the best chains gains 0.1 to 0.5 dB; the order of the steps matters more.
 \end{enumerate}
 \textbf{Limits.} Plastic is unchecked against real pictures, and real water is only partly checked (a tank with milky turbidity and a nearly clear reference; ocean photos without a reference; ink has no real data at all). Own captures are still to come. The haze ranking mismatch across scenes is unexplained beyond the scene argument. The subtraction method's settings were fitted on the test data's source datasets.
 

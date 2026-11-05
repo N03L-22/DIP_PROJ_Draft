@@ -131,6 +131,15 @@ def auto_gamma(image, target=0.5):
     return image ** np.sqrt(low * high)
 
 
+def contrast_stretch_per_channel(image, low_percentile=1.0, high_percentile=99.0):
+    """Linear stretch with a SEPARATE range for each colour: the inverse of a per-colour affine map I_c = a_c J_c + b_c (a coloured glow or a tint).
+
+    contrast_stretch below uses one shared range, so it cannot undo a different gain and offset per colour; this one can (and it also removes a colour cast).
+    """
+    low, high = (np.percentile(image, q, axis=(0, 1)) for q in (low_percentile, high_percentile))
+    return np.clip((image - low) / np.maximum(high - low, 1e-6), 0.0, 1.0)
+
+
 def contrast_stretch(image, low_percentile=1.0, high_percentile=99.0):
     """Linear stretch: the darkest `low_percentile` % maps to black and the brightest `100 - high_percentile` % to white.
 

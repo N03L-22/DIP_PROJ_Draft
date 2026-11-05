@@ -23,6 +23,7 @@ REGISTRY = {
     "hist_eq_rgb":        baselines.histogram_equalise_rgb,                                      # ... on each colour separately
     "gamma_auto":         baselines.auto_gamma,                                                  # power curve to a target brightness
     "stretch":            baselines.contrast_stretch,                                            # linear contrast stretch
+    "stretch_rgb":        baselines.contrast_stretch_per_channel,                                # stretch with a separate range per colour (inverse of a per-colour affine map)
     "dcp_clahe":          medium_aware.dcp_then_clahe,                                           # DCP then CLAHE
     # --- colour and tone (extra.py)
     "gray_world":         lambda image, **s: baselines.gray_world(image),                        # white balance: gray-world

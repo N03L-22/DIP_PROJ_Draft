@@ -5,6 +5,7 @@ experiment is re-run, then recompile the report.
 Run from the project root:  .venv/bin/python code/experiments/make_report_tables.py
 """
 import csv
+import json
 from pathlib import Path
 
 import numpy as np
@@ -118,7 +119,7 @@ def main():
     write_table("signature_compare", ["medium", "level", "pictures", "dark shift", "contrast ratio", "brightness shift", "sharpness ratio"], body, "lllrrrr")
 
     rows = [r for r in read("outdoor_haze_summary.csv") if (r["level"] == "all") != (r["world"] == "reside")]
-    names = {"nyu_original": "indoor rooms, original haze (synthetic)", "nyu": "indoor rooms, calibrated haze (synthetic)", "reside": "outdoor, RESIDE-made haze (synthetic)", "diode": "outdoor, DIODE depth, our haze (synthetic)"}
+    names = {"nyu_original": "indoor rooms, original haze (synthetic)", "nyu": "indoor rooms, calibrated haze (synthetic)", "nyu_refined": "indoor rooms, refined haze: per-colour t and glow, blur (synthetic)", "nyu_flat": "indoor rooms, uniform fog, no depth (synthetic)", "reside": "outdoor, RESIDE-made haze (synthetic)", "diode": "outdoor, DIODE depth, our haze (synthetic)"}
     write_table("outdoor_haze", ["pictures", "n", "Spearman vs real haze", "best method", "PSNR", "guided DCP", "none"],
                 [[names[r["world"]], r["pictures"], f"{float(r['spearman']):+.2f}", tex(r["best_method"]), r["best_psnr"], r["dcp_guided"], r["none"]] for r in rows], "lrrlrrr")
 
@@ -142,6 +143,50 @@ def main():
             ["TUB tank", "real turbid water pairs", "least-turbid view", str(count("manifest_water_tub.csv")), str(scored("water_tub.csv")), "228 (chain tests)"],
             ["RESIDE-SOTS outdoor", "haze made by RESIDE", "clear photo", "492", "--", "100 (outdoor-haze test)"]]
     write_table("data_matrix", ["source", "kind", "reference", "available", "scored in the main comparison", "other analyses"], body, "llcrrl")
+
+    rows = read("model_refinement_summary.csv")
+    write_table("model_refinement", ["pictures", "n", "one t and A", "per colour", "+ blur", "+ local maps", "blur width", "t (R/G/B)", "glow A (R/G/B)"],
+                [[r["set"].split(" (")[0], r["pairs"], r["M1"], r["M2"], r["M3"], r["M4"], r["mean_blur_sigma"], r["t_rgb"], r["A_rgb"]] for r in rows], "lrrrrrrll")
+    rows = read("gap_haze.csv")
+    keys = ["none", "L1_dcp", "L2_true_A", "L3_true_t_est_A", "L4_true_t_true_A_floor", "L5_true_inverse"]
+    write_table("gap_haze", ["severity", "none", "DCP", "DCP, true glow", "true t, estimated glow", "true t and glow, t floor 0.1", "true inverse"],
+                [[lv] + [f"{np.mean([float(r[k]) for r in rows if lv == 'all' or r['level'] == lv]):.1f}" for k in keys] for lv in ("mild", "medium", "heavy", "all")], "lrrrrrr")
+    rows = read("tune_chain_summary.csv") if (TABLES / "tune_chain_summary.csv").exists() else []
+    if rows:
+        write_table("tune_chain", ["pictures", "set", "default settings", "tuned settings", "gain (dB)"],
+                    [[{"haze": "real haze", "water": "real tank water"}[r["medium"]], s_, r[f"default_{s_}"], r[f"tuned_{s_}"], f"{float(r['gain_' + s_]):+.2f} $\\pm$ {r['se_' + s_]}"] for r in rows for s_ in ("A", "B", "C")], "llrrr")
+
+    # chains derived from the inverse equations: were they in the pools of the earlier searches?
+    pools = json.loads((PROJECT / "configs" / "pipelines.json").read_text())
+    subtraction_pool = {"blind_veil_local", "lowfreq_subtract", "dcp_guided", "clahe", "hist_eq", "unsharp", "gamma_auto", "tarel", "gray_world"}
+
+    def tested_before(medium, chain):
+        steps = chain.split(" > ")
+        pool = set(pools[medium]["pool"])
+        if all(x in pool for x in steps) and len(steps) <= 3:
+            return "yes"
+        if medium == "haze" and all(x in subtraction_pool for x in steps):
+            return "yes (subtraction search)"
+        return "no"
+
+    rows = read("theory_chains_summary.csv")
+    body = []
+    for world, medium in (("synthetic", "haze"), ("synthetic", "water"), ("synthetic", "plastic"), ("synthetic", "glass"), ("real", "haze"), ("real", "water")):
+        part = [r for r in rows if r["world"] == world and r["medium"] == medium]
+        for r in part:
+            if r["kind"] in ("theory", "earlier") or r["chain"] == "none":
+                theory = r["kind"] == "theory"
+                gain = "" if r["gain_vs_best_earlier"] in ("", None) else f"{float(r['gain_vs_best_earlier']):+.2f} $\\pm$ {r['se']}"
+                body.append([f"{world} {medium}", tex(r["chain"]), "derived from the inverse" if theory else ("earlier search" if r["kind"] == "earlier" else "--"),
+                             tested_before(medium, r["chain"]) if theory else "--", f"{float(r['psnr']):.2f}", gain])
+        ceilings = {r["chain"]: r["psnr"] for r in part if r["kind"] == "ceiling"}
+        if ceilings:
+            body.append([f"{world} {medium}", "ceilings: oracle LUT / true inverse", "", "", f"{float(ceilings.get('oracle_lut', 'nan')):.1f} / " + (f"{float(ceilings['true_inverse']):.1f}" if 'true_inverse' in ceilings else "--"), ""])
+    write_table("theory_chains", ["pictures", "chain", "origin", "tried before?", "PSNR", "vs best earlier chain"], body, "llllrr")
+    # the same rows as a long table that may break across pages (the report includes this one)
+    header = " & ".join(["pictures", "chain", "origin", "tried before?", "PSNR", "vs best earlier chain"]) + r" \\"
+    lines = [r"\begin{longtable}{llllrr}", r"\toprule", header, r"\midrule", r"\endhead"] + [" & ".join(r) + r" \\" for r in body] + [r"\bottomrule", r"\end{longtable}", ""]
+    (OUT / "theory_chains_long.tex").write_text("\n".join(lines))
 
     # chain-length analysis: ceilings (Stage 4g) and the curve of the best chain per length (Stage 4h)
     rows = read("chain_limits_summary.csv")

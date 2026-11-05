@@ -1,0 +1,76 @@
+world,medium,chain,kind,psnr,gain_vs_best_earlier,se,pictures
+synthetic,haze,none,,11.611,-3.221,0.374,54
+synthetic,haze,dcp_guided > stretch,theory,12.943,-1.889,0.326,54
+synthetic,haze,gray_world > dcp_guided,theory,12.945,-1.887,0.313,54
+synthetic,haze,gray_world > dcp_guided > stretch,theory,12.833,-1.999,0.312,54
+synthetic,haze,dcp_guided > gray_world,theory,12.978,-1.854,0.324,54
+synthetic,haze,dcp_guided > gray_world > stretch_rgb,theory,12.891,-1.941,0.314,54
+synthetic,haze,tarel > stretch,theory,10.919,-3.913,0.309,54
+synthetic,haze,blind_veil_local > stretch,theory,12.156,-2.676,0.346,54
+synthetic,haze,stretch_rgb > dcp_guided,theory,12.286,-2.546,0.303,54
+synthetic,haze,dcp_guided > gamma_auto,theory,13.545,-1.287,0.307,54
+synthetic,haze,hist_eq,earlier,13.071,-1.761,0.325,54
+synthetic,haze,hist_eq > dcp_guided,earlier,14.535,-0.297,0.123,54
+synthetic,haze,hist_eq > clahe > dcp_guided,earlier,14.832,0.0,0.0,54
+synthetic,haze,oracle_affine,ceiling,14.233,,,54
+synthetic,haze,oracle_lut,ceiling,19.383,,,54
+synthetic,haze,true_inverse,ceiling,30.013,,,54
+synthetic,water,none,,14.642,-2.757,0.131,54
+synthetic,water,stretch_rgb,theory,14.819,-2.58,0.194,54
+synthetic,water,gray_world > stretch_rgb,theory,15.322,-2.077,0.19,54
+synthetic,water,red_comp > stretch_rgb,theory,15.845,-1.554,0.192,54
+synthetic,water,stretch_rgb > von_kries,theory,16.809,-0.59,0.157,54
+synthetic,water,udcp > stretch_rgb,theory,11.744,-5.655,0.2,54
+synthetic,water,red_comp > von_kries > stretch_rgb,theory,16.733,-0.666,0.175,54
+synthetic,water,von_kries > stretch_rgb,theory,16.384,-1.015,0.168,54
+synthetic,water,von_kries,earlier,17.171,-0.228,0.058,54
+synthetic,water,red_comp > von_kries,earlier,17.352,-0.047,0.052,54
+synthetic,water,red_comp > von_kries > unsharp,earlier,17.399,0.0,0.0,54
+synthetic,water,oracle_affine,ceiling,18.973,,,54
+synthetic,water,oracle_lut,ceiling,21.173,,,54
+synthetic,water,true_inverse,ceiling,45.522,,,54
+synthetic,plastic,none,,15.808,-2.328,0.559,54
+synthetic,plastic,stretch > wiener,theory,20.259,2.123,0.293,54
+synthetic,plastic,wiener > stretch,theory,20.413,2.277,0.225,54
+synthetic,plastic,stretch_rgb > wiener,theory,21.99,3.854,0.372,54
+synthetic,plastic,wiener > stretch_rgb,theory,21.734,3.598,0.313,54
+synthetic,plastic,stretch_rgb > richardson_lucy,theory,22.173,4.038,0.326,54
+synthetic,plastic,stretch_rgb > wiener_matched,theory,26.006,7.87,0.768,54
+synthetic,plastic,wiener_matched > stretch_rgb,theory,26.568,8.432,0.803,54
+synthetic,plastic,clahe,earlier,18.136,0.0,0.0,54
+synthetic,plastic,wiener > dcp_guided,earlier,17.683,-0.452,0.358,54
+synthetic,plastic,wiener > unsharp > dcp_guided,earlier,17.756,-0.38,0.369,54
+synthetic,plastic,oracle_affine,ceiling,23.839,,,54
+synthetic,plastic,oracle_lut,ceiling,24.204,,,54
+synthetic,glass,none,,25.362,0.502,0.24,54
+synthetic,glass,flat_field > stretch,theory,19.58,-5.28,0.292,54
+synthetic,glass,stretch > flat_field,theory,19.594,-5.266,0.294,54
+synthetic,glass,flat_field > stretch_rgb,theory,19.548,-5.312,0.29,54
+synthetic,glass,stretch_rgb,theory,24.673,-0.187,0.03,54
+synthetic,glass,stretch,earlier,24.86,0.0,0.0,54
+synthetic,glass,stretch > unsharp,earlier,22.64,-2.22,0.169,54
+synthetic,glass,flat_field > unsharp > stretch,earlier,19.279,-5.581,0.326,54
+synthetic,glass,oracle_affine,ceiling,25.803,,,54
+synthetic,glass,oracle_lut,ceiling,26.167,,,54
+real,haze,none,,12.409,-2.83,0.38,69
+real,haze,dcp_guided > stretch,theory,12.696,-2.543,0.248,69
+real,haze,gray_world > dcp_guided,theory,14.285,-0.954,0.254,69
+real,haze,gray_world > dcp_guided > stretch,theory,13.084,-2.155,0.221,69
+real,haze,dcp_guided > gray_world,theory,14.392,-0.847,0.246,69
+real,haze,dcp_guided > gray_world > stretch_rgb,theory,13.3,-1.939,0.191,69
+real,haze,tarel > stretch,theory,9.807,-5.432,0.34,69
+real,haze,blind_veil_local > stretch,theory,13.818,-1.421,0.348,69
+real,haze,stretch_rgb > dcp_guided,theory,13.475,-1.764,0.177,69
+real,haze,dcp_guided > gamma_auto,theory,13.237,-2.002,0.317,69
+real,haze,dcp_guided > gray_world > clahe,earlier,15.239,0.0,0.0,69
+real,haze,dcp_guided > clahe,earlier,14.845,-0.394,0.076,69
+real,water,none,,18.303,-0.16,0.017,89
+real,water,stretch_rgb,theory,12.863,-5.6,0.273,89
+real,water,gray_world > stretch_rgb,theory,12.863,-5.6,0.273,89
+real,water,red_comp > stretch_rgb,theory,12.854,-5.608,0.273,89
+real,water,stretch_rgb > von_kries,theory,12.608,-5.855,0.277,89
+real,water,udcp > stretch_rgb,theory,11.794,-6.668,0.37,89
+real,water,red_comp > von_kries > stretch_rgb,theory,12.849,-5.614,0.273,89
+real,water,von_kries > stretch_rgb,theory,12.859,-5.604,0.273,89
+real,water,red_comp > unsharp,earlier,18.463,0.0,0.0,89
+real,water,unsharp,earlier,18.365,-0.097,0.006,89

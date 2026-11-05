@@ -31,7 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common.datasets import load_clear_scenes  # noqa: E402
 from common.imageio import load_image, normalise_depth  # noqa: E402
 from common.parallel import fingerprint, run_stage  # noqa: E402
-from degrade import haze  # noqa: E402
+from degrade import haze, haze_refined  # noqa: E402
 from degrade.presets import CALIBRATED_PRESETS, LEVELS, PRESETS  # noqa: E402
 from metrics.full_reference import full_reference_scores  # noqa: E402
 from restore.methods import build_method  # noqa: E402
@@ -66,12 +66,20 @@ def work(job):
         clear, hazy = load_image(job["clear"], SIDE), load_image(job["hazy"], SIDE)
         cases = [("reside", hazy)]
     else:
-        if job["world"] in ("nyu", "nyu_original"):
+        if job["world"] in ("nyu", "nyu_original", "nyu_refined", "nyu_flat"):
             clear, depth, _ = load_clear_scenes(PICTURES, SIDE, only=job["index"])[0]
         else:
             clear, depth = diode_load(*job["files"])
-        presets = PRESETS if job["world"] == "nyu_original" else CALIBRATED_PRESETS  # the first hand-chosen haze, or the one fitted to real pictures
-        cases = [(level, np.clip(haze.apply(clear, depth, presets["haze"][level]), 0, 1)) for level in LEVELS]
+        if job["world"] == "nyu_flat":  # homogeneous fog: the same thickness everywhere (constant depth 0.5), settings from the flat-structure tuning of tune_models.py
+            with open(TABLES / "tuning_best.csv") as handle:
+                flat = {r["level"]: r for r in csv.DictReader(handle) if r["medium"] == "haze" and r["structure"] == "flat"}
+            cases = [(level, np.clip(haze.apply(clear, np.full_like(depth, 0.5), {"beta": float(flat[level]["beta"]), "airlight": float(flat[level]["airlight"])}), 0, 1)) for level in LEVELS]
+        elif job["world"] == "nyu_refined":  # per-colour transmission and glow plus a little blur (haze_refined.py), calibrated by tune_refined_haze.py
+            refined = json.loads((PROJECT / "configs" / "refined_haze_presets.json").read_text())
+            cases = [(level, np.clip(haze_refined.apply(clear, depth, refined[level]), 0, 1)) for level in LEVELS]
+        else:
+            presets = PRESETS if job["world"] == "nyu_original" else CALIBRATED_PRESETS  # the first hand-chosen haze, or the one fitted to real pictures
+            cases = [(level, np.clip(haze.apply(clear, depth, presets["haze"][level]), 0, 1)) for level in LEVELS]
     rows = []
     for level, degraded in cases:
         base = full_reference_scores(degraded, clear)
@@ -86,7 +94,9 @@ def work(job):
 
 def build_jobs(methods):
     jobs = {"nyu": [{"key": f"nyu|{i}", "world": "nyu", "index": i, "picture": f"nyu{i}", "methods": methods} for i in range(PICTURES)],
-            "nyu_original": [{"key": f"nyuo|{i}", "world": "nyu_original", "index": i, "picture": f"nyu{i}", "methods": methods} for i in range(PICTURES)]}
+            "nyu_original": [{"key": f"nyuo|{i}", "world": "nyu_original", "index": i, "picture": f"nyu{i}", "methods": methods} for i in range(PICTURES)],
+            "nyu_refined": [{"key": f"nyur|{i}", "world": "nyu_refined", "index": i, "picture": f"nyu{i}", "methods": methods} for i in range(PICTURES)],
+            "nyu_flat": [{"key": f"nyuf|{i}", "world": "nyu_flat", "index": i, "picture": f"nyu{i}", "methods": methods} for i in range(PICTURES)]}
     hazy = sorted((EXISTING / "RESIDE-SOTS" / "SOTS" / "outdoor" / "hazy").glob("*.jpg"))
     pairs = [(h, EXISTING / "RESIDE-SOTS" / "SOTS" / "outdoor" / "gt" / (h.stem.split("_")[0] + ".png")) for h in hazy]
     pairs = [p for p in pairs if p[1].exists()][::5]
@@ -119,7 +129,7 @@ def run(workers=None, resume=True):
     save_csv(rows, TABLES / "outdoor_haze.csv")
     summary = []
     print("\nWhich scenes make synthetic haze rank the methods like REAL haze does? (Spearman and Kendall over the methods)")
-    for world in ("nyu_original", "nyu", "reside", "diode"):
+    for world in ("nyu_original", "nyu", "nyu_refined", "nyu_flat", "reside", "diode"):
         own = [r for r in rows if r["world"] == world]
         if not own:
             continue
@@ -134,7 +144,7 @@ def run(workers=None, resume=True):
             print(f"  {world:7}{level:8} {summary[-1]['pictures']:3} pictures  Spearman {rho:+.2f}  Kendall {tau:+.2f}   best {best} ({means[best]:.2f})   DCP {means['dcp_guided']:.2f}  DCP>CLAHE {means['dcp_clahe']:.2f}  none {means['none']:.2f}")
     save_csv(summary, TABLES / "outdoor_haze_summary.csv")
     print(f"  REAL haze reference: best {max(real, key=real.get)} ({max(real.values()):.2f}), DCP {real['dcp_guided']:.2f}, DCP>CLAHE {real['dcp_clahe']:.2f}, none {real['none']:.2f}")
-    worlds = [w for w in ("nyu_original", "nyu", "reside", "diode") if any(r["world"] == w for r in rows)]
+    worlds = [w for w in ("nyu_original", "nyu", "nyu_refined", "nyu_flat", "reside", "diode") if any(r["world"] == w for r in rows)]
     figure, axes = plt.subplots(1, len(worlds), figsize=(5 * len(worlds), 4.6))
     order = [m for m in methods if m in real]
     for axis, world in zip(np.atleast_1d(axes), worlds):
@@ -146,7 +156,7 @@ def run(workers=None, resume=True):
         low, high = min(list(means.values()) + list(real.values())) - 1, max(list(means.values()) + list(real.values())) + 1
         axis.plot([low, high], [low, high], "--", color="#888888")
         rho = spearmanr([means[m] for m in order], [real[m] for m in order])[0]
-        axis.set_title({"nyu_original": "indoor rooms, ORIGINAL haze", "nyu": "indoor rooms, CALIBRATED haze", "reside": "outdoor, RESIDE haze", "diode": "outdoor, DIODE depth, our haze"}[world] + f"\nSpearman {rho:+.2f}", fontsize=9)
+        axis.set_title({"nyu_original": "indoor rooms, ORIGINAL haze", "nyu_refined": "indoor rooms, REFINED haze", "nyu_flat": "indoor rooms, uniform fog", "nyu": "indoor rooms, CALIBRATED haze", "reside": "outdoor, RESIDE haze", "diode": "outdoor, DIODE depth, our haze"}[world] + f"\nSpearman {rho:+.2f}", fontsize=9)
         axis.set_xlabel("mean PSNR on synthetic haze (dB)")
         axis.set_ylabel("mean PSNR on REAL haze (dB)")
         axis.grid(alpha=0.25)

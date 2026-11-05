@@ -1,0 +1,14 @@
+{
+  "mild": {
+    "beta": 1.3,
+    "blur": 0.0
+  },
+  "medium": {
+    "beta": 2.2,
+    "blur": 0.0
+  },
+  "heavy": {
+    "beta": 5.5,
+    "blur": 0.008
+  }
+}

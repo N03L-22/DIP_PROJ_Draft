@@ -7,5 +7,13 @@ nyu,heavy,90,0.417,0.309,hist_spec,12.47,9.96,9.88,8.99
 nyu,medium,90,0.172,0.191,hist_spec,13.51,12.88,12.96,11.27
 nyu,mild,90,0.196,0.118,dcp_clahe,14.95,14.41,14.95,13.59
 nyu,all,90,0.301,0.235,hist_spec,13.46,12.42,12.6,11.28
+nyu_refined,heavy,90,0.429,0.309,hist_spec,12.21,9.69,9.63,9.58
+nyu_refined,medium,90,0.12,0.147,hist_spec,13.27,12.43,12.54,11.2
+nyu_refined,mild,90,0.301,0.206,dcp_clahe,14.56,14.36,14.56,12.85
+nyu_refined,all,90,0.279,0.221,hist_spec,13.14,12.16,12.25,11.21
+nyu_flat,heavy,90,-0.083,-0.015,stretch,47.65,19.49,19.21,9.9
+nyu_flat,medium,90,-0.14,-0.059,stretch,47.73,17.94,19.48,12.58
+nyu_flat,mild,90,-0.007,-0.015,stretch,47.8,18.61,19.68,16.17
+nyu_flat,all,90,-0.12,-0.044,stretch,47.72,18.68,19.46,12.88
 reside,reside,100,0.093,0.074,stretch,23.83,18.68,17.39,16.01
 reside,all,100,0.093,0.074,stretch,23.83,18.68,17.39,16.01
