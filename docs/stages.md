@@ -52,7 +52,14 @@ flowchart TD
 | 4e | Global against local | `run_local_vs_global.py` (tile sweep: `--tile-sweep`) | Should a method act on the whole picture or tile by tile? |
 | 4f | Subtraction with other tools | `run_subtraction_combos.py` | Does haze removal by subtraction combine well? |
 | 4g, 4h, 4i | How long a chain | `analyse_chain_limits.py`, `run_longer_chains.py`, `run_longer_chains_real.py` | Do chains of 4 and 5 steps help? (No) |
-| 7b | Report assets | `make_report_figures.py`, `make_report_tables.py`, `make_pipeline_figures.py`, `make_water_figures.py` | Figures and tables for `report/final/report.tex` |
+| 2g to 2i | More scenes, outdoor scenes, refined haze | `run_outdoor_haze.py`, `check_model_refinements.py`, `tune_refined_haze.py` (`degrade/haze_refined.py`) | Is the haze ranking stable with 90 scenes? Do outdoor scenes or per-colour glow and blur make the synthetic haze rank the methods like real haze? |
+| 5b | Stability of the agreement numbers | `check_agreement_stability.py` | Bootstrap intervals for every synthetic-against-real rank agreement |
+| 4j | Where the gap to the best possible comes from | `analyse_gap.py` | Give DCP the true glow and the true transmission one piece at a time |
+| 4k | Settings inside the best chains | `tune_chain_params.py` | Should the parameters of the best real-picture chains change? |
+| 4l | Chains derived from the inverse equations | `run_theory_chains.py` (`stretch_rgb` in `restore/baselines.py`) | Do chains that follow the inverse beat the earlier searches, and had they been tried? |
+| 4m | Beyond repair | `analyse_beyond_repair.py` | Which pictures have lost the information a repair needs? |
+| 6a, 6b, 2c, 7 | Earlier stages | `run_failure_analysis.py`, `run_stacked.py`, `validate_models.py`, `run_frequency_analysis.py` | Why methods fail; stacked layers; model validation; frequency-domain study |
+| 7b | Report assets | `make_report_figures.py`, `make_report_tables.py`, `make_pipeline_figures.py`, `make_water_figures.py`, `make_data_gallery.py`, `make_theory_figure.py` | Figures and tables for `report/final/report.tex` |
 
 ### What each stage assumes (the viva questions live here)
 - **Stage 2:** haze `t = exp(−β·d)`, water per-channel `t_c = exp(−β_c·d)` with red absorbed fastest, glass as a low-frequency veil plus droplet or smudge masks, plastic as low transmission plus tint plus blur, stacked as `I2 = J·t1·t2 + A1·t2·(1 − t1) + A2·(1 − t2)`. Depth comes from measured distances, a planar ramp or 2–3 hand-defined layers.

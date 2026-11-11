@@ -291,10 +291,15 @@ Newest at the bottom of each table. Dates are ISO. Tracking note: [[Subjects/DIP
 - [x] Stages 3, 3b, 4, 4b, 4c, 4d and 5 are done (see `docs/results-analysis.md`).
 - [x] Stage 6: failure analysis and the stacked-layer experiment done (F31 to F35).
 - [x] Validation, tuning and same-scene check of the synthetic models done (F36 to F41); frequency-domain theory and subtraction done (F42 to F46).
-- [ ] Replace the original haze and glass presets in `degrade/presets.py` with the calibrated ones and re-run Stage 4 on them (decision for the user: the originals are kept for comparison).
+- [x] Calibrated presets adopted as a second preset set (`CALIBRATED_PRESETS`, `DIP_PRESETS=calibrated`) and the preset-dependent stages re-run (F48 to F52); the originals are kept for comparison (`results_original_presets/`). Later finding (F64): the original haze ranks the methods closer to real haze than the calibrated one.
 - [ ] Extend the haze tuning grid (heavy beta 5.5 and Dense-Haze tau 8 sit at the grid edge) and revise the underwater model to separate the direct and backscatter coefficients.
 - [ ] Test the local-veil inversion on scenes outside the four datasets the priors came from.
 - [x] Equations note written: `docs/model-equations.md` (spatial and frequency domain for every medium; underwater revised-model equation is from memory of Akkaynak and Treibitz, check before citing).
 - [x] Detailed report written: `report/final/report.pdf` (source `report.tex`; tables generated from the CSVs by `code/experiments/make_report_tables.py`, figures by `make_report_figures.py`). Own-capture results are not in it yet.
 - [ ] Re-run sweeps over wider ranges where the best value sat at the edge of the tested range.
 - [ ] Real data for water, glass fog and dirt, plastic and stacked scenes (own captures) to confirm the synthetic findings.
+- [ ] DIODE (outdoor RGB with laser depth, 2.6 GB validation set): the download ran at 12 to 54 kilobytes per second and was stopped; a partial file is in `data/existing/DIODE/`. Resume with `aria2c -c`, or have a teammate download it.
+- [ ] Why the ORIGINAL haze ranks the methods closer to real haze than the calibrated and the refined haze (F64, F68) is unexplained.
+- [ ] Datasets that would fill the coverage gaps (F65): A2I2-Haze (smoke), TURBID (chlorophyll, dye), Flare7K++ (glass dust and flare), Eigen et al. 2013 (dirt on windows): none downloaded.
+- [ ] Repo trim (decision pending): `proposal/peers/*.docx`, `Project-Ideas.md`, `report_detailed.tex`, large per-picture CSVs and unreferenced figures; add a repo README.
+- [ ] Team data share: `data/_share/data.zip` (2.2 GB; includes the UIEB photos for team use only, see `data/curated/water/README.txt`) to be uploaded to the Drive.

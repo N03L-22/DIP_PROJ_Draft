@@ -58,6 +58,7 @@ comparison) without naming who takes which. Names and roll numbers as on the tea
 Findings and changes: [[Subjects/DIP/Projects/DIP-Project/log|log]]. Latest (2026-11-03): proposal files moved to `proposal/`,
 folder structure created, stages and data plan written. Later the same day: public data downloaded and curated, forward models and the demo page written and tested (see log).
 2026-11-04: all stages run on original and calibrated presets, real tank-water data (TUB) added, local-against-global, subtraction and chain-length studies done, detailed report written (`report/final/report.pdf`, `docs/model-equations.md`); findings F1 to F60 in the log. Still open: own captures (water, glass fog and dirt, plastic, stacks), more diverse data (see the log's open items).
+2026-11-05: real haze and glass rerun on all 185 and 58 pairs (haze calibration verdict revised), standard terms and a coverage table with dataset leads, equations/refinements/limits section, theory-derived chains (plastic +8 dB), beyond-repair analysis; report 42 pages; findings F1 to F71; repo https://github.com/N03L-22/DIP_PROJ_Draft (data is not in the repo: see `data/README.md`, and the team zip `data.zip`).
 
 ---
 [[_syllabus|DIP syllabus]] · [[Dashboard]]

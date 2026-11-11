@@ -55,6 +55,15 @@ DIP_PRESETS=calibrated .venv/bin/python code/experiments/run_stages.py     # run
 .venv/bin/python code/experiments/analyse_chain_limits.py                  # the mathematical ceilings for chains
 .venv/bin/python code/experiments/run_longer_chains.py                     # chains of 1 to 5 steps, synthetic; run_longer_chains_real.py: real haze and tank water
 .venv/bin/python code/experiments/make_report_tables.py && .venv/bin/python code/experiments/make_report_figures.py && .venv/bin/python code/experiments/make_water_figures.py && .venv/bin/python code/experiments/make_pipeline_figures.py   # then: cd report/final && pdflatex report.tex (twice)
+.venv/bin/python code/experiments/run_outdoor_haze.py                      # indoor, outdoor and refined synthetic haze against the 185 real haze pairs
+.venv/bin/python code/experiments/check_agreement_stability.py              # bootstrap intervals of the synthetic-against-real agreement numbers
+.venv/bin/python code/experiments/check_model_refinements.py               # nested models fitted to the real pairs (which refinements the real pictures need)
+.venv/bin/python code/experiments/tune_refined_haze.py                     # calibrate the refined haze (degrade/haze_refined.py)
+.venv/bin/python code/experiments/analyse_gap.py                           # DCP given the true glow and transmission piece by piece
+.venv/bin/python code/experiments/run_theory_chains.py                     # chains derived from the inverse equations (stretch_rgb, matched Wiener)
+.venv/bin/python code/experiments/tune_chain_params.py                     # tune the settings inside the best real-picture chains
+.venv/bin/python code/experiments/analyse_beyond_repair.py                 # which pictures are beyond repair
+.venv/bin/python code/experiments/make_data_gallery.py && .venv/bin/python code/experiments/make_theory_figure.py   # more report figures
 .venv/bin/python code/tests/test_local.py                                  # 7 checks of the local-application wrapper
 ```
 `results_original_presets/` holds the results of the first run (original presets), frozen for comparison with `results/`.
